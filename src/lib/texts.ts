@@ -6,9 +6,29 @@ export interface DailyText {
   text: string;
 }
 
+// Función para obtener la fecha de hoy en formato YYYY-MM-DD
+function getTodayDateString() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+
 // Aquí es donde puedes añadir todos los textos.
 // Asegúrate de que el formato de la fecha sea AAAA-MM-DD.
 const dailyTexts: DailyText[] = [
+  {
+    level: 'infantil-primaria',
+    date: getTodayDateString(),
+    text: 'Este es el texto de hoy para Infantil y Primaria. ¡Que tengas un gran día!',
+  },
+  {
+    level: 'secundaria',
+    date: getTodayDateString(),
+    text: 'Este es el texto de hoy para Secundaria. Una oportunidad para reflexionar.',
+  },
   {
     level: 'infantil-primaria',
     date: '2025-08-26',
