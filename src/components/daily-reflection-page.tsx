@@ -15,12 +15,9 @@ export function DailyReflectionPage({ text, questions }: DailyReflectionPageProp
   const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
-    setCurrentDate(new Date().toLocaleDateString('es-ES', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }));
+    const today = new Date();
+    const formattedDate = `Hoy es ${today.toLocaleDateString('es-ES', { weekday: 'long' })}, ${today.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+    setCurrentDate(formattedDate);
   }, []);
 
   return (
@@ -44,6 +41,7 @@ export function DailyReflectionPage({ text, questions }: DailyReflectionPageProp
             <Users className="h-6 w-6" aria-label="Comunidad" />
             <BookOpen className="h-6 w-6" aria-label="Aprendizaje" />
           </div>
+          {currentDate && <p className="text-muted-foreground pt-4 text-md">{currentDate}</p>}
         </header>
 
         <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
