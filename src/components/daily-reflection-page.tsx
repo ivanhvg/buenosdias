@@ -5,6 +5,13 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { BookOpen, Sprout, Users } from 'lucide-react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface DailyReflectionPageProps {
   text: string;
@@ -43,6 +50,18 @@ export function DailyReflectionPage({ text, questions }: DailyReflectionPageProp
           </div>
           {currentDate && <p className="text-muted-foreground pt-4 text-md">{currentDate}</p>}
         </header>
+
+        <div className="w-full max-w-xs mx-auto">
+          <Select>
+            <SelectTrigger>
+              <SelectValue placeholder="Selecciona tu nivel educativo" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="infantil-primaria">Infantil y Primaria</SelectItem>
+              <SelectItem value="secundaria">Secundaria</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
 
         <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
           <CardContent className="pt-6">
