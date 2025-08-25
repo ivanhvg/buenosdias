@@ -45,10 +45,7 @@ export function DailyReflectionPage({ text, questions }: DailyReflectionPageProp
         </header>
 
         <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
-          <CardHeader>
-            <CardTitle className="font-headline text-2xl">Texto del Día</CardTitle>
-          </CardHeader>
-          <CardContent>
+          <CardContent className="pt-6">
             <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
               {text}
             </blockquote>
