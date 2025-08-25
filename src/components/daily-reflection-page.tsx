@@ -12,10 +12,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CardHeader, CardTitle, CardDescription } from './ui/card';
+import { CardHeader, CardTitle } from './ui/card';
 import { getDailyTextForLevel } from '@/lib/texts';
 import { generateReflectionQuestions } from '@/ai/flows/generate-reflection-questions';
-import { Button } from './ui/button';
 import { Loader } from 'lucide-react';
 
 interface DailyReflectionPageProps {
@@ -106,7 +105,6 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Pistas para la reflexión</CardTitle>
-                <CardDescription>Generadas por IA para guiar tu pensamiento.</CardDescription>
               </CardHeader>
               <CardContent>
                 {questions && questions.length > 0 ? (
