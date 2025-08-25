@@ -130,7 +130,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
 
 
         <footer className="text-center text-sm text-muted-foreground py-4">
-            <p>Colegio Buen Consejo La Laguna · {new Date().getFullYear()}</p>
+            <p>Buen Consejo La Laguna · {new Date().getFullYear()}</p>
         </footer>
 
       </main>
