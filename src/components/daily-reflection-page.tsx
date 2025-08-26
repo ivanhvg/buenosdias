@@ -58,8 +58,8 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <Image
             src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
             alt="Logo del centro educativo"
-            width={412}
-            height={112}
+            width={206}
+            height={56}
             className="mx-auto"
             priority
           />
