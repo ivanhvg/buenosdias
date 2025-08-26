@@ -27,6 +27,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   const [text, setText] = useState(initialText);
   const [questions, setQuestions] = useState(initialQuestions);
   const [isLoading, setIsLoading] = useState(false);
+  const [showInitialMessage, setShowInitialMessage] = useState(true);
 
   useEffect(() => {
     const today = new Date();
@@ -35,13 +36,18 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   }, []);
 
   const handleLevelChange = async (level: string) => {
+    setShowInitialMessage(false);
     setSelectedLevel(level);
     setIsLoading(true);
     try {
-      const newText = getDailyTextForLevel(level, new Date());
+      const newText = await getDailyTextForLevel(level, new Date());
       setText(newText);
-      const reflectionData = await generateReflectionQuestions({ text: newText });
-      setQuestions(reflectionData.questions);
+      if (newText && !newText.startsWith("No hay un texto disponible")) {
+        const reflectionData = await generateReflectionQuestions({ text: newText });
+        setQuestions(reflectionData.questions);
+      } else {
+        setQuestions([]);
+      }
     } catch (error) {
       console.error("Error updating content:", error);
       setText("Hubo un error al cargar el texto. Por favor, inténtalo de nuevo.");
@@ -91,7 +97,15 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="flex justify-center items-center p-10">
             <Loader className="h-8 w-8 animate-spin text-primary" />
           </div>
-        ) : selectedLevel ? (
+        ) : showInitialMessage ? (
+           <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
+            <CardContent className="pt-6">
+              <p className="text-muted-foreground text-center">
+                Aún no hay lectura ni oración para tu nivel y la fecha de hoy. Por favor, selecciónalo o vuelve mañana.
+              </p>
+            </CardContent>
+          </Card>
+        ) : (
           <>
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
               <CardContent className="pt-6">
@@ -120,21 +134,12 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-muted-foreground">No se pudieron generar preguntas en este momento.</p>
+                   <p className="text-muted-foreground text-center">No hay preguntas para el texto de hoy.</p>
                 )}
               </CardContent>
             </Card>
           </>
-        ) : (
-          <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
-            <CardContent className="pt-6">
-              <p className="text-muted-foreground text-center">
-                Aún no hay lectura ni oración para tu nivel y la fecha de hoy. Por favor, selecciónalo o vuelve mañana.
-              </p>
-            </CardContent>
-          </Card>
         )}
-
 
         <footer className="text-center text-sm text-muted-foreground py-4">
             <p>{new Date().getFullYear()} · Buen Consejo La Laguna</p>
