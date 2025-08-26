@@ -92,7 +92,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="flex justify-center items-center p-10">
             <Loader className="h-8 w-8 animate-spin text-primary" />
           </div>
-        ) : (
+        ) : selectedLevel ? (
           <>
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
               <CardContent className="pt-6">
@@ -126,6 +126,14 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               </CardContent>
             </Card>
           </>
+        ) : (
+          <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
+            <CardContent className="pt-6">
+              <p className="text-muted-foreground text-center">
+                Aún no hay lectura ni oración para tu nivel y la fecha de hoy. Por favor, selecciónalo o vuelve mañana.
+              </p>
+            </CardContent>
+          </Card>
         )}
 
 
