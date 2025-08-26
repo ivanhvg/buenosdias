@@ -29,9 +29,16 @@ export async function getDailyTextForLevel(level: string, date: Date): Promise<s
     const monthModule = await import(`@/lib/texts/${month}`);
     const dailyTexts: DailyText[] = monthModule.default;
 
-    const foundText = dailyTexts.find(
+    // Busca un texto para el día y nivel específicos
+    let foundText = dailyTexts.find(
       (t) => t.level === level && t.day === day
     );
+    
+    // Si no se encuentra un texto para el día específico,
+    // busca cualquier texto del nivel y mes para usar como fallback.
+    if (!foundText) {
+        foundText = dailyTexts.find((t) => t.level === level);
+    }
 
     if (foundText) {
       return foundText.text;

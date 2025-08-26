@@ -64,8 +64,8 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <Image
             src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
             alt="Logo del centro educativo"
-            width={170}
-            height={46}
+            width={100}
+            height={27}
             className="mx-auto"
             priority
           />
@@ -74,11 +74,11 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           </h1>
           <p className="text-muted-foreground pt-4 text-xl font-medium">Un momento del día para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-4 text-primary/80">
-            <Sprout className="h-7 w-7" aria-label="Crecimiento" />
-            <Users className="h-7 w-7" aria-label="Comunidad" />
-            <BookOpen className="h-7 w-7" aria-label="Aprendizaje" />
+            <Sprout className="h-8 w-8" aria-label="Crecimiento" />
+            <Users className="h-8 w-8" aria-label="Comunidad" />
+            <BookOpen className="h-8 w-8" aria-label="Aprendizaje" />
           </div>
-          {currentDate && <p className="text-muted-foreground/80 pt-6 text-md italic">{currentDate}</p>}
+          {currentDate && <p className="text-muted-foreground/80 pt-6 text-lg italic">{currentDate}</p>}
         </header>
 
         <div className="w-full max-w-xs mx-auto">
@@ -97,7 +97,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="flex justify-center items-center p-10">
             <Loader className="h-8 w-8 animate-spin text-primary" />
           </div>
-        ) : showInitialMessage ? (
+        ) : showInitialMessage && !selectedLevel ? (
            <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
             <CardContent className="pt-6">
               <p className="text-muted-foreground text-center">
