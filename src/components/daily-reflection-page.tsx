@@ -58,9 +58,9 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <Image
             src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
             alt="Logo del centro educativo"
-            width={206}
-            height={56}
-            className="mx-auto mb-4"
+            width={150}
+            height={41}
+            className="mx-auto mb-2"
             priority
           />
           <h1 className="text-4xl sm:text-5xl font-bold font-headline text-primary-foreground bg-primary rounded-lg py-2 px-4 inline-block shadow-md">
@@ -72,7 +72,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             <Users className="h-6 w-6" aria-label="Comunidad" />
             <BookOpen className="h-6 w-6" aria-label="Aprendizaje" />
           </div>
-          {currentDate && <p className="text-muted-foreground pt-4 text-md">{currentDate}</p>}
+          {currentDate && <p className="text-muted-foreground pt-6 text-md">{currentDate}</p>}
         </header>
 
         <div className="w-full max-w-xs mx-auto">
