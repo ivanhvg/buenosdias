@@ -27,7 +27,7 @@ const nextConfig: NextConfig = {
         hostname: 'www.buenconsejolalaguna.com',
         port: '',
         pathname: '/**',
-      },
+      }
     ],
   },
 };
