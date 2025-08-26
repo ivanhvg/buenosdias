@@ -66,7 +66,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             alt="Logo del centro educativo"
             width={170}
             height={46}
-            className="mx-auto mb-2"
+            className="mx-auto"
             priority
           />
           <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary">
