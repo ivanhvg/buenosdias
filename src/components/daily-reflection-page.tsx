@@ -64,21 +64,21 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <Image
             src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
             alt="Logo del centro educativo"
-            width={150}
-            height={41}
+            width={170}
+            height={46}
             className="mx-auto mb-2"
             priority
           />
-          <h1 className="text-4xl sm:text-5xl font-bold font-headline text-primary-foreground bg-primary rounded-lg py-2 px-4 inline-block shadow-md">
+          <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary">
             ¡Buenos días!
           </h1>
-          <p className="text-muted-foreground pt-4 text-lg">Un momento del día para la reflexión y la oración grupal</p>
-          <div className="flex justify-center items-center gap-6 pt-2 text-primary/80">
-            <Sprout className="h-6 w-6" aria-label="Crecimiento" />
-            <Users className="h-6 w-6" aria-label="Comunidad" />
-            <BookOpen className="h-6 w-6" aria-label="Aprendizaje" />
+          <p className="text-muted-foreground pt-4 text-xl font-medium">Un momento del día para la reflexión y la oración grupal</p>
+          <div className="flex justify-center items-center gap-6 pt-4 text-primary/80">
+            <Sprout className="h-7 w-7" aria-label="Crecimiento" />
+            <Users className="h-7 w-7" aria-label="Comunidad" />
+            <BookOpen className="h-7 w-7" aria-label="Aprendizaje" />
           </div>
-          {currentDate && <p className="text-muted-foreground pt-6 text-md">{currentDate}</p>}
+          {currentDate && <p className="text-muted-foreground/80 pt-6 text-md italic">{currentDate}</p>}
         </header>
 
         <div className="w-full max-w-xs mx-auto">
