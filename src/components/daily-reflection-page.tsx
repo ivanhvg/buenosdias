@@ -102,8 +102,8 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             </Card>
 
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl">Pistas para la reflexión</CardTitle>
+              <CardHeader className="text-center">
+                <CardTitle className="font-headline text-3xl text-primary/90">Pistas para la reflexión</CardTitle>
               </CardHeader>
               <CardContent>
                 {questions && questions.length > 0 ? (
@@ -113,7 +113,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                         <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
                           {index + 1}
                         </div>
-                        <p className="text-base leading-relaxed text-muted-foreground mt-1.5">
+                        <p className="text-base leading-relaxed text-muted-foreground mt-1.5 text-left">
                           {question}
                         </p>
                       </li>
