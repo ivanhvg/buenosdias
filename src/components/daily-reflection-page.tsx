@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { BookOpen, Sprout, Users } from 'lucide-react';
 import {
   Select,
@@ -108,18 +107,18 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               </CardHeader>
               <CardContent>
                 {questions && questions.length > 0 ? (
-                  <Accordion type="single" collapsible className="w-full">
-                    {questions.map((question, index) => (
-                      <AccordionItem value={`item-${index + 1}`} key={index}>
-                        <AccordionTrigger className="text-left text-base hover:no-underline data-[state=open]:text-primary data-[state=open]:font-semibold">
-                          Pregunta {index + 1}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                  <ul className="space-y-6">
+                    {questions.slice(0, 3).map((question, index) => (
+                      <li key={index} className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
+                          {index + 1}
+                        </div>
+                        <p className="text-base leading-relaxed text-muted-foreground mt-1.5">
                           {question}
-                        </AccordionContent>
-                      </AccordionItem>
+                        </p>
+                      </li>
                     ))}
-                  </Accordion>
+                  </ul>
                 ) : (
                   <p className="text-muted-foreground">No se pudieron generar preguntas en este momento.</p>
                 )}
