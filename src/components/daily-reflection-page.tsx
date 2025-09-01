@@ -70,10 +70,10 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             className="mx-auto"
             priority
           />
-          <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary">
+          <h1 className="text-4xl sm:text-5xl font-bold font-headline text-primary">
             ¡Buenos días!
           </h1>
-          <p className="text-muted-foreground pt-4 text-xl font-medium">Un momento del día para la reflexión y la oración grupal</p>
+          <p className="text-muted-foreground pt-4 text-lg font-medium">Un momento del día para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-4 text-primary/80">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
@@ -85,7 +85,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
         <div className="w-full max-w-xs mx-auto">
           <Select onValueChange={handleLevelChange}>
             <SelectTrigger className="bg-card border-border shadow-sm">
-              <SelectValue placeholder="Selecciona tu nivel educativo" />
+              <SelectValue placeholder="Selecciona tu etapa educativa" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="infantil-primaria">Infantil y Primaria</SelectItem>
