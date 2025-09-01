@@ -16,6 +16,7 @@ import { CardHeader, CardTitle } from './ui/card';
 import { getDailyTextForLevel } from '@/lib/texts';
 import { generateReflectionQuestions } from '@/ai/flows/generate-reflection-questions';
 import { Loader } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 interface DailyReflectionPageProps {
   initialText: string;
@@ -29,6 +30,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   const [questions, setQuestions] = useState(initialQuestions);
   const [isLoading, setIsLoading] = useState(false);
   const [showInitialMessage, setShowInitialMessage] = useState(true);
+  const { toast } = useToast();
 
   useEffect(() => {
     const today = new Date();
@@ -40,19 +42,34 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     setShowInitialMessage(false);
     setSelectedLevel(level);
     setIsLoading(true);
+    setQuestions([]); // Limpiar preguntas anteriores
     try {
       const newText = await getDailyTextForLevel(level, new Date());
       setText(newText);
+
       if (newText && !newText.startsWith("No hay un texto disponible")) {
-        const reflectionData = await generateReflectionQuestions({ text: newText });
-        setQuestions(reflectionData.questions);
-      } else {
-        setQuestions([]);
+        try {
+          const reflectionData = await generateReflectionQuestions({ text: newText });
+          setQuestions(reflectionData.questions);
+        } catch (genError) {
+          console.error("Error generating reflection questions:", genError);
+          // Si la generación de preguntas falla, no rompemos la app,
+          // simplemente mostramos un toast y dejamos las preguntas vacías.
+          toast({
+            variant: "destructive",
+            title: "Error de IA",
+            description: "No se pudieron generar las pistas para la reflexión.",
+          });
+        }
       }
     } catch (error) {
       console.error("Error updating content:", error);
       setText("Hubo un error al cargar el texto. Por favor, inténtalo de nuevo.");
-      setQuestions([]);
+      toast({
+        variant: "destructive",
+        title: "Error de carga",
+        description: "No se pudo obtener el texto del día.",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -102,7 +119,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
            <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
             <CardContent className="pt-6">
               <p className="text-muted-foreground text-center">
-                Aún no hay lectura ni oración para tu nivel y la fecha de hoy. Por favor, selecciónalo o vuelve mañana.
+                Selecciona una etapa educativa para ver la lectura del día.
               </p>
             </CardContent>
           </Card>
@@ -135,7 +152,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                     ))}
                   </ul>
                 ) : (
-                   <p className="text-muted-foreground text-center">No hay preguntas para el texto de hoy.</p>
+                   <p className="text-muted-foreground text-center">No hay pistas para la reflexión disponibles para el texto de hoy.</p>
                 )}
               </CardContent>
             </Card>
