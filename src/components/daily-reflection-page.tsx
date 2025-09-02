@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect, useTransition } from 'react';
@@ -53,7 +52,13 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
         startTransition(async () => {
           try {
             const reflectionData = await generateReflectionQuestions({ text: newText });
-            setQuestions(reflectionData.questions);
+            if (reflectionData && reflectionData.questions.length > 0) {
+              setQuestions(reflectionData.questions);
+            } else {
+              // No mostramos un toast de error si la IA no devuelve preguntas,
+              // simplemente no se mostrará la sección.
+              console.log("La IA no generó preguntas o devolvió un array vacío.");
+            }
           } catch (genError) {
             console.error("Error generating reflection questions:", genError);
             toast({
@@ -163,7 +168,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                       ))}
                     </ul>
                   ) : (
-                     <p className="text-muted-foreground text-center">No hay pistas para la reflexión disponibles para el texto de hoy.</p>
+                     !isPending && <p className="text-muted-foreground text-center">No hay pistas para la reflexión disponibles para el texto de hoy.</p>
                   )}
                 </CardContent>
               </Card>
