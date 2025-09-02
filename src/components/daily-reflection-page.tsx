@@ -102,7 +102,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               className="mx-auto"
               priority
             />
-            <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary">
+            <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary -mt-2">
               ¡Buenos días!
             </h1>
           </div>
