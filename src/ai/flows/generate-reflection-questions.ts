@@ -53,14 +53,7 @@ const generateReflectionQuestionsFlow = ai.defineFlow(
       return { questions: [] };
     }
     
-    try {
-        const {output} = await prompt(input);
-        return output || { questions: [] };
-    } catch (error) {
-        console.error("Error generating reflection questions in flow:", error);
-        // En caso de un error en la llamada a la IA, devolvemos un array vacío
-        // para evitar que la aplicación falle.
-        return { questions: [] };
-    }
+    const {output} = await prompt(input);
+    return output || { questions: [] };
   }
 );
