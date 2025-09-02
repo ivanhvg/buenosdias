@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Daily Reflection',
-  description: 'A space for daily thought and reflection.',
+  title: 'Buenos días BCLL',
+  description: 'Un espacio para el pensamiento y la reflexión diarios.',
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useTransition } from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { BookOpen, Sprout, Users } from 'lucide-react';
@@ -29,6 +29,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   const [text, setText] = useState(initialText);
   const [questions, setQuestions] = useState(initialQuestions);
   const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const [showInitialMessage, setShowInitialMessage] = useState(true);
   const { toast } = useToast();
 
@@ -43,24 +44,25 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     setSelectedLevel(level);
     setIsLoading(true);
     setQuestions([]); // Limpiar preguntas anteriores
+    
     try {
       const newText = await getDailyTextForLevel(level, new Date());
       setText(newText);
 
       if (newText && !newText.startsWith("No hay un texto disponible")) {
-        try {
-          const reflectionData = await generateReflectionQuestions({ text: newText });
-          setQuestions(reflectionData.questions);
-        } catch (genError) {
-          console.error("Error generating reflection questions:", genError);
-          // Si la generación de preguntas falla, no rompemos la app,
-          // simplemente mostramos un toast y dejamos las preguntas vacías.
-          toast({
-            variant: "destructive",
-            title: "Error de IA",
-            description: "No se pudieron generar las pistas para la reflexión.",
-          });
-        }
+        startTransition(async () => {
+          try {
+            const reflectionData = await generateReflectionQuestions({ text: newText });
+            setQuestions(reflectionData.questions);
+          } catch (genError) {
+            console.error("Error generating reflection questions:", genError);
+            toast({
+              variant: "destructive",
+              title: "Error de IA",
+              description: "No se pudieron generar las pistas para la reflexión.",
+            });
+          }
+        });
       }
     } catch (error) {
       console.error("Error updating content:", error);
@@ -90,13 +92,13 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <h1 className="text-4xl sm:text-5xl font-bold font-headline text-primary">
             ¡Buenos días!
           </h1>
-          <p className="text-muted-foreground pt-4 text-lg font-medium">Un momento del día para la reflexión y la oración grupal</p>
+          <p className="text-muted-foreground pt-4 text-lg font-medium">Un momento de la mañana para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-4 text-primary/80">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
             <BookOpen className="h-8 w-8" aria-label="Aprendizaje" />
           </div>
-          {currentDate && <p className="text-muted-foreground/80 pt-6 text-lg italic">{currentDate}</p>}
+          {currentDate && <p className="text-muted-foreground/80 pt-8 text-lg italic">{currentDate}</p>}
         </header>
 
         <div className="w-full max-w-xs mx-auto">
@@ -105,7 +107,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               <SelectValue placeholder="Selecciona tu etapa educativa" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="infantil-primaria">Infantil y Primaria</SelectItem>
+              <SelectItem value="primaria">Primaria</SelectItem>
               <SelectItem value="secundaria">Secundaria</SelectItem>
             </SelectContent>
           </Select>
@@ -133,34 +135,40 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
-              <CardHeader className="text-center">
-                <CardTitle className="font-headline text-3xl text-primary/90">Pistas para la reflexión</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {questions && questions.length > 0 ? (
-                  <ul className="space-y-6">
-                    {questions.slice(0, 3).map((question, index) => (
-                      <li key={index} className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
-                          {index + 1}
-                        </div>
-                        <p className="text-base leading-relaxed text-muted-foreground mt-1.5 text-left">
-                          {question}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                   <p className="text-muted-foreground text-center">No hay pistas para la reflexión disponibles para el texto de hoy.</p>
-                )}
-              </CardContent>
-            </Card>
+            {(isPending || (questions && questions.length > 0)) && (
+              <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
+                <CardHeader className="text-center">
+                  <CardTitle className="font-headline text-3xl text-primary/90">Pistas para la reflexión</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {isPending ? (
+                    <div className="flex justify-center items-center">
+                       <Loader className="h-6 w-6 animate-spin text-primary" />
+                    </div>
+                  ) : questions && questions.length > 0 ? (
+                    <ul className="space-y-6">
+                      {questions.slice(0, 3).map((question, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
+                            {index + 1}
+                          </div>
+                          <p className="text-base leading-relaxed text-muted-foreground mt-1.5 text-left">
+                            {question}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                     <p className="text-muted-foreground text-center">No hay pistas para la reflexión disponibles para el texto de hoy.</p>
+                  )}
+                </CardContent>
+              </Card>
+            )}
           </>
         )}
 
         <footer className="text-center text-sm text-muted-foreground py-4">
-            <p>{new Date().getFullYear()} · Buen Consejo La Laguna</p>
+            <p>Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
         </footer>
 
       </main>

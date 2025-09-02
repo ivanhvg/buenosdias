@@ -26,7 +26,7 @@ Que todo viajero que ande por sendas y caminos, buscando o perdido, caído o her
 Antes de que salierais del seno materno, os consagré. Como luz del mundo os constituí. No tengáis miedo, que Yo estoy con vosotros» (CfrJr 1,5.8)`
   },
   {
-    level: 'infantil-primaria',
+    level: 'primaria',
     day: 10, // Corresponde al 10 de septiembre
     text: '¡Bienvenidos de nuevo al cole! Hoy es un día para reencontrarse con los amigos y empezar con alegría.'
   },
@@ -36,12 +36,12 @@ Antes de que salierais del seno materno, os consagré. Como luz del mundo os con
     text: 'El comienzo de un nuevo curso es una oportunidad para marcarse nuevas metas. ¿Qué te gustaría conseguir este año?'
   },
   {
-    level: 'infantil-primaria',
+    level: 'primaria',
     day: 11,
     text: 'Nuestro planeta es como nuestra casa grande. ¿Qué pequeñas cosas podemos hacer en el cole y en casa para cuidarlo? Como apagar las luces o reciclar el papel.'
   },
   {
-    level: 'infantil-primaria',
+    level: 'primaria',
     day: 12,
     text: 'Ser solidario es como ser un superhéroe de la amabilidad. Si un amigo está triste o necesita ayuda con los deberes, ¿cómo podrías ayudarle a sentirse mejor?'
   },

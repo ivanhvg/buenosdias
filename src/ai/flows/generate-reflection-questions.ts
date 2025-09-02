@@ -31,11 +31,11 @@ const prompt = ai.definePrompt({
   name: 'generateReflectionQuestionsPrompt',
   input: {schema: GenerateReflectionQuestionsInputSchema},
   output: {schema: GenerateReflectionQuestionsOutputSchema},
-  prompt: `You are an experienced teacher. Generate a list of reflection questions based on the following text:
+  prompt: `Eres un profesor con experiencia. Genera una lista de 3 preguntas de reflexión, SIEMPRE EN ESPAÑOL, basadas en el siguiente texto:
 
-Text: {{{text}}}
+Texto: {{{text}}}
 
-Questions:`,config: {
+Preguntas:`,config: {
     safetySettings: [
       {
         category: 'HARM_CATEGORY_HATE_SPEECH',

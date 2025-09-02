@@ -1,7 +1,7 @@
 // src/lib/texts.ts
 
 export interface DailyText {
-  level: 'infantil-primaria' | 'secundaria';
+  level: 'primaria' | 'secundaria';
   day: number; // Day of the month
   text: string;
 }

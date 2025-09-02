@@ -5,7 +5,7 @@ import type { DailyText } from '@/lib/texts';
 // El sistema los cargará automáticamente según el día.
 const dailyTexts: DailyText[] = [
   {
-    level: 'infantil-primaria',
+    level: 'primaria',
     day: 1, // Corresponde al 1 de octubre
     text: 'Octubre nos trae nuevos colores en la naturaleza. Miremos a nuestro alrededor y demos gracias por las cosas bonitas que vemos cada día.'
   },
@@ -15,7 +15,7 @@ const dailyTexts: DailyText[] = [
     text: 'Comienza un nuevo mes, una página en blanco. ¿Qué pequeño objetivo realista te puedes marcar para estas próximas semanas? Piensa en algo que dependa de ti.'
   },
   {
-    level: 'infantil-primaria',
+    level: 'primaria',
     day: 2,
     text: 'Ayudar a un compañero cuando no entiende algo es como darle un pequeño regalo. Hoy, busca la oportunidad de ser amable y ayudar a alguien en clase.'
   },
