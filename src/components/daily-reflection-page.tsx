@@ -92,7 +92,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 md:p-8">
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
-        <header className="text-center space-y-4">
+        <header className="text-center space-y-2">
           <div className="flex flex-col items-center">
             <Image
               src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
@@ -106,13 +106,13 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               ¡Buenos días!
             </h1>
           </div>
-          <p className="text-muted-foreground text-lg font-medium">Un momento de la mañana para la reflexión y la oración grupal</p>
+          <p className="text-muted-foreground text-lg font-medium pt-0">Un momento de la mañana para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-6 text-primary/80">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
             <BookOpen className="h-8 w-8" aria-label="Aprendizaje" />
           </div>
-          {currentDate && <p className="text-muted-foreground/80 pt-10 text-lg italic">{currentDate}</p>}
+          {currentDate && <p className="text-muted-foreground/80 pt-6 text-lg italic">{currentDate}</p>}
           {valorDelMes && (
             <div className="mt-4">
               <p className="text-sm text-muted-foreground tracking-widest">Valor del mes</p>
