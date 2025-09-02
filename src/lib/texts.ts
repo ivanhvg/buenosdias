@@ -42,7 +42,7 @@ export async function getDailyTextForLevel(level: string, date: Date): Promise<s
   }
 
   // Texto por defecto si no se encuentra uno para la fecha y nivel específicos.
-  return "No hay un texto disponible para el nivel y la fecha seleccionados. Por favor, selecciona otro nivel o vuelve mañana.";
+  return "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 }
 
 
