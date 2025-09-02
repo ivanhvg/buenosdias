@@ -4,6 +4,16 @@ import type { DailyText } from '@/lib/texts';
 const dailyTexts: DailyText[] = [
   {
     level: 'secundaria',
+    day: 2,
+    text: 'ORACIÓN\nDios de toda la vida, te damos gracias por el don de la tierra, nuestra casa común. En este momento, muchas personas, los océanos y los ecosistemas de la tierra están luchando por sobrevivir. Ayúdanos a cambiar nuestra forma de actuar y guíanos a vivir una vida que no se centre exclusivamente en nosotros mismos, sino en las necesidades de los demás y en el culto a ti como nuestra máxima preocupación. Escúchanos, Señor.\nOremos unos por otros en este momento para que podamos vivir la visión y los valores de la encíclica del Papa Francisco sobre el cuidado de nuestra casa común. En particular, pedimos que se preste mayor atención a la justicia social y la justicia climática. Escúchanos, Señor.\nSeñor, te pedimos que podamos apreciar más profundamente la belleza y la diversidad de todo lo que has creado. Mientras recorremos nuestro curso, ayúdanos a escuchar también la voz de la creación, a reconocer lo profundamente interconectados que estamos entre nosotros y con el mundo natural. Escúchanos, Señor.\nSeñor, en el espíritu de la llamada de tu Hijo, Jesús, a seguirle, renunciando a nosotros mismos, que nos decidamos a frenar todas las acciones individuales egoístas que entran en conflicto con nuestra interrelación entre nosotros y con el mundo natural. Te pedimos que nos apartemos de los combustibles fósiles y elijamos nuevas opciones de inversión, como las energías renovables, y que compartamos mejor los dones de la creación. Escúchanos, Señor.',
+  },
+  {
+    level: 'secundaria',
+    day: 3,
+    text: 'Reflexión:\nNuestra fe y nuestro compromiso con los empobrecidos nos mueven, porque "son inseparables la preocupación por la naturaleza, la justicia con los pobres, el compromiso con la sociedad y la paz interior" (LS 10) y porque "estamos llamados a ser los instrumentos del Padre Dios para que nuestro planeta sea lo que Él soñó al crearlo y responda a su proyecto de paz, belleza y plenitud" (LS 53).\n¿Estás dispuesto/a a anunciar este mensaje?',
+  },
+  {
+    level: 'secundaria',
     day: 10,
     text: 'Acogida en el salón de actos. Oración.',
   },
@@ -55,7 +65,7 @@ const dailyTexts: DailyText[] = [
   {
     level: 'secundaria',
     day: 24,
-    text: 'ORACIÓN\nDios de toda la vida, te damos gracias por el don de la tierra, nuestra casa común. En este momento, muchas personas, los océanos y los ecosistemas de la tierra están luchando por sobrevivir. Ayúdanos a cambiar nuestra forma de actuar y guíanos a vivir una vida que no se centre exclusivamente en nosotros mismos, sino en las necesidades de los demás y en el culto a ti como nuestra máxima preocupación. Escúchanos, Señor.\nOremos unos por otros en este momento para que podamos vivir la visión y los valores de la encícllica del Papa Francisco sobre el cuidado de nuestra casa común. En particular, pedimos que se preste mayor atención a la justicia social y la justicia climática. Escúchanos, Señor.\nSeñor, te pedimos que podamos apreciar más profundamente la belleza y la diversidad de todo lo que has creado. Mientras recorremos nuestro curso, ayúdanos a escuchar también la voz de la creación, a reconocer lo profundamente interconectados que estamos entre nosotros y con el mundo natural. Escúchanos, Señor.\nSeñor, en el espíritu de la llamada de tu Hijo, Jesús, a seguirle, renunciando a nosotros mismos, que nos decidamos a frenar todas las acciones individuales egoístas que entran en conflicto con nuestra interrelación entre nosotros y con el mundo natural. Te pedimos que nos apartemos de los combustibles fósiles y elijamos nuevas opciones de inversión, como las energías renovables, y que compartamos mejor los dones de la creación. Escúchanos, Señor.',
+    text: 'ORACIÓN\nDios de toda la vida, te damos gracias por el don de la tierra, nuestra casa común. En este momento, muchas personas, los océanos y los ecosistemas de la tierra están luchando por sobrevivir. Ayúdanos a cambiar nuestra forma de actuar y guíanos a vivir una vida que no se centre exclusivamente en nosotros mismos, sino en las necesidades de los demás y en el culto a ti como nuestra máxima preocupación. Escúchanos, Señor.\nOremos unos por otros en este momento para que podamos vivir la visión y los valores de la encíclica del Papa Francisco sobre el cuidado de nuestra casa común. En particular, pedimos que se preste mayor atención a la justicia social y la justicia climática. Escúchanos, Señor.\nSeñor, te pedimos que podamos apreciar más profundamente la belleza y la diversidad de todo lo que has creado. Mientras recorremos nuestro curso, ayúdanos a escuchar también la voz de la creación, a reconocer lo profundamente interconectados que estamos entre nosotros y con el mundo natural. Escúchanos, Señor.\nSeñor, en el espíritu de la llamada de tu Hijo, Jesús, a seguirle, renunciando a nosotros mismos, que nos decidamos a frenar todas las acciones individuales egoístas que entran en conflicto con nuestra interrelación entre nosotros y con el mundo natural. Te pedimos que nos apartemos de los combustibles fósiles y elijamos nuevas opciones de inversión, como las energías renovables, y que compartamos mejor los dones de la creación. Escúchanos, Señor.',
   },
   {
     level: 'secundaria',
@@ -76,16 +86,6 @@ const dailyTexts: DailyText[] = [
     level: 'secundaria',
     day: 30,
     text: 'Buenos días.\nEl curso ya está prácticamente encarrilado. Ya estamos metidos de lleno en la materia de cada asignatura, haciendo deberes, trabajos, proyectos... ¡Ya ni nos acordamos de las vacaciones de verano!\n¿Qué sentimientos tienes a estas alturas? ¿Aún tienes miedo al nuevo curso? ¿Te parece más difícil?\nAtrévete a vencer tus miedos y a afrontar las dificultades.\nAtrévete a dejar de repetirte a ti mismo que no puedes y lánzate a aceptar los retos que este nuevo curso te propone.\nAtrévete a buscar caminos nuevos para salir de las situaciones que no te gustan.\nAtrévete a salir de ti mismo y abrirte a los compañeros con los que ya has iniciado el curso. Atrévete a hacer este curso algo diferente a lo que has hecho otros años.\nQue tengas un gran día.',
-  },
-  {
-    level: 'secundaria',
-    day: 2,
-    text: 'ORACIÓN\nDios de toda la vida, te damos gracias por el don de la tierra, nuestra casa común. En este momento, muchas personas, los océanos y los ecosistemas de la tierra están luchando por sobrevivir. Ayúdanos a cambiar nuestra forma de actuar y guíanos a vivir una vida que no se centre exclusivamente en nosotros mismos, sino en las necesidades de los demás y en el culto a ti como nuestra máxima preocupación. Escúchanos, Señor.\nOremos unos por otros en este momento para que podamos vivir la visión y los valores de la encíclica del Papa Francisco sobre el cuidado de nuestra casa común. En particular, pedimos que se preste mayor atención a la justicia social y la justicia climática. Escúchanos, Señor.\nSeñor, te pedimos que podamos apreciar más profundamente la belleza y la diversidad de todo lo que has creado. Mientras recorremos nuestro curso, ayúdanos a escuchar también la voz de la creación, a reconocer lo profundamente interconectados que estamos entre nosotros y con el mundo natural. Escúchanos, Señor.\nSeñor, en el espíritu de la llamada de tu Hijo, Jesús, a seguirle, renunciando a nosotros mismos, que nos decidamos a frenar todas las acciones individuales egoístas que entran en conflicto con nuestra interrelación entre nosotros y con el mundo natural. Te pedimos que nos apartemos de los combustibles fósiles y elijamos nuevas opciones de inversión, como las energías renovables, y que compartamos mejor los dones de la creación. Escúchanos, Señor.',
-  },
-  {
-    level: 'secundaria',
-    day: 3,
-    text: 'Reflexión:\nNuestra fe y nuestro compromiso con los empobrecidos nos mueven, porque "son inseparables la preocupación por la naturaleza, la justicia con los pobres, el compromiso con la sociedad y la paz interior" (LS 10) y porque "estamos llamados a ser los instrumentos del Padre Dios para que nuestro planeta sea lo que Él soñó al crearlo y responda a su proyecto de paz, belleza y plenitud" (LS 53).\n¿Estás dispuesto/a a anunciar este mensaje?',
   },
 ];
 
