@@ -27,15 +27,10 @@ Que todo viajero que ande por sendas y caminos, buscando o perdido, caído o her
     level: 'secundaria',
     day: 3,
     text: `ORACIÓN
-
 Hoy, Señor, al comenzar este nuevo día te ofrezco todo lo que soy y lo que tengo.
-
 Te ofrezco las pequeñas cosas que suelo hacer cada día: el esfuerzo que supone levantarse, la rutina de vestirse, desayunar y venir al colegio, la monotonía de las clases y la satisfacción de estar con mis amigos.
-
 Te presento el tiempo de estudio y el descanso, la relación con mis padres y el sacrificio de colaborar en las cosas de casa.
-
 Gracias, Señor, porque todo, aún lo más ordinario y cotidiano, es una oportunidad que me das para vivir intensamente, poniendo amor en todo lo que hago.
-
 Que al final del día, sienta la cercanía de tu presencia y la satisfacción de saber que en este día he hecho lo que a ti te agrada.`
   },
   {
