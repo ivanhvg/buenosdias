@@ -121,7 +121,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
            <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
             <CardContent className="pt-6">
               <p className="text-muted-foreground text-center">
-                Selecciona una etapa educativa para ver la lectura del día.
+                Selecciona tu etapa para descubrir la lectura del día.
               </p>
             </CardContent>
           </Card>
