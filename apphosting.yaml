@@ -6,7 +6,7 @@ runConfig:
   # more instances in response to increased traffic.
   maxInstances: 1
   environment:
-    - variable: NEXT_PUBLIC_GEMINI_API_KEY
+    - variable: GEMINI_API_KEY
       availability:
         - BUILD
         - RUNTIME
