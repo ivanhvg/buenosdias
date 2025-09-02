@@ -92,18 +92,20 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 md:p-8">
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
-        <header className="text-center">
-          <Image
-            src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
-            alt="Logo del centro educativo"
-            width={150}
-            height={41}
-            className="mx-auto"
-            priority
-          />
-          <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary">
-            ¡Buenos días!
-          </h1>
+        <header className="text-center space-y-4">
+          <div className="flex flex-col items-center">
+            <Image
+              src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
+              alt="Logo del centro educativo"
+              width={150}
+              height={41}
+              className="mx-auto"
+              priority
+            />
+            <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary">
+              ¡Buenos días!
+            </h1>
+          </div>
           <p className="text-muted-foreground pt-4 text-lg font-medium">Un momento de la mañana para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-6 text-primary/80">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
