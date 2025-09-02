@@ -22,15 +22,15 @@ interface DailyReflectionPageProps {
   initialQuestions: string[];
 }
 
-const valoresDelMes: { [key: string]: string } = {
-  septiembre: 'ACOGIDA',
-  octubre: 'GRATITUD',
+const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
+  septiembre: { valor: 'ACOGIDA', mes: 'septiembre' },
+  octubre: { valor: 'GRATITUD', mes: 'octubre' },
   // Agrega aquí más meses y valores
 };
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
-  const [valorDelMes, setValorDelMes] = useState('');
+  const [valorDelMes, setValorDelMes] = useState<{ valor: string; mes: string } | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [text, setText] = useState(initialText);
   const [questions, setQuestions] = useState(initialQuestions);
@@ -46,7 +46,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     const monthName = today.toLocaleString('es-ES', { month: 'long' }).toLowerCase();
     const valor = valoresDelMes[monthName];
     if (valor) {
-      setValorDelMes(`Valor del mes de ${monthName}: ${valor}`);
+      setValorDelMes(valor);
     }
 
   }, []);
@@ -102,7 +102,13 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             <BookOpen className="h-8 w-8" aria-label="Aprendizaje" />
           </div>
           {currentDate && <p className="text-muted-foreground/80 pt-10 text-lg italic">{currentDate}</p>}
-          {valorDelMes && <p className="text-accent font-bold pt-2 text-xl uppercase tracking-wider">{valorDelMes}</p>}
+          {valorDelMes && (
+            <div className="mt-4 inline-block bg-accent text-accent-foreground px-4 py-2 rounded-lg shadow-md">
+                <p className="text-xl font-bold uppercase tracking-wider">
+                    valor del mes de {valorDelMes.mes}: {valorDelMes.valor}
+                </p>
+            </div>
+          )}
         </header>
 
         <div className="w-full max-w-xs mx-auto">
