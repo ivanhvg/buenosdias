@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { CardHeader, CardTitle } from './ui/card';
 import { getDailyTextForLevel } from '@/lib/texts';
-import { getDailyReflectionsForLevel } from '@/lib/reflections'; // Importamos la nueva función
+import { getDailyReflectionsForLevel } from '@/lib/reflections';
 import { Loader } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -22,8 +22,15 @@ interface DailyReflectionPageProps {
   initialQuestions: string[];
 }
 
+const valoresDelMes: { [key: string]: string } = {
+  septiembre: 'ACOGIDA',
+  octubre: 'GRATITUD',
+  // Agrega aquí más meses y valores
+};
+
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
+  const [valorDelMes, setValorDelMes] = useState('');
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [text, setText] = useState(initialText);
   const [questions, setQuestions] = useState(initialQuestions);
@@ -35,6 +42,13 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     const today = new Date();
     const formattedDate = `Hoy es ${today.toLocaleDateString('es-ES', { weekday: 'long' })}, ${today.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}`;
     setCurrentDate(formattedDate);
+    
+    const monthName = today.toLocaleString('es-ES', { month: 'long' }).toLowerCase();
+    const valor = valoresDelMes[monthName];
+    if (valor) {
+      setValorDelMes(`Valor del mes de ${monthName}: ${valor}`);
+    }
+
   }, []);
 
   const handleLevelChange = async (level: string) => {
@@ -88,6 +102,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             <BookOpen className="h-8 w-8" aria-label="Aprendizaje" />
           </div>
           {currentDate && <p className="text-muted-foreground/80 pt-10 text-lg italic">{currentDate}</p>}
+          {valorDelMes && <p className="text-accent font-bold pt-2 text-xl uppercase tracking-wider">{valorDelMes}</p>}
         </header>
 
         <div className="w-full max-w-xs mx-auto">
