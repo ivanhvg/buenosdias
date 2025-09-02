@@ -35,7 +35,8 @@ const prompt = ai.definePrompt({
 
 Texto: {{{text}}}
 
-Preguntas:`,config: {
+Preguntas:`,
+  config: {
     safetySettings: [
       {
         category: 'HARM_CATEGORY_HATE_SPEECH',
