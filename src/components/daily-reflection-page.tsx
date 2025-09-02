@@ -132,7 +132,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                 <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
                   {text.split('\n').map((paragraph, index) => (
                     <p key={index}>
-                      {paragraph}
+                      {paragraph || '\u00A0' /* Render non-breaking space for empty lines */}
                     </p>
                   ))}
                 </blockquote>
@@ -152,11 +152,11 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                   ) : questions && questions.length > 0 ? (
                     <ul className="space-y-6">
                       {questions.slice(0, 3).map((question, index) => (
-                        <li key={index} className="flex items-start gap-4">
+                        <li key={index} className="flex items-center gap-4">
                           <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
                             {index + 1}
                           </div>
-                          <p className="text-base leading-relaxed text-muted-foreground text-left mt-1.5">
+                          <p className="text-base leading-relaxed text-muted-foreground text-left">
                             {question}
                           </p>
                         </li>
