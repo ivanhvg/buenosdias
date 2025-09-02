@@ -23,8 +23,8 @@ interface DailyReflectionPageProps {
 }
 
 const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
-  septiembre: { valor: 'Acogida · Bienvenida', mes: 'septiembre' },
-  octubre: { valor: 'Fraternidad', mes: 'octubre' },
+  septiembre: { valor: 'ACOGIDA · BIENVENIDA', mes: 'septiembre' },
+  octubre: { valor: 'FRATERNIDAD', mes: 'octubre' },
   // Agrega aquí más meses y valores
 };
 
@@ -112,7 +112,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           </div>
           {currentDate && <p className="text-muted-foreground/80 pt-10 text-lg italic">{currentDate}</p>}
           {valorDelMes && (
-            <div className="mt-4">
+            <div className="mt-2">
               <p className="text-sm text-muted-foreground tracking-widest">Valor del mes</p>
               <div className="mt-2 inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-md">
                   <p className="text-xl font-bold tracking-wider">
