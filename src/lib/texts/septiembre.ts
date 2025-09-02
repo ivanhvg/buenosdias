@@ -12,24 +12,15 @@ Momento de reflexión personal, piensa en los sueños de paz que te gustaría se
   {
     level: 'secundaria',
     day: 2,
-    text: `ORACIÓN 
-
-Sois semillas del Reino plantadas en la historia. 
-
-Sois buenas y tiernas, llenas de vida. 
-
-Os tengo en mi mano, os acuno y quiero, y por eso os lanzo al mundo: ¡Perdeos! 
-
+    text: `ORACIÓN
+Sois semillas del Reino plantadas en la historia.
+Sois buenas y tiernas, llenas de vida.
+Os tengo en mi mano, os acuno y quiero, y por eso os lanzo al mundo: ¡Perdeos!
 No tengáis miedo a tormentas ni sequías, a pisadas ni espinos.
-
-Bebed de los pobres, dejaos tocar el alma por ellos y empapaos de mi rocío, de mi presencia. 
-
+Bebed de los pobres, dejaos tocar el alma por ellos y empapaos de mi rocío, de mi presencia.
 Floreced y dad fruto... contribuid a hacer de este mundo un vergel.
-
-Dejaos mecer por el viento de mi Espíritu. 
-
+Dejaos mecer por el viento de mi Espíritu.
 Que todo viajero que ande por sendas y caminos, buscando o perdido, caído o herido, al veros, sienta un vuelco al encontrar en vosotros calor humano, fraterno, y pueda sentirse amado, rescatado, levantado, sanado... SALVADO.
-
 ¡Sois semillas de mi Reino! «Antes de formaros en el vientre de vuestra madre, yo os escogí. Antes de que salierais del seno materno, os consagré. Como luz del mundo os constituí. No tengáis miedo, que Yo estoy con vosotros» (CfrJr 1,5.8)`
   },
   {

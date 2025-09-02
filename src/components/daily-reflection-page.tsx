@@ -129,10 +129,10 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <>
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
               <CardContent className="pt-6">
-                <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
+                <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
                   {text.split('\n').map((paragraph, index) => (
                     <p key={index}>
-                      {paragraph || '\u00A0'}{/* Render non-breaking space for empty lines */}
+                      {paragraph}
                     </p>
                   ))}
                 </blockquote>
