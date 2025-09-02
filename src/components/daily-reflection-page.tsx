@@ -28,6 +28,8 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
   // Agrega aquí más meses y valores
 };
 
+const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
+
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
   const [valorDelMes, setValorDelMes] = useState<{ valor: string; mes: string } | null>(null);
@@ -63,8 +65,13 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
       const newText = await getDailyTextForLevel(level, today);
       setText(newText);
       
-      const newQuestions = await getDailyReflectionsForLevel(level, today);
-      setQuestions(newQuestions);
+      // Solo buscar reflexiones si se encontró un texto válido.
+      if (newText !== DEFAULT_TEXT) {
+        const newQuestions = await getDailyReflectionsForLevel(level, today);
+        setQuestions(newQuestions);
+      } else {
+        setQuestions([]); // Asegurarse de que no hay preguntas si no hay texto.
+      }
 
     } catch (error) {
       console.error("Error updating content:", error);
@@ -79,6 +86,8 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
       setIsLoading(false);
     }
   };
+
+  const showReflectionQuestions = questions.length > 0 && text !== DEFAULT_TEXT;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 md:p-8">
@@ -149,7 +158,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               </CardContent>
             </Card>
 
-            {questions.length > 0 && (
+            {showReflectionQuestions && (
               <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
                 <CardHeader className="text-center">
                   <CardTitle className="font-headline text-3xl text-primary/90">Pistas para la reflexión</CardTitle>

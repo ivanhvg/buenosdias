@@ -6,6 +6,8 @@ export interface DailyText {
   text: string;
 }
 
+const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
+
 export async function getDailyTextForLevel(level: string, date: Date): Promise<string> {
   const month = date.toLocaleString('es-ES', { month: 'long' }).toLowerCase();
   const day = date.getDate();
@@ -28,7 +30,7 @@ export async function getDailyTextForLevel(level: string, date: Date): Promise<s
   }
 
   // Texto por defecto si no se encuentra uno para la fecha y nivel específicos.
-  return "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
+  return DEFAULT_TEXT;
 }
 
 
