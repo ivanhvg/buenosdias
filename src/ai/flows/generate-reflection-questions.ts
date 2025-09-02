@@ -49,7 +49,7 @@ const generateReflectionQuestionsFlow = ai.defineFlow(
     outputSchema: GenerateReflectionQuestionsOutputSchema,
   },
   async input => {
-    if (!input?.text?.trim()) {
+    if (!input?.text?.trim() || input.text.startsWith("Hoy no hay lectura")) {
       return { questions: [] };
     }
     
