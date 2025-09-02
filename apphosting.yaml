@@ -7,6 +7,6 @@ runConfig:
   maxInstances: 1
 # Secrets can be updated using the Firebase CLI or in the Google Cloud Secret Manager.
 # https://firebase.google.com/docs/app-hosting/configure#secret-env
-  secretEnvironment:
-    - key: GEMINI_API_KEY
-      secret: GEMINI_API_KEY
+secretEnvironment:
+  - key: GEMINI_API_KEY
+    secret: GEMINI_API_KEY
