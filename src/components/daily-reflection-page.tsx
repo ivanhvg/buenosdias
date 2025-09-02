@@ -113,7 +113,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           {currentDate && <p className="text-muted-foreground/80 pt-10 text-lg italic">{currentDate}</p>}
           {valorDelMes && (
             <div className="mt-8">
-              <p className="text-sm text-muted-foreground uppercase tracking-widest">valor del mes</p>
+              <p className="text-sm text-muted-foreground tracking-widest">Valor del mes</p>
               <div className="mt-2 inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-md">
                   <p className="text-xl font-bold tracking-wider">
                       {valorDelMes.valor}
