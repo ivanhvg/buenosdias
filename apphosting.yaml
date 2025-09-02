@@ -5,3 +5,13 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+  environment:
+    - variable: NEXT_PUBLIC_GEMINI_API_KEY
+      availability:
+        - BUILD
+        - RUNTIME
+# Secrets can be updated using the Firebase CLI or in the Google Cloud Secret Manager.
+# https://firebase.google.com/docs/app-hosting/configure#secret-env
+#  secretEnvironment:
+#    - key: STRIPE_API_KEY
+#      secret: STRIPE_API_KEY
