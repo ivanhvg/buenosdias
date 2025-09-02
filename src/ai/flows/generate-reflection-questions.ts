@@ -37,9 +37,6 @@ Texto:
 {{{text}}}
 
 Genera las 3 preguntas de reflexión:`,
-  config: {
-    model: 'gemini-1.5-flash',
-  },
 });
 
 const generateReflectionQuestionsFlow = ai.defineFlow(
@@ -53,7 +50,16 @@ const generateReflectionQuestionsFlow = ai.defineFlow(
       return { questions: [] };
     }
     
-    const {output} = await prompt(input);
+    const {output} = await ai.generate({
+      model: 'gemini-1.5-flash',
+      prompt: {
+        text: prompt.compile({input}),
+      },
+      output: {
+        format: 'json',
+        schema: GenerateReflectionQuestionsOutputSchema,
+      },
+    });
     return output || { questions: [] };
   }
 );
