@@ -36,7 +36,7 @@ const prompt = ai.definePrompt({
 Texto: {{{text}}}
 
 Preguntas:`,
-  model: 'gemini-1.5-flash-latest',
+  model: 'gemini-1.5-flash',
   config: {
     safetySettings: [
       {
