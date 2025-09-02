@@ -93,12 +93,12 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             ¡Buenos días!
           </h1>
           <p className="text-muted-foreground pt-4 text-lg font-medium">Un momento de la mañana para la reflexión y la oración grupal</p>
-          <div className="flex justify-center items-center gap-6 pt-4 text-primary/80">
+          <div className="flex justify-center items-center gap-6 pt-6 text-primary/80">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
             <BookOpen className="h-8 w-8" aria-label="Aprendizaje" />
           </div>
-          {currentDate && <p className="text-muted-foreground/80 pt-8 text-lg italic">{currentDate}</p>}
+          {currentDate && <p className="text-muted-foreground/80 pt-10 text-lg italic">{currentDate}</p>}
         </header>
 
         <div className="w-full max-w-xs mx-auto">
@@ -107,8 +107,8 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               <SelectValue placeholder="Selecciona tu etapa educativa" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="primaria">Primaria</SelectItem>
-              <SelectItem value="secundaria">Secundaria</SelectItem>
+              <SelectItem value="primaria">Educación Primaria</SelectItem>
+              <SelectItem value="secundaria">Educación Secundaria</SelectItem>
             </SelectContent>
           </Select>
         </div>
