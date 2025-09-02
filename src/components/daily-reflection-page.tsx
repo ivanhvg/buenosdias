@@ -106,7 +106,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               ¡Buenos días!
             </h1>
           </div>
-          <p className="text-muted-foreground text-lg font-medium pt-0">Un momento de la mañana para la reflexión y la oración grupal</p>
+          <p className="text-muted-foreground text-lg font-medium">Un momento de la mañana para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-6 text-primary/80">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
@@ -114,7 +114,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           </div>
           {currentDate && <p className="text-muted-foreground/80 pt-4 text-lg italic">{currentDate}</p>}
           {valorDelMes && (
-            <div className="pt-6">
+            <div className="pt-5">
               <p className="text-sm text-muted-foreground tracking-widest">Valor del mes</p>
               <div className="mt-2 inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-md">
                   <p className="text-xl font-bold tracking-wider">
