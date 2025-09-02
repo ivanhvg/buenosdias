@@ -1,8 +1,7 @@
 import { DailyReflectionPage } from '@/components/daily-reflection-page';
 
 export default async function Home() {
-  // Dado que los textos ahora se cargan en el cliente,
-  // ya no es necesario cargarlos inicialmente en el servidor.
-  // El componente DailyReflectionPage se encargará de todo.
+  // Los textos y reflexiones se cargan en el cliente,
+  // por lo que pasamos valores iniciales vacíos.
   return <DailyReflectionPage initialText="" initialQuestions={[]} />;
 }

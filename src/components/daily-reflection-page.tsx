@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useTransition } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { BookOpen, Sprout, Users } from 'lucide-react';
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { CardHeader, CardTitle } from './ui/card';
 import { getDailyTextForLevel } from '@/lib/texts';
-import { generateReflectionQuestions } from '@/ai/flows/generate-reflection-questions';
+import { getDailyReflectionsForLevel } from '@/lib/reflections'; // Importamos la nueva función
 import { Loader } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -28,9 +28,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   const [text, setText] = useState(initialText);
   const [questions, setQuestions] = useState(initialQuestions);
   const [isLoading, setIsLoading] = useState(false);
-  const [isPending, startTransition] = useTransition();
   const [showInitialMessage, setShowInitialMessage] = useState(true);
-  const [aiError, setAiError] = useState<string | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -43,40 +41,25 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     setShowInitialMessage(false);
     setSelectedLevel(level);
     setIsLoading(true);
+    setText('');
     setQuestions([]);
-    setAiError(null);
     
     try {
-      const newText = await getDailyTextForLevel(level, new Date());
+      const today = new Date();
+      const newText = await getDailyTextForLevel(level, today);
       setText(newText);
+      
+      const newQuestions = await getDailyReflectionsForLevel(level, today);
+      setQuestions(newQuestions);
 
-      if (newText && !newText.startsWith("Hoy no hay lectura")) {
-        startTransition(async () => {
-          try {
-            const reflectionData = await generateReflectionQuestions({ text: newText });
-            if (reflectionData && reflectionData.questions.length > 0) {
-              setQuestions(reflectionData.questions);
-            } else {
-              setAiError("La IA no pudo generar las pistas para la reflexión. Inténtalo de nuevo.");
-            }
-          } catch (genError) {
-            console.error("Error generating reflection questions:", genError);
-            setAiError("Ocurrió un error al contactar con la IA. Por favor, comprueba la configuración.");
-            toast({
-              variant: "destructive",
-              title: "Error de IA",
-              description: "No se pudieron generar las pistas para la reflexión.",
-            });
-          }
-        });
-      }
     } catch (error) {
       console.error("Error updating content:", error);
-      setText("Hubo un error al cargar el texto. Por favor, inténtalo de nuevo.");
+      setText("Hubo un error al cargar el contenido. Por favor, inténtalo de nuevo.");
+      setQuestions([]);
       toast({
         variant: "destructive",
         title: "Error de carga",
-        description: "No se pudo obtener el texto del día.",
+        description: "No se pudo obtener el texto o las reflexiones del día.",
       });
     } finally {
       setIsLoading(false);
@@ -145,19 +128,14 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               </CardContent>
             </Card>
 
-            {(isPending || questions.length > 0 || aiError) && (
+            {questions.length > 0 && (
               <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
                 <CardHeader className="text-center">
                   <CardTitle className="font-headline text-3xl text-primary/90">Pistas para la reflexión</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {isPending ? (
-                    <div className="flex justify-center items-center">
-                       <Loader className="h-6 w-6 animate-spin text-primary" />
-                    </div>
-                  ) : questions.length > 0 ? (
                     <ul className="space-y-6">
-                      {questions.slice(0, 3).map((question, index) => (
+                      {questions.map((question, index) => (
                         <li key={index} className="flex items-center gap-4">
                           <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
                             {index + 1}
@@ -168,9 +146,6 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                         </li>
                       ))}
                     </ul>
-                  ) : aiError ? (
-                    <p className="text-destructive text-center">{aiError}</p>
-                  ) : null}
                 </CardContent>
               </Card>
             )}
