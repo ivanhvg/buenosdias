@@ -102,11 +102,11 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               className="mx-auto"
               priority
             />
-            <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary -mt-2">
+            <h1 className="text-5xl sm:text-6xl font-bold font-headline text-title -mt-2">
               ¡Buenos días!
             </h1>
           </div>
-          <p className="text-muted-foreground text-lg font-medium pt-4">Un momento de la mañana para la reflexión y la oración grupal</p>
+          <p className="text-muted-foreground text-lg font-medium pt-4 text-title/80">Un momento de la mañana para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-6 text-primary/80">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
