@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Literata', 'serif'],
-        headline: ['"Patrick Hand"', 'cursive'],
+        headline: ['"Dancing Script"', 'cursive'],
         code: ['monospace'],
       },
       colors: {
