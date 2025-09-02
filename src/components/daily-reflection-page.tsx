@@ -101,7 +101,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             className="mx-auto"
             priority
           />
-          <h1 className="text-4xl sm:text-5xl font-bold font-headline text-primary">
+          <h1 className="text-5xl sm:text-6xl font-bold font-headline text-primary">
             ¡Buenos días!
           </h1>
           <p className="text-muted-foreground pt-4 text-lg font-medium">Un momento de la mañana para la reflexión y la oración grupal</p>
