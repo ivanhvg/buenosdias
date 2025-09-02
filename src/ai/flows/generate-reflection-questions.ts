@@ -24,16 +24,7 @@ export type GenerateReflectionQuestionsOutput = z.infer<typeof GenerateReflectio
 export async function generateReflectionQuestions(
   input: GenerateReflectionQuestionsInput
 ): Promise<GenerateReflectionQuestionsOutput> {
-  // Encapsulamos la llamada en un try-catch para manejar errores de red o de la API de forma segura.
-  try {
-    const result = await generateReflectionQuestionsFlow(input);
-    // Aseguramos que siempre devolvemos un objeto con la estructura esperada.
-    return result || { questions: [] };
-  } catch (error) {
-    console.error('Error in generateReflectionQuestions flow:', error);
-    // En caso de error, devolvemos un array vacío para no romper el cliente.
-    return { questions: [] };
-  }
+  return generateReflectionQuestionsFlow(input);
 }
 
 const prompt = ai.definePrompt({
@@ -46,18 +37,8 @@ Texto:
 {{{text}}}
 
 Genera las 3 preguntas de reflexión:`,
-  model: 'gemini-1.5-flash',
   config: {
-    safetySettings: [
-      { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_ONLY_HIGH' },
-      { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
-      { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-      { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_LOW_AND_ABOVE' },
-    ],
-    // Añadimos un tiempo de espera para evitar errores en entornos con respuesta lenta.
-    requestConfig: {
-      timeout: 30000, // 30 segundos
-    }
+    model: 'gemini-1.5-flash',
   },
 });
 
@@ -68,12 +49,18 @@ const generateReflectionQuestionsFlow = ai.defineFlow(
     outputSchema: GenerateReflectionQuestionsOutputSchema,
   },
   async input => {
-    // Verificamos si el texto de entrada es válido.
-    if (!input || !input.text || input.text.trim() === '') {
+    if (!input?.text?.trim()) {
       return { questions: [] };
     }
-    const {output} = await prompt(input);
-    // Verificamos si la salida del modelo es válida antes de devolverla.
-    return output || { questions: [] };
+    
+    try {
+        const {output} = await prompt(input);
+        return output || { questions: [] };
+    } catch (error) {
+        console.error("Error generating reflection questions in flow:", error);
+        // En caso de un error en la llamada a la IA, devolvemos un array vacío
+        // para evitar que la aplicación falle.
+        return { questions: [] };
+    }
   }
 );
