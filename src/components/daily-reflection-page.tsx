@@ -170,7 +170,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             {showReflectionQuestions && (
               <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
                 <CardHeader className="text-center">
-                  <CardTitle className="font-headline text-3xl text-foreground">Pistas para la reflexión</CardTitle>
+                  <CardTitle className="font-headline text-3xl text-title">Pistas para la reflexión</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <ul className="space-y-6">
