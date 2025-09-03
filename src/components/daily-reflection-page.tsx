@@ -92,7 +92,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 md:p-8">
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
-        <header className="text-center pb-5">
+        <header className="text-center pb-4">
           <div className="flex flex-col items-center">
             <Image
               src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
