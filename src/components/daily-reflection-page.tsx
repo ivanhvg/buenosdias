@@ -37,7 +37,6 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   const [text, setText] = useState(initialText);
   const [questions, setQuestions] = useState(initialQuestions);
   const [isLoading, setIsLoading] = useState(false);
-  const [showInitialMessage, setShowInitialMessage] = useState(true);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -54,40 +53,41 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   }, []);
 
   const handleLevelChange = async (level: string) => {
-    setShowInitialMessage(false);
     setSelectedLevel(level);
     setIsLoading(true);
-    setText('');
-    setQuestions([]);
     
-    try {
-      const today = new Date();
-      const newText = await getDailyTextForLevel(level, today);
-      setText(newText);
-      
-      // Solo buscar reflexiones si se encontró un texto válido.
-      if (newText !== DEFAULT_TEXT) {
-        const newQuestions = await getDailyReflectionsForLevel(level, today);
-        setQuestions(newQuestions);
-      } else {
-        setQuestions([]); // Asegurarse de que no hay preguntas si no hay texto.
-      }
+    // Añadimos un pequeño retardo para asegurar que el loader se vea.
+    setTimeout(async () => {
+      try {
+        const today = new Date();
+        const newText = await getDailyTextForLevel(level, today);
+        setText(newText);
+        
+        if (newText !== DEFAULT_TEXT) {
+          const newQuestions = await getDailyReflectionsForLevel(level, today);
+          setQuestions(newQuestions);
+        } else {
+          setQuestions([]);
+        }
 
-    } catch (error) {
-      console.error("Error updating content:", error);
-      setText("Hubo un error al cargar el contenido. Por favor, inténtalo de nuevo.");
-      setQuestions([]);
-      toast({
-        variant: "destructive",
-        title: "Error de carga",
-        description: "No se pudo obtener el texto o las reflexiones del día.",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+      } catch (error) {
+        console.error("Error updating content:", error);
+        setText("Hubo un error al cargar el contenido. Por favor, inténtalo de nuevo.");
+        setQuestions([]);
+        toast({
+          variant: "destructive",
+          title: "Error de carga",
+          description: "No se pudo obtener el texto o las reflexiones del día.",
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    }, 250); // Un retardo de 250ms es suficiente para la percepción del usuario
   };
 
-  const showReflectionQuestions = questions.length > 0 && text !== DEFAULT_TEXT;
+  const showContent = selectedLevel && !isLoading;
+  const showInitialMessage = !selectedLevel && !isLoading;
+  const showReflectionQuestions = showContent && questions.length > 0 && text !== DEFAULT_TEXT;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 md:p-8">
@@ -126,7 +126,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
         </header>
 
         <div className="w-full max-w-xs mx-auto">
-          <Select onValueChange={handleLevelChange}>
+          <Select onValueChange={handleLevelChange} disabled={isLoading}>
             <SelectTrigger className="bg-card border-border shadow-sm">
               <SelectValue placeholder="Selecciona tu etapa educativa" />
             </SelectTrigger>
@@ -137,11 +137,13 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           </Select>
         </div>
 
-        {isLoading ? (
+        {isLoading && (
           <div className="flex justify-center items-center p-10">
             <Loader className="h-8 w-8 animate-spin text-primary" />
           </div>
-        ) : showInitialMessage && !selectedLevel ? (
+        )}
+
+        {showInitialMessage && (
            <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
             <CardContent className="pt-6">
               <p className="text-muted-foreground text-center">
@@ -149,14 +151,16 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               </p>
             </CardContent>
           </Card>
-        ) : (
-          <>
+        )}
+        
+        {showContent && (
+          <div className="space-y-8 animate-in fade-in-50 duration-300">
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
               <CardContent className="pt-6">
                 <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
                   {text.split('\n').map((paragraph, index) => (
                     <p key={index}>
-                      {paragraph || '\u00A0' /* Render non-breaking space for empty lines */}
+                      {paragraph || '\u00A0'}
                     </p>
                   ))}
                 </blockquote>
@@ -184,7 +188,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                 </CardContent>
               </Card>
             )}
-          </>
+          </div>
         )}
 
         <footer className="text-center text-sm text-muted-foreground py-4">
