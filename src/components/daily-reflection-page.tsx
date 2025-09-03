@@ -90,7 +90,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
   const showReflectionQuestions = showContent && questions.length > 0 && text !== DEFAULT_TEXT;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 sm:p-6 md:p-8">
+    <div className="flex flex-col items-center justify-center min-h-svh bg-background p-4 sm:p-6 md:p-8">
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
         <header className="text-center pb-3">
           <div className="flex flex-col items-center">
