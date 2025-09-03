@@ -82,7 +82,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
       } finally {
         setIsLoading(false);
       }
-    }, 250); // Un retardo de 250ms es suficiente para la percepción del usuario
+    }, 500); 
   };
 
   const showContent = selectedLevel && !isLoading;
@@ -154,8 +154,8 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
         )}
         
         {showContent && (
-          <div className="space-y-8 animate-in fade-in-50 duration-300">
-            <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
+          <div className="space-y-8">
+            <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
                 <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
                   {text.split('\n').map((paragraph, index) => (
@@ -168,7 +168,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             </Card>
 
             {showReflectionQuestions && (
-              <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
+              <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
                 <CardHeader className="text-center">
                   <CardTitle className="font-headline text-3xl text-foreground">Pistas para la reflexión</CardTitle>
                 </CardHeader>
