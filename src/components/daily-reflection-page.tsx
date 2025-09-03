@@ -107,15 +107,15 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             </h1>
           </div>
           <p className="text-lg font-medium text-title/80 pt-4">Un momento de la mañana para la reflexión y la oración grupal</p>
-          <div className="flex justify-center items-center gap-6 pt-6 text-primary/80">
+          <div className="flex justify-center items-center gap-6 pt-6 text-title">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
             <BookOpen className="h-8 w-8" aria-label="Aprendizaje" />
           </div>
-          {currentDate && <p className="text-muted-foreground/80 pt-4 text-lg italic">{currentDate}</p>}
+          {currentDate && <p className="text-title/80 pt-4 text-lg italic">{currentDate}</p>}
           {valorDelMes && (
             <div className="pt-5">
-              <p className="text-sm text-muted-foreground tracking-widest">Valor del mes</p>
+              <p className="text-sm text-title/90 tracking-widest">Valor del mes</p>
               <div className="mt-2 inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-md">
                   <p className="text-xl font-bold tracking-wider">
                       {valorDelMes.valor.toUpperCase()}
@@ -166,7 +166,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             {showReflectionQuestions && (
               <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl">
                 <CardHeader className="text-center">
-                  <CardTitle className="font-headline text-3xl text-primary/90">Pistas para la reflexión</CardTitle>
+                  <CardTitle className="font-headline text-3xl text-title">Pistas para la reflexión</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <ul className="space-y-6">
