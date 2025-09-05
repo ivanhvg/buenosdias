@@ -94,14 +94,16 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
         <header className="text-center pb-3">
           <div className="flex flex-col items-center">
-            <Image
-              src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
-              alt="Logo del centro educativo"
-              width={150}
-              height={41}
-              className="mx-auto"
-              priority
-            />
+             <div className="relative w-[150px] h-[41px]">
+              <Image
+                src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
+                alt="Logo del centro educativo"
+                fill
+                sizes="150px"
+                className="object-contain"
+                priority
+              />
+            </div>
             <h1 className="text-5xl sm:text-6xl font-bold font-headline text-title -mt-2">
               ¡Buenos días!
             </h1>
