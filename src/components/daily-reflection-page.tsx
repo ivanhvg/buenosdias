@@ -25,7 +25,14 @@ interface DailyReflectionPageProps {
 const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
   septiembre: { valor: 'ACOGIDA · BIENVENIDA', mes: 'septiembre' },
   octubre: { valor: 'FRATERNIDAD', mes: 'octubre' },
-  // Agrega aquí más meses y valores
+  noviembre: { valor: 'RESPETO', mes: 'noviembre' },
+  diciembre: { valor: 'AMOR', mes: 'diciembre' },
+  enero: { valor: 'VIDA', mes: 'enero' },
+  febrero: { valor: 'PAZ', mes: 'febrero' },
+  marzo: { valor: 'RESPONSABILIDAD', mes: 'marzo' },
+  abril: { valor: 'TOLERANCIA', mes: 'abril' },
+  mayo: { valor: 'ENTUSIASMO', mes: 'mayo' },
+  junio: { valor: 'GRATITUD', mes: 'junio' },
 };
 
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
