@@ -88,18 +88,18 @@ const dailyReflections: DailyReflection[] = [
     level: 'secundaria',
     day: 11,
     questions: [
-      '¿Qué significa para ti "soñar paz" en tu vida diaria y en tus relaciones con los demás?',
-      '¿Qué pequeñas acciones concretas puedes "sembrar" en tu familia, colegio o barrio para lograr un mundo más justo y solidario?',
-      '¿Cómo puedes pasar de ser solo espectador de los problemas a ser parte de la solución?'
+      'La oración nos invita a soñar con un mundo más justo y solidario. ¿Qué significa para ti "soñar paz" en tu vida diaria y en tus relaciones con los demás?',
+      'El lema de este curso dice: “Sueña paz y siembra el bien”. ¿Qué pequeñas acciones concretas puedes “sembrar” en tu familia, colegio o barrio para lograrlo?',
+      'Se nos recuerda que no basta con mirar. ¿Cómo puedes pasar de ser solo espectador de los problemas a ser parte de la solución?'
     ]
   },
   {
     level: 'secundaria',
     day: 12,
     questions: [
-      '¿En qué momentos de tu vida te has sentido como una “semilla” que tiene algo valioso que ofrecer?',
-      '¿Qué “tormentas” o dificultades te preocupan y cómo puedes afrontarlas con más confianza?',
-      '¿Cómo puedes ser “calor humano” y apoyo para alguien cercano que lo esté pasando mal?'
+      'La oración nos llama a ser “semillas del Reino”. ¿En qué momentos de tu vida te has sentido así, con algo valioso que ofrecer?',
+      'Se mencionan “tormentas, sequías y espinos” como dificultades. ¿Qué obstáculos de tu vida se parecen a esos y cómo podrías afrontarlos con más confianza?',
+      'Se nos anima a dar calor humano a los demás. ¿Cómo puedes ser apoyo para alguien cercano que lo esté pasando mal?'
     ]
   },
   {
@@ -133,9 +133,9 @@ const dailyReflections: DailyReflection[] = [
     level: 'secundaria',
     day: 18,
     questions: [
-      '¿Qué pequeños detalles de la naturaleza sueles pasar por alto y cómo podrías apreciarlos más?',
-      '¿Cómo se relaciona cuidar la naturaleza con ayudar a las personas más vulnerables?',
-      '¿Qué acciones puedes hacer para apoyar a quienes son olvidados o marginados en tu comunidad?'
+      'En la oración se agradece la ternura de Dios en toda la creación. ¿Qué pequeños detalles de la naturaleza sueles pasar por alto y cómo podrías apreciarlos más?',
+      'Se pide cuidar la vida y la belleza. ¿Cómo relacionas el cuidado de la naturaleza con ayudar a las personas más vulnerables?',
+      'El texto habla de “rescatar a los olvidados”. ¿Qué acciones podrías hacer para apoyar a quienes son marginados en tu entorno?'
     ]
   },
   {
@@ -151,27 +151,27 @@ const dailyReflections: DailyReflection[] = [
     level: 'secundaria',
     day: 22,
     questions: [
-      '¿Cómo puedes transformar las rutinas aburridas en oportunidades para crecer como persona?',
-      '¿Qué significa para ti “poner amor” en lo que haces, incluso en lo más pequeño?',
-      '¿Cómo puedes mejorar la relación con tu familia colaborando más en las tareas de casa?'
+      'La oración presenta la rutina diaria como una ofrenda. ¿Cómo puedes transformar lo aburrido en una oportunidad para crecer como persona?',
+      'Se nos invita a “poner amor en lo más ordinario y cotidiano”. ¿Qué significa para ti hacerlo en tus tareas de cada día?',
+      'El texto menciona la relación con los padres y la colaboración en casa. ¿Cómo puedes mejorar la convivencia familiar ayudando más en lo cotidiano?'
     ]
   },
   {
     level: 'secundaria',
     day: 23,
     questions: [
-      '¿Qué aspectos de la naturaleza te invitan a decir con alegría: “¡Alabado seas, Señor!”?',
-      '¿Cómo puedes aprender a valorar más las cosas sencillas de cada día?',
-      '¿De qué maneras puedes ser más responsable en el cuidado de nuestra “casa común”?'
+      'En esta oración se afirma que toda criatura tiene un lugar en el mundo. ¿Qué aspectos de la naturaleza te invitan a decir con alegría: “¡Alabado seas, Señor!”?',
+      'El texto recuerda que la creación es un misterio que se contempla con gratitud. ¿Cómo puedes aprender a valorar más las cosas sencillas de cada día?',
+      'Se nos pide sentirnos responsables de la casa común. ¿De qué maneras puedes cuidar mejor la vida en todas sus formas?'
     ]
   },
   {
     level: 'secundaria',
     day: 24,
     questions: [
-      '¿Qué relación ves entre cuidar el planeta y luchar contra las injusticias sociales?',
-      '¿Qué hábitos personales podrías cambiar para ser más respetuoso con la naturaleza?',
-      '¿Qué significa para ti vivir sabiendo que estamos interconectados con los demás y con el mundo natural?'
+      'La oración pide vivir según los valores de la encíclica Laudato Si’. ¿Qué relación ves entre cuidar el planeta y luchar contra las injusticias sociales?',
+      'El texto menciona la necesidad de cambiar nuestra forma de actuar. ¿Qué hábitos personales podrías modificar para ser más respetuoso con la naturaleza?',
+      'Se nos recuerda que todo está interconectado. ¿Qué significa para ti vivir sabiendo que dependemos unos de otros y del mundo natural?'
     ]
   },
   {
@@ -196,9 +196,9 @@ const dailyReflections: DailyReflection[] = [
     level: 'secundaria',
     day: 29,
     questions: [
-      '¿Cómo puedes vivir con más sencillez y valorar lo pequeño en vez de querer siempre más?',
-      '¿Qué papel tiene tu familia en enseñarte valores como la solidaridad y el compartir?',
-      '¿Cómo están relacionados los problemas sociales (pobreza, injusticia) con los problemas ambientales?'
+      'La reflexión subraya que “el daño social y el daño ambiental son caras de una misma moneda”. ¿Cómo crees que se relacionan estos dos problemas en tu vida diaria o en tu entorno?',
+      'El Papa Francisco propone “vivir con sobriedad y valorar lo pequeño”. ¿Cómo puedes practicar la sencillez y aprender a disfrutar de lo simple?',
+      'Se señala que la familia es el mejor lugar para aprender la solidaridad. ¿Qué papel tiene la tuya en enseñarte a compartir y pensar en los demás?'
     ]
   },
   {
