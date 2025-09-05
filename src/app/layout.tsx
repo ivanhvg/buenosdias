@@ -5,6 +5,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Buenos días · BCLL',
   description: 'Nuestro espacio diario para la reflexión y la oración grupal.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
