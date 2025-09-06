@@ -209,6 +209,141 @@ const dailyReflections: DailyReflection[] = [
       '¿Qué nueva actitud te gustaría desarrollar este año para que sea diferente a los anteriores?',
       '¿Cómo puedes ayudar a un compañero que todavía está teniendo dificultades para adaptarse al curso?'
     ]
+  },
+  {
+    level: 'primaria',
+    day: 9,
+    questions: [
+      'El texto dice que el nuevo curso es como un libro con las páginas en blanco. ¿Qué cosas bonitas te gustaría "escribir" o vivir en este libro durante el curso?',
+      'Para llenar este "libro" con amistad, ¿qué puedes hacer hoy para ser un buen amigo o amiga con tus compañeros?',
+      'Al empezar el curso, ¿qué es lo que más ilusión te hace y por qué le das las gracias a Jesús?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 10,
+    questions: [
+      'La oración da las gracias por el sol y por la vida. Si tuvieras que dar las gracias por tres cosas que tienes ahora mismo, ¿cuáles serían?',
+      'El texto pide que el día sea como una "página alegre". ¿Qué pequeña cosa podría pasar hoy para que tu día sea más alegre?',
+      'Al final, le pide a Jesús que le acompañe. ¿En qué momentos del día te gusta sentir que alguien te acompaña y no estás solo?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 11,
+    questions: [
+      'La oración pide ayuda para querer a todos. ¿Cómo puedes demostrarle a alguien de tu clase que le tienes cariño, sin necesidad de usar palabras?',
+      'Se habla de que nuestras palabras y gestos demuestren "respeto". ¿Puedes pensar en un ejemplo de cómo se muestra respeto a un profesor o a un compañero?',
+      'El texto quiere "escribir un capítulo lleno de bondad". Si la bondad fuera un superpoder, ¿cómo lo usarías hoy en el colegio?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 12,
+    questions: [
+      'Piensa en tu mejor amigo o amiga. ¿Qué es lo que más te gusta de vuestra amistad?',
+      'La oración pide aprender a perdonarnos. ¿Por qué es importante perdonar a un amigo cuando nos hemos enfadado?',
+      '¿Qué gesto de amistad o de cuidado puedes tener hoy con una de las personas con las que juegas en el patio?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 16,
+    questions: [
+      'Cierra los ojos un momento y piensa en los niños y niñas que no tienen tanta suerte como tú. ¿Qué crees que pueden necesitar más?',
+      'El texto nos pide que nuestro corazón "no se quede indiferente". ¿Qué significa esa expresión para ti?',
+      'Aunque no podamos solucionar todos los problemas del mundo, ¿qué pequeña cosa solidaria podrías hacer en tu cole o en tu barrio (compartir, ayudar, etc.)?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 17,
+    questions: [
+      'La oración da las gracias por la familia y los amigos. Elige a una persona de tu familia y piensa en algo bueno que te haya dado hoy o esta semana.',
+      'Pide ser "luz en los caminos" de los amigos. ¿Cómo puedes ser tú una pequeña luz para un amigo que está triste o preocupado?',
+      '¿Por qué crees que es importante ser agradecido por las cosas que tenemos cada día?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 18,
+    questions: [
+      'El texto pide ayuda para "no aparentar lo que no soy". ¿Por qué es importante mostrarnos a los demás tal y como somos de verdad?',
+      'A veces, decir la verdad cuesta un poquito. ¿Recuerdas alguna vez que dijiste la verdad aunque fue difícil y te sentiste valiente?',
+      'Ayudar a los demás nos hace sentir bien. ¿Qué pequeña ayuda puedes ofrecer hoy en casa o en clase a alguien que lo necesite?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 19,
+    questions: [
+      'La oración pide perdón por muchas cosas. De todas ellas, ¿cuál crees que es más importante intentar mejorar esta semana?',
+      'Cuando nos equivocamos y pedimos perdón, ¿cómo nos sentimos después? ¿Y cómo se siente la otra persona?',
+      'Jesús siempre nos da una "nueva oportunidad". ¿Qué significa para ti tener una nueva oportunidad para hacer las cosas mejor?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 22,
+    questions: [
+      'El texto pide ser "buen amigo y compañero". ¿Qué diferencia hay entre ser un compañero de clase y ser un buen amigo?',
+      'Dice que lo que aprendemos podemos compartirlo "como un libro abierto". ¿Qué cosa interesante que has aprendido en el cole podrías enseñarle a alguien de tu familia?',
+      '¿De qué manera ayudar a un compañero con las tareas es una forma de quererle?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 23,
+    questions: [
+      'La oración dice que nuestras acciones pueden ser "palabras que hablen de Ti". ¿Qué acción buena (ayudar, compartir, sonreír) puedes hacer hoy para hablar de Jesús sin usar la voz?',
+      'Nos anima a descubrir "lo bueno que hay en cada persona". Piensa en un compañero con el que no hablas mucho, ¿qué cualidad buena crees que puede tener?',
+      '¿Qué significa la palabra "fraternidad" y cómo podemos vivirla en nuestra clase?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 24,
+    questions: [
+      'El texto dice que en cada persona podemos "leer un poco de tu amor". ¿De qué forma ves el amor de Jesús en tus padres o en tus abuelos?',
+      'Piensa en un momento de esta semana en el que te hayas sentido muy feliz y en paz. ¿Dónde estaba Jesús en ese momento?',
+      'Dar las gracias nos hace sentir bien. ¿Por qué amigo o amiga le das especialmente las gracias a Jesús hoy?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 25,
+    questions: [
+      'La paz es importante para convivir con alegría. ¿Qué cosas podemos hacer en clase para que haya un ambiente de paz y no de peleas?',
+      'El texto nos pide ser "mensajeros de paz". Si la paz fuera un mensaje, ¿cómo lo entregarías en tu casa hoy?',
+      '¿Por qué crees que es tan importante pedir por los niños y niñas que viven en países con guerra?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 26,
+    questions: [
+      'Mirar el mundo con "esperanza" es creer que las cosas pueden mejorar. ¿Qué pequeña cosa te gustaría que mejorara en tu clase o en el patio?',
+      'La oración pide "fuerza para cambiar lo que no está bien". ¿Qué cosa que no te parece justa podrías intentar cambiar con la ayuda de tus compañeros y profesores?',
+      '¿Qué significa para ti "repartir alegría"? ¿Puedes nombrar una forma sencilla de hacerlo?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 29,
+    questions: [
+      'La oración es muy cortita pero muy importante. ¿En qué momento del día (al despertar, antes de dormir, en el recreo...) te acuerdas más de que Jesús está contigo?',
+      'Pide a Jesús que te enseñe a "querer a todos como tú me quieres". ¿Cómo crees que nos quiere Jesús?',
+      'Si pudieras pedirle a Jesús que te acompañara en una sola actividad del día de hoy, ¿cuál elegirías y por qué?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 30,
+    questions: [
+      'El texto habla de niños que no tienen comida. ¿Cómo te sientes cuando piensas en eso?',
+      'Ser solidario es ayudar y compartir. ¿Qué cosa tuya (un juguete, una merienda, tu tiempo) estarías dispuesto a compartir con alguien que lo necesita?',
+      'La oración pide que todos los niños puedan "vivir y ser felices". Además de la comida, ¿qué otras cosas crees que necesita un niño para ser feliz?'
+    ]
   }
 ];
 
