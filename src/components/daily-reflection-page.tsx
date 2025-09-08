@@ -124,7 +124,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             <div className="pt-6">
               <p className="text-sm text-muted-foreground tracking-widest">Valor del mes</p>
               <div className="mt-2 inline-block bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-md">
-                  <p className="text-xl font-bold tracking-wider">
+                  <p className="text-xl font-bold tracking-wider font-display">
                       {valorDelMes.valor.toUpperCase()}
                   </p>
               </div>

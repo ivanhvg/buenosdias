@@ -12,6 +12,7 @@ export default {
       fontFamily: {
         body: ['Literata', 'serif'],
         headline: ['"Dancing Script"', 'cursive'],
+        display: ['Poppins', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
