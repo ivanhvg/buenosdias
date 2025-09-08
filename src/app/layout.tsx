@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Literata:opsz,wght@24..96,400;24..96,700&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Literata:opsz,wght@24..96,400;24..96,700&family=Open+Sans:wght@500&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
         {children}
