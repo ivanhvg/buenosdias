@@ -80,10 +80,37 @@ const dailyReflections: DailyReflection[] = [
   },
   {
     level: 'primaria',
+    day: 14,
+    questions: [
+      'El padre de la historia usó su inteligencia y su creatividad para ayudar a su hijo. ¿De qué manera podemos usar nosotros nuestros talentos (dibujar, ser bueno en mates, ser cariñoso...) para ayudar a nuestra familia?',
+      'El amor de este padre no tenía "límites". ¿Qué significa para ti que el amor de los padres es tan grande?',
+      'Imagina la alegría del niño al volver a caminar. ¿Recuerdas alguna vez que te sentiste muy feliz por haber ayudado a alguien o porque alguien te ayudó a ti?'
+    ]
+  },
+  {
+    level: 'primaria',
     day: 15,
     questions: [
       'Primaria 1.º - 3.º: ¿Cuál es tu “luz” (tu cualidad) y cómo la compartes en clase?',
       'Primaria 4.º - 6.º: Nombra un talento tuyo y pon un ejemplo de cómo lo pondrás al servicio.'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 16,
+    questions: [
+      'La oración pide que valoremos la "experiencia y sabiduría" de los abuelos. ¿Qué es lo más importante o lo más divertido que has aprendido de tus abuelos?',
+      'A veces los abuelos se pueden sentir solos. ¿Qué pequeña cosa puedes hacer para que tus abuelos o una persona mayor que conozcas se sientan queridos y acompañados?',
+      '¿Por qué es un tesoro tener abuelos y personas mayores en nuestra vida?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 17,
+    questions: [
+      'El texto dice que Jesús es un "amigo infalible", es decir, un amigo que nunca falla. ¿Qué cualidades tiene que tener un buen amigo para ti?',
+      'Piensa en uno de tus mejores amigos. ¿Por qué le das las gracias a Dios por tenerlo en tu vida?',
+      '¿De qué manera puedes ser tú un "amigo infalible" para alguien que te necesite hoy?'
     ]
   },
   {
