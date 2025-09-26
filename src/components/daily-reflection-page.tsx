@@ -67,11 +67,14 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     setTimeout(async () => {
       try {
         const today = new Date();
-        const newText = await getDailyTextForLevel(level, today);
+        // Si se selecciona "infantil", cargamos el contenido de "primaria"
+        const contentLevel = level === 'infantil' ? 'primaria' : level;
+
+        const newText = await getDailyTextForLevel(contentLevel, today);
         setText(newText);
         
         if (newText !== DEFAULT_TEXT) {
-          const newQuestions = await getDailyReflectionsForLevel(level, today);
+          const newQuestions = await getDailyReflectionsForLevel(contentLevel, today);
           setQuestions(newQuestions);
         } else {
           setQuestions([]);
@@ -109,7 +112,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               style={{ height: 'auto' }}
               priority
             />
-            <h1 className="text-5xl sm:text-6xl font-bold font-headline text-title -mt-2">
+            <h1 className="text-5xl sm:text-6xl font-headline text-title -mt-2">
               ¡Buenos días!
             </h1>
           </div>
@@ -138,6 +141,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               <SelectValue placeholder="Selecciona tu etapa educativa" />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="infantil">Educación Infantil</SelectItem>
               <SelectItem value="primaria">Educación Primaria</SelectItem>
               <SelectItem value="secundaria">Educación Secundaria</SelectItem>
             </SelectContent>
