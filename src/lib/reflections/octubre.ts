@@ -13,6 +13,24 @@ const dailyReflections: DailyReflection[] = [
   },
   {
     level: 'primaria',
+    day: 2,
+    questions: [
+      'La oración pide "amor, respeto y comprensión" en la familia. ¿Puedes pensar en una acción pequeña que demuestre amor, otra que demuestre respeto y otra que demuestre comprensión en tu casa?',
+      '¿Por qué es importante que en una familia todos se ayuden y se traten con cariño?',
+      'Si tuvieras que pedir una sola cosa para tu familia hoy, ¿qué pedirías para que estuvieran más unidos y felices?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 3,
+    questions: [
+      'La oración da gracias por el sol, la luna y las estrellas. Si miras a tu alrededor ahora mismo, ¿cuáles son las tres cosas de la naturaleza por las que te sientes más agradecido?',
+      'El texto dice que tenemos un "corazón para amar". ¿Cómo usas tú tu corazón para querer a las personas, a los animales o a la naturaleza?',
+      'San Francisco de Asís cuidaba mucho de la creación. ¿Qué pequeño gesto puedes hacer tú esta semana para cuidar el planeta, como lo hacía él?'
+    ]
+  },
+  {
+    level: 'primaria',
     day: 6,
     questions: [
         'Si una obra de arte pudiera mostrarte la verdad de algo que dices valorar, ¿qué te revelaría sobre tu forma real de cuidarlo en el día a día?'
