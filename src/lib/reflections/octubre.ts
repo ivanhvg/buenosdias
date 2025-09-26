@@ -122,10 +122,37 @@ const dailyReflections: DailyReflection[] = [
   },
   {
     level: 'primaria',
+    day: 21,
+    questions: [
+        'El abuelo Eugene usó su imaginación para hacer felices a unos perritos abandonados. ¿Qué idea creativa se te ocurre para ayudar o hacer felices a los animales de tu barrio?',
+        'Los perritos disfrutan del paseo como una "gran aventura". ¿Qué pequeña cosa del día a día puedes convertir tú en una gran aventura?',
+        'Este abuelo dedicaba su tiempo a cuidar de los animales. ¿Por qué es importante ser amables y cuidar de los animales que no tienen un hogar?'
+    ]
+  },
+  {
+    level: 'primaria',
     day: 22,
     questions: [
       'Primaria 1.º - 3.º: ¿Escuchas cuando te invitan a hacer el bien?',
       'Primaria 4.º - 6.º: Piensa una invitación buena que recibiste y cómo respondiste.'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 23,
+    questions: [
+        'La oración pide cultivar la "amistad verdadera". ¿Qué diferencia hay entre un compañero de clase y un amigo de verdad?',
+        '¿Qué significa para ti "apoyo mutuo" entre amigos? ¿Puedes contar alguna vez que hayas apoyado a un amigo o que un amigo te haya apoyado a ti?',
+        'Compartir la vida con amigos la hace más alegre. ¿Cuál es el recuerdo más divertido que tienes con tus amigos?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 24,
+    questions: [
+        'El texto da gracias porque los padres "buscan lo mejor" para nosotros. ¿De qué maneras te demuestran tus padres que te quieren y buscan lo mejor para ti?',
+        'La oración pide ayuda para "contribuir a su felicidad". ¿Qué pequeña cosa puedes hacer hoy para hacer felices a tus padres?',
+        '¿Por qué es importante que en una familia todos intenten comprenderse y quererse, aunque a veces se enfaden?'
     ]
   },
   {
@@ -137,10 +164,37 @@ const dailyReflections: DailyReflection[] = [
   },
   {
     level: 'primaria',
+    day: 28,
+    questions: [
+        'André fue muy valiente al proteger a su hermana pequeña. ¿Qué significa para ti ser valiente? ¿Solo se es valiente en situaciones de peligro?',
+        'El gesto de André inspiró a toda una ciudad a ayudar. ¿Cómo un acto pequeño de bondad o valentía puede animar a otros a hacer cosas buenas también?',
+        'El amor entre hermanos es muy fuerte. ¿De qué forma cuidas y proteges tú a tus hermanos o a tus amigos más cercanos?'
+    ]
+  },
+  {
+    level: 'primaria',
     day: 29,
     questions: [
       'Primaria 1.º - 3.º: ¿Te cuesta perdonar cuando te piden perdón?',
       'Primaria 4.º - 6.º: Cuenta una vez que perdonaste y cómo te sentiste.'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 30,
+    questions: [
+        'La oración pide que aprendamos a vivir "como hermanos". ¿Qué significa tratar a todos los niños del mundo como si fueran nuestros hermanos?',
+        'La paz no es solo que no haya guerras. ¿Cómo podemos crear paz en nuestra clase, en el patio o en nuestra casa?',
+        'Si fueras un "mensajero de la paz", ¿qué mensaje llevarías hoy a tus compañeros?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 31,
+    questions: [
+        'La oración da gracias por todos los animales, desde los más pequeños a los más grandes. ¿Cuál es tu animal favorito y por qué le das las gracias a Dios por haberlo creado?',
+        'El texto nos pide que ayudemos a cuidar la creación para que sea un hogar para todas las criaturas. ¿Qué podemos hacer para que los animales que viven en nuestra ciudad o en el campo tengan un hogar seguro y limpio?',
+        '¿Por qué es importante cuidar y respetar a todos los seres vivos, por muy pequeños que sean?'
     ]
   }
 ];
