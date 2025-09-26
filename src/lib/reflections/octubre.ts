@@ -4,15 +4,6 @@ import type { DailyReflection } from '@/lib/reflections';
 // Aquí puedes añadir las pistas de reflexión para el mes de octubre.
 const dailyReflections: DailyReflection[] = [
   {
-    level: 'secundaria',
-    day: 1,
-    questions: [
-      'El texto sugiere marcarse un objetivo. ¿Qué te impide a veces cumplir las metas que te propones?',
-      '¿De qué manera tus acciones diarias pueden influir positivamente en las personas que te rodean?',
-      'Reflexiona sobre la última vez que te sentiste orgulloso/a de algo que lograste por tu propio esfuerzo. ¿Qué aprendiste de esa experiencia?'
-    ]
-  },
-  {
     level: 'primaria',
     day: 1,
     questions: [
@@ -21,7 +12,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'secundaria',
+    level: 'primaria',
     day: 6,
     questions: [
         'Si una obra de arte pudiera mostrarte la verdad de algo que dices valorar, ¿qué te revelaría sobre tu forma real de cuidarlo en el día a día?'
@@ -36,7 +27,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'secundaria',
+    level: 'primaria',
     day: 13,
     questions: [
       'Si no pudieras soñar mientras duermes, ¿qué meta elegirías hoy que, al perseguirla, hiciera que tu vida (y la de otros) se sintiera “soñada”?'
@@ -51,7 +42,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'secundaria',
+    level: 'primaria',
     day: 20,
     questions: [
       'Si lo invisible dependiera de tus decisiones diarias, ¿qué pequeño hábito cambiarías hoy para proteger los mundos que no ves?'
@@ -66,7 +57,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'secundaria',
+    level: 'primaria',
     day: 27,
     questions: [
       'En tu vida diaria, ¿qué “elementos” (personas, saberes, herramientas) podrías combinar hoy para crear algo que ninguno lograría por sí solo?'
