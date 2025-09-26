@@ -1,7 +1,7 @@
 // src/lib/reflections/octubre.ts
 import type { DailyReflection } from '@/lib/reflections';
 
-// Aquí puedes añadir las pistas de reflexión para el mes de octubre.
+// Pistas para la reflexión del mes de octubre.
 const dailyReflections: DailyReflection[] = [
   {
     level: 'primaria',
@@ -38,10 +38,37 @@ const dailyReflections: DailyReflection[] = [
   },
   {
     level: 'primaria',
+    day: 7,
+    questions: [
+      'Francisco es un niño, como tú, que ha decidido ayudar al planeta. ¿Qué te parece que los niños también puedan tener grandes ideas para cambiar el mundo?',
+      'De las cosas que propone Francisco (plantar árboles, usar menos plástico...), ¿cuál te parece más fácil de hacer en tu casa o en tu clase?',
+      'Si tuvieras que hacer un vídeo para animar a otros niños a cuidar el medio ambiente, ¿qué mensaje importante les dirías?'
+    ]
+  },
+  {
+    level: 'primaria',
     day: 8,
     questions: [
       'Primaria 1.º - 3.º: ¿Qué “cosas nuevas” quiere Jesús traer a tu corazón?',
       'Primaria 4.º - 6.º: Cuenta una situación en la que un “parche” no bastó y qué cambiaste de verdad.'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 9,
+    questions: [
+      'La oración pide por todas las personas del colegio: profesores, estudiantes y personal. ¿Por qué es importante que todos en el cole trabajen juntos y se lleven bien?',
+      'Piensa en una persona que trabaja en el colegio (que no sea un profesor). ¿Cómo ayuda su trabajo a que el colegio funcione mejor para todos?',
+      '¿Qué es lo que más te gusta de tu colegio y por qué le darías las gracias a Dios?'
+    ]
+  },
+  {
+    level: 'primaria',
+    day: 10,
+    questions: [
+      'La oración da gracias por el sol, los amigos y la familia. Hoy, ¿cuál es tu principal motivo para dar las gracias?',
+      'A veces se nos olvida agradecer las cosas pequeñas. ¿Puedes nombrar tres cosas pequeñas de hoy por las que te sientas agradecido?',
+      '¿Por qué crees que ser agradecido nos ayuda a sentirnos más felices?'
     ]
   },
   {
