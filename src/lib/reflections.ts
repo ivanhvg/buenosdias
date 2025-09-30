@@ -1,7 +1,7 @@
 // src/lib/reflections.ts
 
 export interface DailyReflection {
-  level: 'primaria' | 'secundaria';
+  level: 'infantil-primaria' | 'secundaria';
   day: number; // Day of the month
   questions: string[];
 }

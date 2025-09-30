@@ -110,77 +110,77 @@ const dailyTexts: DailyText[] = [
     text: 'Buenos días.\nEl curso ya está prácticamente encarrilado. Ya estamos metidos de lleno en la materia de cada asignatura, haciendo deberes, trabajos, proyectos... ¡Ya ni nos acordamos de las vacaciones de verano!\n¿Qué sentimientos tienes a estas alturas? ¿Aún tienes miedo al nuevo curso? ¿Te parece más difícil?\nAtrévete a vencer tus miedos y a afrontar las dificultades.\nAtrévete a dejar de repetirte a ti mismo que no puedes y lánzate a aceptar los retos que este nuevo curso te propone.\nAtrévete a buscar caminos nuevos para salir de las situaciones que no te gustan.\nAtrévete a salir de ti mismo y abrirte a los compañeros con los que ya has iniciado el curso.\nAtrévete a hacer este curso algo diferente a lo que has hecho otros años.\nQue tengas un gran día.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 9,
     text: '¡Buenos días, Jesús!\nHoy comenzamos un nuevo curso y lo recibimos como si fuera un libro nuevo. Cada día es una página en blanco que Tú nos regalas para llenarla con ilusión, esfuerzo y amistad.\nGracias por las vacaciones, por lo vivido en familia y por el reencuentro con nuestros amigos en el colegio.\nAcompáñanos, Señor, para que en este curso sepamos escribir una historia bonita, llena de esperanza y de amor.\nCanto: Es Jesús'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 10,
     text: 'Buenos días, Señor.\nHoy me das la oportunidad de empezar un nuevo día. Gracias por el sol, por la vida y por todas las cosas buenas que pones en mi camino.\nQuiero que esta jornada sea como una página alegre, escrita con ilusión, confianza y gratitud. Acompáñame, Jesús, y no me dejes caminar solo.\nCanto: Es Jesús'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 11,
     text: 'Señor Jesús, gracias por el regalo de este día.\nQuédate conmigo en cada momento y enséñame a querer a todos como Tú me quieres. Que mis palabras y gestos transmitan respeto, cariño y amistad.\nHaz que hoy escriba con mis acciones un capítulo lleno de bondad.\nOración: Padrenuestro'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 12,
     text: 'Jesús, hoy quiero darte las gracias por mis amigos y amigas. Protégelos, cuídalos y acompáñalos siempre.\nQue nuestra amistad sea fuerte, sincera y alegre. Enséñanos a vivir unidos, a perdonarnos y a cuidarnos con cariño.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 16,
     text: 'Padre bueno, hoy quiero acordarme de tantos niños y niñas que sufren en el mundo.\nPor los que no tienen familia, por los que están enfermos, por los que viven en la guerra o en la calle.\nSeñor, haz que nuestro corazón no se quede indiferente. Que sepamos ser solidarios y escribir páginas de esperanza para ellos.\nCanto: No has nacido amigo para estar triste.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 17,
     text: 'Gracias Dios por este día,\nperdona mis ofensas, renuévame, ayúdame a ser agradecido\npor cada cosa que haces.\nGracias Dios por mi familia,\ngracias te doy también por mis amigos, sé luz en sus caminos,\nalivio para sus penas\ny dales muchas bendiciones.\nGracias Señor por las personas\nque pones a nuestro alrededor para bendecirlos con tu bondad, ayúdame a hacer tu voluntad\ny guíame en este nuevo día.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 18,
     text: 'Amigo Jesús: ayúdame a ser humilde y sincero. A no aparentar lo que no soy ni querer ser más que los otros.\nEnséñame a decir siempre la verdad y a no mentir, aunque a veces cueste bastante y haya que poner mucha voluntad.\nQuiero aprender a ayudar y a dar una mano a todo el que lo necesite. Abrir mi corazón para que viva pensando en los demás.\nDame coraje y valentía para ser honesto y no engañar a nadie. Para ganarme las cosas con esfuerzo y dedicación.\nAyúdame a cumplir todas las metas que me propongo para crecer y ser cada día mejor persona.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 19,
     text: 'Buenos días, Jesús.\nHoy te quiero pedir perdón por las veces que no soy generoso y no comparto con los demás.\nPor las veces que ofendo a los otros con palabras o mentiras.\nPor las veces que no escucho a mis padres y creo sabérmelas todas.\nPor las veces que peleo con mis hermanos y amigos.\nPor las veces que no cumplo con mis trabajos, tareas y estudio.\nPor las veces que me olvido de ti.\nPerdóname Señor y dame una nueva oportunidad para vivir como tú nos enseñas.\n¡Que así sea, Señor!\nCanto: Padrenuestro.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 22,
     text: 'Padre bueno, ayúdame a crecer como Jesús, a ser más bueno y a querer a todos los que me rodean.\nQue estudie con ilusión, que sea buen amigo y compañero. Que todo lo aprendido lo comparta con los demás, como un libro abierto que transmite esperanza y alegría.\nOración: Padrenuestro'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 23,
     text: 'Señor, hoy queremos vivir de manera que nuestras acciones sean palabras que hablen de Ti. Que sirvamos a los demás, sobre todo a los más necesitados.\nConcédenos la alegría de descubrir lo bueno que hay en cada persona y de hacer de este día un capítulo de fraternidad.\nCanto: Señor, hazme instrumento de tu paz.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 24,
     text: 'Jesús, gracias porque siempre estás cerca: en mi vida, en mi familia y en mis amigos. Gracias porque en cada persona podemos leer un poco de tu amor. Hoy te damos gracias porque llenas nuestras vidas con tu presencia y tu paz.\nCanto: Padrenuestro.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 25,
     text: 'Señor Jesús, danos tu paz.\nEsa paz que necesitamos para convivir con alegría y respeto.Te pedimos por los países en guerra y por quienes sufren violencia. Haznos mensajeros de paz en nuestro colegio, en casa y en cada lugar donde estemos.\nCanto: Señor, hazme instrumento de tu paz.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 26,
     text: 'Señor Jesús, confiamos en Ti.\nEnséñanos a mirar el mundo con esperanza, a descubrir qué podemos hacer para repartir alegría.\nDanos fuerza para cambiar lo que no está bien y serenidad para respetar a los demás. Haz que nuestra vida sea como un libro que se llena de gestos de amor y solidaridad.\nOración: Padrenuestro'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 29,
     text: 'Señor Jesús, te doy las gracias por este día que empieza.\nTe pido que estés conmigo durante todo el día; y que me enseñes a querer a todos como tú me quieres.\nAmén.'
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 30,
     text: 'Jesús, me han dicho muchas veces que hay niños y niñas que no pueden vivir porque no tienen comida.\nHoy te pido que les ayudes. Que sepamos repartir nuestras cosas, ser amables, solidarios... Que todos los niños y las niñas tengan lo necesario para vivir y ser felices.\n¡Escúchanos, Jesús!'
   }

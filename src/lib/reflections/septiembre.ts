@@ -13,7 +13,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 2,
     questions: [
         'El planeta es como una casa gigante donde vivimos todos. ¿Qué podemos hacer para que nuestra casa esté siempre limpia y bonita?',
@@ -31,7 +31,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 3,
     questions: [
         'El planeta es como una casa gigante donde vivimos todos. ¿Qué podemos hacer para que nuestra casa esté siempre limpia y bonita?',
@@ -211,7 +211,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 9,
     questions: [
       'El texto dice que el nuevo curso es como un libro con las páginas en blanco. ¿Qué cosas bonitas te gustaría "escribir" o vivir en este libro durante el curso?',
@@ -220,7 +220,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 10,
     questions: [
       'La oración da las gracias por el sol y por la vida. Si tuvieras que dar las gracias por tres cosas que tienes ahora mismo, ¿cuáles serían?',
@@ -229,7 +229,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 11,
     questions: [
       'La oración pide ayuda para querer a todos. ¿Cómo puedes demostrarle a alguien de tu clase que le tienes cariño, sin necesidad de usar palabras?',
@@ -238,7 +238,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 12,
     questions: [
       'Piensa en tu mejor amigo o amiga. ¿Qué es lo que más te gusta de vuestra amistad?',
@@ -247,7 +247,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 16,
     questions: [
       'Cierra los ojos un momento y piensa en los niños y niñas que no tienen tanta suerte como tú. ¿Qué crees que pueden necesitar más?',
@@ -256,7 +256,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 17,
     questions: [
       'La oración da las gracias por la familia y los amigos. Elige a una persona de tu familia y piensa en algo bueno que te haya dado hoy o esta semana.',
@@ -265,7 +265,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 18,
     questions: [
       'El texto pide ayuda para "no aparentar lo que no soy". ¿Por qué es importante mostrarnos a los demás tal y como somos de verdad?',
@@ -274,7 +274,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 19,
     questions: [
       'La oración pide perdón por muchas cosas. De todas ellas, ¿cuál crees que es más importante intentar mejorar esta semana?',
@@ -283,7 +283,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 22,
     questions: [
       'El texto pide ser "buen amigo y compañero". ¿Qué diferencia hay entre ser un compañero de clase y ser un buen amigo?',
@@ -292,7 +292,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 23,
     questions: [
       'La oración dice que nuestras acciones pueden ser "palabras que hablen de Ti". ¿Qué acción buena (ayudar, compartir, sonreír) puedes hacer hoy para hablar de Jesús sin usar la voz?',
@@ -301,7 +301,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 24,
     questions: [
       'El texto dice que en cada persona podemos "leer un poco de tu amor". ¿De qué forma ves el amor de Jesús en tus padres o en tus abuelos?',
@@ -310,7 +310,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 25,
     questions: [
       'La paz es importante para convivir con alegría. ¿Qué cosas podemos hacer en clase para que haya un ambiente de paz y no de peleas?',
@@ -319,7 +319,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 26,
     questions: [
       'Mirar el mundo con "esperanza" es creer que las cosas pueden mejorar. ¿Qué pequeña cosa te gustaría que mejorara en tu clase o en el patio?',
@@ -328,7 +328,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 29,
     questions: [
       'La oración es muy cortita pero muy importante. ¿En qué momento del día (al despertar, antes de dormir, en el recreo...) te acuerdas más de que Jesús está contigo?',
@@ -337,7 +337,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 30,
     questions: [
       'El texto habla de niños que no tienen comida. ¿Cómo te sientes cuando piensas en eso?',

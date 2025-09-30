@@ -4,7 +4,7 @@ import type { DailyReflection } from '@/lib/reflections';
 // Pistas para la reflexión del mes de octubre.
 const dailyReflections: DailyReflection[] = [
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 1,
     questions: [
       'Primaria 1.º - 3.º: ¿Qué cosas hacemos cada día que ponen nuestra vida “sobre roca”?',
@@ -12,7 +12,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 2,
     questions: [
       'La oración pide "amor, respeto y comprensión" en la familia. ¿Puedes pensar en una acción pequeña que demuestre amor, otra que demuestre respeto y otra que demuestre comprensión en tu casa?',
@@ -21,7 +21,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 3,
     questions: [
       'La oración da gracias por el sol, la luna y las estrellas. Si miras a tu alrededor ahora mismo, ¿cuáles son las tres cosas de la naturaleza por las que te sientes más agradecido?',
@@ -30,14 +30,14 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 6,
     questions: [
         'Si una obra de arte pudiera mostrarte la verdad de algo que dices valorar, ¿qué te revelaría sobre tu forma real de cuidarlo en el día a día?'
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 7,
     questions: [
       'Francisco es un niño, como tú, que ha decidido ayudar al planeta. ¿Qué te parece que los niños también puedan tener grandes ideas para cambiar el mundo?',
@@ -46,7 +46,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 8,
     questions: [
       'Primaria 1.º - 3.º: ¿Qué “cosas nuevas” quiere Jesús traer a tu corazón?',
@@ -54,7 +54,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 9,
     questions: [
       'La oración pide por todas las personas del colegio: profesores, estudiantes y personal. ¿Por qué es importante que todos en el cole trabajen juntos y se lleven bien?',
@@ -63,7 +63,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 10,
     questions: [
       'La oración da gracias por el sol, los amigos y la familia. Hoy, ¿cuál es tu principal motivo para dar las gracias?',
@@ -72,14 +72,14 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 13,
     questions: [
       'Si no pudieras soñar mientras duermes, ¿qué meta elegirías hoy que, al perseguirla, hiciera que tu vida (y la de otros) se sintiera “soñada”?'
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 14,
     questions: [
       'El padre de la historia usó su inteligencia y su creatividad para ayudar a su hijo. ¿De qué manera podemos usar nosotros nuestros talentos (dibujar, ser bueno en mates, ser cariñoso...) para ayudar a nuestra familia?',
@@ -88,7 +88,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 15,
     questions: [
       'Primaria 1.º - 3.º: ¿Cuál es tu “luz” (tu cualidad) y cómo la compartes en clase?',
@@ -96,7 +96,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 16,
     questions: [
       'La oración pide que valoremos la "experiencia y sabiduría" de los abuelos. ¿Qué es lo más importante o lo más divertido que has aprendido de tus abuelos?',
@@ -105,7 +105,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 17,
     questions: [
       'El texto dice que Jesús es un "amigo infalible", es decir, un amigo que nunca falla. ¿Qué cualidades tiene que tener un buen amigo para ti?',
@@ -114,14 +114,14 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 20,
     questions: [
       'Si lo invisible dependiera de tus decisiones diarias, ¿qué pequeño hábito cambiarías hoy para proteger los mundos que no ves?'
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 21,
     questions: [
         'El abuelo Eugene usó su imaginación para hacer felices a unos perritos abandonados. ¿Qué idea creativa se te ocurre para ayudar o hacer felices a los animales de tu barrio?',
@@ -130,7 +130,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 22,
     questions: [
       'Primaria 1.º - 3.º: ¿Escuchas cuando te invitan a hacer el bien?',
@@ -138,7 +138,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 23,
     questions: [
         'La oración pide cultivar la "amistad verdadera". ¿Qué diferencia hay entre un compañero de clase y un amigo de verdad?',
@@ -147,7 +147,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 24,
     questions: [
         'El texto da gracias porque los padres "buscan lo mejor" para nosotros. ¿De qué maneras te demuestran tus padres que te quieren y buscan lo mejor para ti?',
@@ -156,14 +156,14 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 27,
     questions: [
       'En tu vida diaria, ¿qué “elementos” (personas, saberes, herramientas) podrías combinar hoy para crear algo que ninguno lograría por sí solo?'
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 28,
     questions: [
         'André fue muy valiente al proteger a su hermana pequeña. ¿Qué significa para ti ser valiente? ¿Solo se es valiente en situaciones de peligro?',
@@ -172,7 +172,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 29,
     questions: [
       'Primaria 1.º - 3.º: ¿Te cuesta perdonar cuando te piden perdón?',
@@ -180,7 +180,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 30,
     questions: [
         'La oración pide que aprendamos a vivir "como hermanos". ¿Qué significa tratar a todos los niños del mundo como si fueran nuestros hermanos?',
@@ -189,7 +189,7 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
-    level: 'primaria',
+    level: 'infantil-primaria',
     day: 31,
     questions: [
         'La oración da gracias por todos los animales, desde los más pequeños a los más grandes. ¿Cuál es tu animal favorito y por qué le das las gracias a Dios por haberlo creado?',
