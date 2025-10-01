@@ -41,7 +41,7 @@ const parseBold = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={index} className="not-italic">{part.slice(2, -2)}</strong>;
+      return <strong key={index} className="not-italic mb-1 block">{part.slice(2, -2)}</strong>;
     }
     return part;
   });
@@ -176,10 +176,10 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="space-y-8">
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
-                <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-2">
-                  {text.split('\n').map((paragraph, index) => (
+                <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
+                  {text.split('\n').filter(p => p.trim() !== '').map((paragraph, index) => (
                     <p key={index}>
-                      {paragraph ? parseBold(paragraph) : '\u00A0'}
+                      {parseBold(paragraph)}
                     </p>
                   ))}
                 </blockquote>
