@@ -37,6 +37,16 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
 
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 
+const parseBold = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index} className="not-italic">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
   const [valorDelMes, setValorDelMes] = useState<{ valor: string; mes: string } | null>(null);
@@ -166,10 +176,10 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="space-y-8">
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
-                <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
+                <blockquote className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-2">
                   {text.split('\n').map((paragraph, index) => (
                     <p key={index}>
-                      {paragraph || '\u00A0'}
+                      {paragraph ? parseBold(paragraph) : '\u00A0'}
                     </p>
                   ))}
                 </blockquote>
