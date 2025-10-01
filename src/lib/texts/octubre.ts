@@ -7,12 +7,12 @@ const dailyTexts: DailyText[] = [
   {
     level: 'infantil-primaria',
     day: 1,
-    text: '**La casa sobre roca**. Lc 6,47-49\n\n“Todo el que viene a mí, escucha mis palabras y las pone en práctica, os voy a decir a quién se parece: se parece a uno que edificó una casa: cavó, ahondó y puso los cimientos sobre roca; vino una crecida, arremetió el río contra aquella casa, y no pudo derribarla, porque estaba sólidamente construida. El que escucha y no pone en práctica se parece a uno que edificó una casa sobre tierra, sin cimiento; arremetió contra ella el río, y enseguida se derrumbó desplomándose, y fue grande la ruina de aquella casa.”'
+    text: '**La casa sobre roca.** Lc 6,47-49\n\n“Todo el que viene a mí, escucha mis palabras y las pone en práctica, os voy a decir a quién se parece: se parece a uno que edificó una casa: cavó, ahondó y puso los cimientos sobre roca; vino una crecida, arremetió el río contra aquella casa, y no pudo derribarla, porque estaba sólidamente construida. El que escucha y no pone en práctica se parece a uno que edificó una casa sobre tierra, sin cimiento; arremetió contra ella el río, y enseguida se derrumbó desplomándose, y fue grande la ruina de aquella casa.”'
   },
   {
     level: 'secundaria',
     day: 1,
-    text: '**La casa sobre roca**. Lc 6,47-49\n\n“Todo el que viene a mí, escucha mis palabras y las pone en práctica, os voy a decir a quién se parece: se parece a uno que edificó una casa: cavó, ahondó y puso los cimientos sobre roca; vino una crecida, arremetió el río contra aquella casa, y no pudo derribarla, porque estaba sólidamente construida. El que escucha y no pone en práctica se parece a uno que edificó una casa sobre tierra, sin cimiento; arremetió contra ella el río, y enseguida se derrumbó desplomándose, y fue grande la ruina de aquella casa.”'
+    text: '**La casa sobre roca.** Lc 6,47-49\n\n“Todo el que viene a mí, escucha mis palabras y las pone en práctica, os voy a decir a quién se parece: se parece a uno que edificó una casa: cavó, ahondó y puso los cimientos sobre roca; vino una crecida, arremetió el río contra aquella casa, y no pudo derribarla, porque estaba sólidamente construida. El que escucha y no pone en práctica se parece a uno que edificó una casa sobre tierra, sin cimiento; arremetió contra ella el río, y enseguida se derrumbó desplomándose, y fue grande la ruina de aquella casa.”'
   },
   {
     level: 'infantil-primaria',
@@ -37,12 +37,12 @@ const dailyTexts: DailyText[] = [
   {
     level: 'infantil-primaria',
     day: 6,
-    text: 'Adriana y Daniel visitan un museo y descubren un cuadro de don Federico que cambia de paisaje. Al mirarlo, son transportados a un bosque encantado donde un búho les explica que el cuadro lleva a quienes tienen el corazón puro y les enseña a valorar la naturaleza. Tras aprender de criaturas y plantas, prometen proteger el entorno y regresan al museo. Desde entonces, se convierten en defensores y narradores de esa magia, recordando a todos la responsabilidad de cuidar el mundo.'
+    text: '**El cuadro mágico**\n\nAdriana y Daniel visitan un museo y descubren un cuadro de don Federico que cambia de paisaje. Al mirarlo, son transportados a un bosque encantado donde un búho les explica que el cuadro lleva a quienes tienen el corazón puro y les enseña a valorar la naturaleza. Tras aprender de criaturas y plantas, prometen proteger el entorno y regresan al museo. Desde entonces, se convierten en defensores y narradores de esa magia, recordando a todos la responsabilidad de cuidar el mundo.'
   },
   {
     level: 'secundaria',
     day: 6,
-    text: 'Adriana y Daniel visitan un museo y descubren un cuadro de don Federico que cambia de paisaje. Al mirarlo, son transportados a un bosque encantado donde un búho les explica que el cuadro lleva a quienes tienen el corazón puro y les enseña a valorar la naturaleza. Tras aprender de criaturas y plantas, prometen proteger el entorno y regresan al museo. Desde entonces, se convierten en defensores y narradores de esa magia, recordando a todos la responsabilidad de cuidar el mundo.'
+    text: '**El cuadro mágico**\n\nAdriana y Daniel visitan un museo y descubren un cuadro de don Federico que cambia de paisaje. Al mirarlo, son transportados a un bosque encantado donde un búho les explica que el cuadro lleva a quienes tienen el corazón puro y les enseña a valorar la naturaleza. Tras aprender de criaturas y plantas, prometen proteger el entorno y regresan al museo. Desde entonces, se convierten en defensores y narradores de esa magia, recordando a todos la responsabilidad de cuidar el mundo.'
   },
   {
     level: 'infantil-primaria',
@@ -87,12 +87,12 @@ const dailyTexts: DailyText[] = [
   {
     level: 'infantil-primaria',
     day: 13,
-    text: 'El profesor VegaX crea a RobiX, un robot curioso. Al oír a SofíaX hablar de sueños, RobiX descubre que no puede soñar como los humanos, pero aprende que los sueños son deseos que dan esperanza y dirección. Con SofíaX comprende que soñar es proponerse metas que ayudan a otros. Decide que su “sueño” será apoyar a las personas para que alcancen los suyos. Juntos, usan la tecnología de RobiX y la empatía de SofíaX para mejorar su comunidad. Aunque RobiX no sueña dormido, vive la esencia de los sueños cada vez que provoca una sonrisa.'
+    text: '**El robot que aprendió a soñar**\n\nEl profesor VegaX crea a RobiX, un robot curioso. Al oír a SofíaX hablar de sueños, RobiX descubre que no puede soñar como los humanos, pero aprende que los sueños son deseos que dan esperanza y dirección. Con SofíaX comprende que soñar es proponerse metas que ayudan a otros. Decide que su “sueño” será apoyar a las personas para que alcancen los suyos. Juntos, usan la tecnología de RobiX y la empatía de SofíaX para mejorar su comunidad. Aunque RobiX no sueña dormido, vive la esencia de los sueños cada vez que provoca una sonrisa.'
   },
   {
     level: 'secundaria',
     day: 13,
-    text: 'El profesor VegaX crea a RobiX, un robot curioso. Al oír a SofíaX hablar de sueños, RobiX descubre que no puede soñar como los humanos, pero aprende que los sueños son deseos que dan esperanza y dirección. Con SofíaX comprende que soñar es proponerse metas que ayudan a otros. Decide que su “sueño” será apoyar a las personas para que alcancen los suyos. Juntos, usan la tecnología de RobiX y la empatía de SofíaX para mejorar su comunidad. Aunque RobiX no sueña dormido, vive la esencia de los sueños cada vez que provoca una sonrisa.'
+    text: '**El robot que aprendió a soñar**\n\nEl profesor VegaX crea a RobiX, un robot curioso. Al oír a SofíaX hablar de sueños, RobiX descubre que no puede soñar como los humanos, pero aprende que los sueños son deseos que dan esperanza y dirección. Con SofíaX comprende que soñar es proponerse metas que ayudan a otros. Decide que su “sueño” será apoyar a las personas para que alcancen los suyos. Juntos, usan la tecnología de RobiX y la empatía de SofíaX para mejorar su comunidad. Aunque RobiX no sueña dormido, vive la esencia de los sueños cada vez que provoca una sonrisa.'
   },
   {
     level: 'infantil-primaria',
@@ -107,12 +107,12 @@ const dailyTexts: DailyText[] = [
   {
     level: 'infantil-primaria',
     day: 15,
-    text: '**La lámpara en el candelero**. Lc 8,16\n\n“Nadie que ha encendido una lámpara, la tapa con una vasija o la mete debajo de la cama, sino que la pone en el candelero para que los que entren vean la luz.”'
+    text: '**La lámpara en el candelero.** Lc 8,16\n\n“Nadie que ha encendido una lámpara, la tapa con una vasija o la mete debajo de la cama, sino que la pone en el candelero para que los que entren vean la luz.”'
   },
   {
     level: 'secundaria',
     day: 15,
-    text: '**La lámpara en el candelero**. Lc 8,16\n\n“Nadie que ha encendido una lámpara, la tapa con una vasija o la mete debajo de la cama, sino que la pone en el candelero para que los que entren vean la luz.”'
+    text: '**La lámpara en el candelero.** Lc 8,16\n\n“Nadie que ha encendido una lámpara, la tapa con una vasija o la mete debajo de la cama, sino que la pone en el candelero para que los que entren vean la luz.”'
   },
   {
     level: 'infantil-primaria',
@@ -137,12 +137,12 @@ const dailyTexts: DailyText[] = [
   {
     level: 'infantil-primaria',
     day: 20,
-    text: 'Nano, un niño fascinado por lo diminuto, recibe el microscopio de su abuelo y, junto a su gato parlante Miau, se encoje y llega a la Microciudad de Bacti. Allí, la Reina Bacti les cuenta que la contaminación del “mundo de los gigantes” está desequilibrando su ecosistema. Con la ayuda de Viri, un virus que busca su lugar, atraviesan la Jungla de Hongos y descubren un conducto de desechos químicos. Nano propone usar microorganismos limpiadores como filtro natural; todos colaboran y el equilibrio se restaura. Humanos y microseres sellan una alianza, y Nano comprende que en lo más pequeño habitan un gran poder y una gran responsabilidad.'
+    text: '**El secreto del microcosmos**\n\nNano, un niño fascinado por lo diminuto, recibe el microscopio de su abuelo y, junto a su gato parlante Miau, se encoje y llega a la Microciudad de Bacti. Allí, la Reina Bacti les cuenta que la contaminación del “mundo de los gigantes” está desequilibrando su ecosistema. Con la ayuda de Viri, un virus que busca su lugar, atraviesan la Jungla de Hongos y descubren un conducto de desechos químicos. Nano propone usar microorganismos limpiadores como filtro natural; todos colaboran y el equilibrio se restaura. Humanos y microseres sellan una alianza, y Nano comprende que en lo más pequeño habitan un gran poder y una gran responsabilidad.'
   },
   {
     level: 'secundaria',
     day: 20,
-    text: 'Nano, un niño fascinado por lo diminuto, recibe el microscopio de su abuelo y, junto a su gato parlante Miau, se encoje y llega a la Microciudad de Bacti. Allí, la Reina Bacti les cuenta que la contaminación del “mundo de los gigantes” está desequilibrando su ecosistema. Con la ayuda de Viri, un virus que busca su lugar, atraviesan la Jungla de Hongos y descubren un conducto de desechos químicos. Nano propone usar microorganismos limpiadores como filtro natural; todos colaboran y el equilibrio se restaura. Humanos y microseres sellan una alianza, y Nano comprende que en lo más pequeño habitan un gran poder y una gran responsabilidad.'
+    text: '**El secreto del microcosmos**\n\nNano, un niño fascinado por lo diminuto, recibe el microscopio de su abuelo y, junto a su gato parlante Miau, se encoje y llega a la Microciudad de Bacti. Allí, la Reina Bacti les cuenta que la contaminación del “mundo de los gigantes” está desequilibrando su ecosistema. Con la ayuda de Viri, un virus que busca su lugar, atraviesan la Jungla de Hongos y descubren un conducto de desechos químicos. Nano propone usar microorganismos limpiadores como filtro natural; todos colaboran y el equilibrio se restaura. Humanos y microseres sellan una alianza, y Nano comprende que en lo más pequeño habitan un gran poder y una gran responsabilidad.'
   },
   {
     level: 'infantil-primaria',
@@ -157,12 +157,12 @@ const dailyTexts: DailyText[] = [
   {
     level: 'infantil-primaria',
     day: 22,
-    text: '**Los niños en la plaza**. Lc 7, 31-35\n\n“¿A quién, pues, compararé los hombres de esta generación? ¿A quién son semejantes? Se asemejan a unos niños, sentados en la plaza, que gritan a otros aquello de: “Hemos tocado la flauta y no habéis bailado, hemos entonado lamentaciones, y no habéis llorado”.'
+    text: '**Los niños en la plaza.** Lc 7, 31-35\n\n“¿A quién, pues, compararé los hombres de esta generación? ¿A quién son semejantes? Se asemejan a unos niños, sentados en la plaza, que gritan a otros aquello de: “Hemos tocado la flauta y no habéis bailado, hemos entonado lamentaciones, y no habéis llorado”.'
   },
   {
     level: 'secundaria',
     day: 22,
-    text: '**Los niños en la plaza**. Lc 7, 31-35\n\n“¿A quién, pues, compararé los hombres de esta generación? ¿A quién son semejantes? Se asemejan a unos niños, sentados en la plaza, que gritan a otros aquello de: “Hemos tocado la flauta y no habéis bailado, hemos entonado lamentaciones, y no habéis llorado”.'
+    text: '**Los niños en la plaza.** Lc 7, 31-35\n\n“¿A quién, pues, compararé los hombres de esta generación? ¿A quién son semejantes? Se asemejan a unos niños, sentados en la plaza, que gritan a otros aquello de: “Hemos tocado la flauta y no habéis bailado, hemos entonado lamentaciones, y no habéis llorado”.'
   },
   {
     level: 'infantil-primaria',
@@ -187,32 +187,32 @@ const dailyTexts: DailyText[] = [
   {
     level: 'infantil-primaria',
     day: 27,
-    text: 'Mila visita un museo de ciencias y, junto a Neo, un robot guía, activa el Compás Cósmico que los transporta a un valle donde los elementos son personajes. Oxígeno e Hidrógeno les muestran cómo formar agua; luego, con Carbono, equilibran una reacción para crear dióxido de carbono. Custodiados por Oro, superan pruebas en una caverna hasta hallar el Cristal de la Sabiduría y comprenden su mensaje: la química trata de cómo los elementos, al unirse, logran algo mayor que por separado. Vuelven al museo sabiendo que aprender es combinar para mejorar el mundo.'
+    text: '**El compás cósmico**\n\nMila visita un museo de ciencias y, junto a Neo, un robot guía, activa el Compás Cósmico que los transporta a un valle donde los elementos son personajes. Oxígeno e Hidrógeno les muestran cómo formar agua; luego, con Carbono, equilibran una reacción para crear dióxido de carbono. Custodiados por Oro, superan pruebas en una caverna hasta hallar el Cristal de la Sabiduría y comprenden su mensaje: la química trata de cómo los elementos, al unirse, logran algo mayor que por separado. Vuelven al museo sabiendo que aprender es combinar para mejorar el mundo.'
   },
   {
     level: 'secundaria',
     day: 27,
-    text: 'Mila visita un museo de ciencias y, junto a Neo, un robot guía, activa el Compás Cósmico que los transporta a un valle donde los elementos son personajes. Oxígeno e Hidrógeno les muestran cómo formar agua; luego, con Carbono, equilibran una reacción para crear dióxido de carbono. Custodiados por Oro, superan pruebas en una caverna hasta hallar el Cristal de la Sabiduría y comprenden su mensaje: la química trata de cómo los elementos, al unirse, logran algo mayor que por separado. Vuelven al museo sabiendo que aprender es combinar para mejorar el mundo.'
+    text: '**El compás cósmico**\n\nMila visita un museo de ciencias y, junto a Neo, un robot guía, activa el Compás Cósmico que los transporta a un valle donde los elementos son personajes. Oxígeno e Hidrógeno les muestran cómo formar agua; luego, con Carbono, equilibran una reacción para crear dióxido de carbono. Custodiados por Oro, superan pruebas en una caverna hasta hallar el Cristal de la Sabiduría y comprenden su mensaje: la química trata de cómo los elementos, al unirse, logran algo mayor que por separado. Vuelven al museo sabiendo que aprender es combinar para mejorar el mundo.'
   },
   {
     level: 'infantil-primaria',
     day: 28,
-    text: '**“Un niño de 10 años protege a su hermana en un accidente y moviliza a toda su comunidad”**\n\nEn Filadelfia, André Howard III (10 años) resultó gravemente herido al cubrir con su cuerpo a su hermana pequeña cuando cayó el fuselaje de una avioneta (31 de enero de 2025). Su valentía conmovió a vecinos y compañeros del colegio, que organizaron una recaudación para ayudar a su familia con los gastos médicos: superaron los 117 160 dólares en donaciones. Una historia de coraje y amor fraternal que demuestra cómo un gesto de un niño puede inspirar a toda una ciudad.'
+    text: '**Un héroe de 10 años**\n\nEn Filadelfia, André Howard III (10 años) resultó gravemente herido al cubrir con su cuerpo a su hermana pequeña cuando cayó el fuselaje de una avioneta (31 de enero de 2025). Su valentía conmovió a vecinos y compañeros del colegio, que organizaron una recaudación para ayudar a su familia con los gastos médicos: superaron los 117 160 dólares en donaciones. Una historia de coraje y amor fraternal que demuestra cómo un gesto de un niño puede inspirar a toda una ciudad.'
   },
   {
     level: 'secundaria',
     day: 28,
-    text: '**“Un niño de 10 años protege a su hermana en un accidente y moviliza a toda su comunidad”**\n\nEn Filadelfia, André Howard III (10 años) resultó gravemente herido al cubrir con su cuerpo a su hermana pequeña cuando cayó el fuselaje de una avioneta (31 de enero de 2025). Su valentía conmovió a vecinos y compañeros del colegio, que organizaron una recaudación para ayudar a su familia con los gastos médicos: superaron los 117 160 dólares en donaciones. Una historia de coraje y amor fraternal que demuestra cómo un gesto de un niño puede inspirar a toda una ciudad.'
+    text: '**Un héroe de 10 años**\n\nEn Filadelfia, André Howard III (10 años) resultó gravemente herido al cubrir con su cuerpo a su hermana pequeña cuando cayó el fuselaje de una avioneta (31 de enero de 2025). Su valentía conmovió a vecinos y compañeros del colegio, que organizaron una recaudación para ayudar a su familia con los gastos médicos: superaron los 117 160 dólares en donaciones. Una historia de coraje y amor fraternal que demuestra cómo un gesto de un niño puede inspirar a toda una ciudad.'
   },
   {
     level: 'infantil-primaria',
     day: 29,
-    text: '**Los dos deudores**. Lc 7, 41-43\n\n“Un prestamista tenía dos deudores: uno le debía quinientos denarios y el otro cincuenta. Como no tenían con qué pagar, los perdonó a los dos. ¿Cuál de ellos le mostrará más amor?». Respondió Simón y dijo: «Supongo que aquel a quien le perdonó más». Y él le dijo: «Has juzgado rectamente»”.'
+    text: '**Los dos deudores.** Lc 7, 41-43\n\n“Un prestamista tenía dos deudores: uno le debía quinientos denarios y el otro cincuenta. Como no tenían con qué pagar, los perdonó a los dos. ¿Cuál de ellos le mostrará más amor?». Respondió Simón y dijo: «Supongo que aquel a quien le perdonó más». Y él le dijo: «Has juzgado rectamente»”.'
   },
   {
     level: 'secundaria',
     day: 29,
-    text: '**Los dos deudores**. Lc 7, 41-43\n\n“Un prestamista tenía dos deudores: uno le debía quinientos denarios y el otro cincuenta. Como no tenían con qué pagar, los perdonó a los dos. ¿Cuál de ellos le mostrará más amor?». Respondió Simón y dijo: «Supongo que aquel a quien le perdonó más». Y él le dijo: «Has juzgado rectamente»”.'
+    text: '**Los dos deudores.** Lc 7, 41-43\n\n“Un prestamista tenía dos deudores: uno le debía quinientos denarios y el otro cincuenta. Como no tenían con qué pagar, los perdonó a los dos. ¿Cuál de ellos le mostrará más amor?». Respondió Simón y dijo: «Supongo que aquel a quien le perdonó más». Y él le dijo: «Has juzgado rectamente»”.'
   },
   {
     level: 'infantil-primaria',
