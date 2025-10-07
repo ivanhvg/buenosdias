@@ -41,7 +41,14 @@ const parseBold = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={index} className="not-italic">{part.slice(2, -2)}</strong>;
+      const content = part.slice(2, -2);
+      const titleParts = content.split(/ (.*)/s);
+      return (
+        <span key={index}>
+          <strong className="not-italic">{titleParts[0]}</strong>
+          {titleParts[1] && <span className="font-normal"> {titleParts[1]}</span>}
+        </span>
+      );
     }
     return part;
   });
@@ -176,9 +183,9 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="space-y-8">
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
-                <div className="text-lg leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
+                <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-0">
                   {text.split('\n\n').map((paragraph, index) => (
-                    <p key={index}>
+                     <p key={index} className={paragraph.startsWith('**') ? 'font-bold mb-2' : 'mb-4'}>
                       {parseBold(paragraph)}
                     </p>
                   ))}
@@ -198,7 +205,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                           <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
                             {index + 1}
                           </div>
-                          <p className="text-base leading-relaxed text-muted-foreground text-left">
+                          <p className="text-lg leading-relaxed text-muted-foreground text-left">
                             {question}
                           </p>
                         </li>
