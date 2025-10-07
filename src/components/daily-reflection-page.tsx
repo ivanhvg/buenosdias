@@ -217,7 +217,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               <CardContent className="pt-6">
                 <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
                   {text.split('\n\n').map((paragraph, index) => (
-                     <p key={index} className="mb-0">
+                     <p key={index} className="mb-4">
                       {parseText(paragraph)}
                     </p>
                   ))}
