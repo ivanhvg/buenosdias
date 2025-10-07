@@ -217,7 +217,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               <CardContent className="pt-6">
                 <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
                   {text.split('\n\n').map((paragraph, index) => (
-                     <p key={index} className="mb-4">
+                     <p key={index} className="mb-0">
                       {parseText(paragraph)}
                     </p>
                   ))}
@@ -228,7 +228,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             {showReflectionQuestions && (
               <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
                 <CardHeader className="text-center">
-                  <CardTitle className="font-headline text-3xl text-title">Pistas para la reflexión</CardTitle>
+                  <CardTitle className="font-headline text-4xl text-title">Pistas para la reflexión</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <ul className="space-y-6">
