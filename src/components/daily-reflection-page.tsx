@@ -164,7 +164,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               ¡Buenos días!
             </h1>
           </div>
-          <p className="text-lg font-medium text-title/80 pt-4">Un momento de la mañana para la reflexión y la oración grupal</p>
+          <p className="text-xl font-medium text-title/80 pt-4">Un momento de la mañana para la reflexión y la oración grupal</p>
           <div className="flex justify-center items-center gap-6 pt-6 text-muted-foreground">
             <Sprout className="h-8 w-8" aria-label="Crecimiento" />
             <Users className="h-8 w-8" aria-label="Comunidad" />
