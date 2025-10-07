@@ -52,7 +52,7 @@ const parseText = (text: string) => {
 
       result.push(
         <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${i}`}>
-          <Button variant="link" className="p-0 h-auto text-lg text-primary hover:text-accent">
+          <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
             <Youtube className="mr-2 h-5 w-5"/>
             Ver vídeo en YouTube
           </Button>
@@ -82,7 +82,7 @@ const parseText = (text: string) => {
     }
   }
 
-  return result.map((el, index) => <>{el}</>);
+  return result.map((el, index) => <React.Fragment key={index}>{el}</React.Fragment>);
 };
 
 
