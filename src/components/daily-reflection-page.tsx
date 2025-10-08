@@ -185,12 +185,12 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
 
         <div className="w-full max-w-xs mx-auto">
           <Select onValueChange={handleLevelChange} disabled={isLoading}>
-            <SelectTrigger className="bg-card border-border shadow-sm">
+            <SelectTrigger className="bg-card border-border shadow-sm text-base">
               <SelectValue placeholder="Selecciona tu etapa educativa" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="infantil-primaria">Educación Infantil y Primaria</SelectItem>
-              <SelectItem value="secundaria">Educación Secundaria</SelectItem>
+              <SelectItem value="infantil-primaria" className="text-base">Educación Infantil y Primaria</SelectItem>
+              <SelectItem value="secundaria" className="text-base">Educación Secundaria</SelectItem>
             </SelectContent>
           </Select>
         </div>
