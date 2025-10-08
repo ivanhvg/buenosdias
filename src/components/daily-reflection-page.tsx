@@ -40,51 +40,38 @@ const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, 
 
 const parseText = (text: string) => {
   const urlRegex = /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*/g;
-  
-  const parts = text.split(urlRegex);
-  const result = [];
-  
-  for (let i = 0; i < parts.length; i++) {
-    if (i % 2 === 1) {
-      // Es una URL, el ID de video es la parte impar
-      const videoId = parts[i];
-      const fullUrl = text.match(urlRegex)?.[(i-1)/2];
 
-      result.push(
-        <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${i}`}>
-          <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
-            <Youtube className="mr-2 h-5 w-5"/>
-            Ver vídeo en YouTube
-          </Button>
-        </a>
-      );
-    } else {
-      // Texto normal
-      const normalText = parts[i];
-      const boldParts = normalText.split(/(\*\*.*?\*\*)/g);
-      boldParts.forEach((part, j) => {
-        if (part.startsWith('**') && part.endsWith('**')) {
-          const content = part.slice(2, -2);
-          const titleParts = content.split(/ (.*)/s);
+  const parts = text.split(/(\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g);
+  const result: (JSX.Element | string)[] = [];
+
+  parts.forEach((part, index) => {
+    if (!part) return;
+
+    if (part.startsWith('**') && part.endsWith('**')) {
+      result.push(<strong key={`bold-${index}`}>{part.slice(2, -2)}</strong>);
+    } else if (urlRegex.test(part)) {
+       // Reset regex state
+      urlRegex.lastIndex = 0;
+      const fullUrl = part.match(urlRegex)?.[0];
+      if (fullUrl) {
           result.push(
-            <span key={`bold-${i}-${j}`} className="mb-0">
-              <strong className="not-italic">{titleParts[0]}</strong>
-              {titleParts[1] && <span className="font-normal"> {titleParts[1]}</span>}
-            </span>
+              <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${index}`}>
+                  <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
+                      <Youtube className="mr-2 h-5 w-5"/>
+                      Ver vídeo en YouTube
+                  </Button>
+              </a>
           );
-        } else {
-           // Si el texto es "Vídeo: " o similar, lo ignoramos para que no se duplique
-           if (!/Vídeo:\s*$/i.test(part) && !/\[https?:\/\/[^\]]+\]/i.test(part)) {
-             result.push(<span key={`text-${i}-${j}`}>{part.replace(/\[|\]/g, '')}</span>);
-           }
-        }
-      });
+      }
+    } else {
+       if (!/Vídeo:\s*$/i.test(part) && !/\[https?:\/\/[^\]]+\]/i.test(part)) {
+        result.push(<span key={`text-${index}`}>{part.replace(/\[|\]/g, '')}</span>);
+      }
     }
-  }
+  });
 
   return result.map((el, index) => <React.Fragment key={index}>{el}</React.Fragment>);
 };
-
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
