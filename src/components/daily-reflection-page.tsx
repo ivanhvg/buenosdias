@@ -161,7 +161,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               style={{ height: 'auto' }}
               priority
             />
-            <h1 className="text-5xl sm:text-6xl font-headline text-title -mt-2">
+            <h1 className="text-5xl sm:text-6xl font-headline text-title">
               ¡Buenos días!
             </h1>
           </div>
