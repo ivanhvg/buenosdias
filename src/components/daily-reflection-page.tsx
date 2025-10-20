@@ -40,56 +40,45 @@ const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, 
 
 const parseText = (text: string) => {
   const urlRegex = /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*/g;
-  
-  // Divide el texto por saltos de línea para procesar cada uno
-  const lines = text.split('\n');
+  const lines = text.split('\n').filter(line => line.trim() !== '');
 
   return lines.map((line, lineIndex) => {
-    // Busca si la línea contiene solo un título en negrita.
+    // Procesa títulos en negrita
     const boldRegex = /^\*\*(.*?)\*\*$/;
-    const match = line.match(boldRegex);
-
-    if (match) {
-      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{match[1]}</strong>;
+    if (boldRegex.test(line)) {
+      return <strong key={`bold-${lineIndex}`} className="block font-bold">{line.replace(/\*\*/g, '')}</strong>;
     }
 
     // Procesa para encontrar URLs de YouTube en otras líneas
-    const parts = line.split(urlRegex);
-    const result: (JSX.Element | string)[] = [];
-
-    let currentText = '';
-    for (let i = 0; i < parts.length; i++) {
-      if (i % 2 === 0) {
-        currentText += parts[i];
-      } else {
-        if (currentText) {
-          result.push(currentText);
-          currentText = '';
-        }
-        const videoId = parts[i];
-        const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        result.push(
-          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${lineIndex}-${i}`}>
-            <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
-              <Youtube className="mr-2 h-5 w-5" />
-              Ver vídeo en YouTube
-            </Button>
-          </a>
-        );
+    const parts: (string | JSX.Element)[] = [];
+    let lastIndex = 0;
+    line.replace(urlRegex, (match, videoId, offset) => {
+      // Añade el texto antes del enlace
+      if (offset > lastIndex) {
+        parts.push(line.substring(lastIndex, offset));
       }
-    }
-    if (currentText) {
-      result.push(currentText);
-    }
-    
-    // Evita renderizar párrafos vacíos
-    if (result.length === 0 || (result.length === 1 && typeof result[0] === 'string' && result[0].trim() === '')) {
-      return null;
+      // Añade el enlace de YouTube
+      const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      parts.push(
+        <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${lineIndex}-${lastIndex}`}>
+          <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
+            <Youtube className="mr-2 h-5 w-5" />
+            Ver vídeo en YouTube
+          </Button>
+        </a>
+      );
+      lastIndex = offset + match.length;
+      return match;
+    });
+
+    // Añade el texto restante de la línea
+    if (lastIndex < line.length) {
+      parts.push(line.substring(lastIndex));
     }
 
     return (
       <p key={`line-${lineIndex}`} className="mb-4">
-        {result.map((part, partIndex) => (
+        {parts.map((part, partIndex) => (
           <React.Fragment key={partIndex}>{part}</React.Fragment>
         ))}
       </p>
