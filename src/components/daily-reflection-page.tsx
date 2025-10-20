@@ -40,38 +40,63 @@ const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, 
 
 const parseText = (text: string) => {
   const urlRegex = /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*/g;
+  
+  // Divide el texto por saltos de línea para procesar cada uno
+  const lines = text.split('\n');
 
-  const parts = text.split(/(\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g);
-  const result: (JSX.Element | string)[] = [];
+  return lines.map((line, lineIndex) => {
+    // Busca si la línea contiene solo un título en negrita.
+    const boldRegex = /^\*\*(.*?)\*\*$/;
+    const match = line.match(boldRegex);
 
-  parts.forEach((part, index) => {
-    if (!part) return;
+    if (match) {
+      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{match[1]}</strong>;
+    }
 
-    if (part.startsWith('**') && part.endsWith('**')) {
-      result.push(<strong key={`bold-${index}`}>{part.slice(2, -2)}</strong>);
-    } else if (urlRegex.test(part)) {
-       // Reset regex state
-      urlRegex.lastIndex = 0;
-      const fullUrl = part.match(urlRegex)?.[0];
-      if (fullUrl) {
-          result.push(
-              <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${index}`}>
-                  <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
-                      <Youtube className="mr-2 h-5 w-5"/>
-                      Ver vídeo en YouTube
-                  </Button>
-              </a>
-          );
-      }
-    } else {
-       if (!/Vídeo:\s*$/i.test(part) && !/\[https?:\/\/[^\]]+\]/i.test(part)) {
-        result.push(<span key={`text-${index}`}>{part.replace(/\[|\]/g, '')}</span>);
+    // Procesa para encontrar URLs de YouTube en otras líneas
+    const parts = line.split(urlRegex);
+    const result: (JSX.Element | string)[] = [];
+
+    let currentText = '';
+    for (let i = 0; i < parts.length; i++) {
+      if (i % 2 === 0) {
+        currentText += parts[i];
+      } else {
+        if (currentText) {
+          result.push(currentText);
+          currentText = '';
+        }
+        const videoId = parts[i];
+        const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        result.push(
+          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${lineIndex}-${i}`}>
+            <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
+              <Youtube className="mr-2 h-5 w-5" />
+              Ver vídeo en YouTube
+            </Button>
+          </a>
+        );
       }
     }
-  });
+    if (currentText) {
+      result.push(currentText);
+    }
+    
+    // Evita renderizar párrafos vacíos
+    if (result.length === 0 || (result.length === 1 && typeof result[0] === 'string' && result[0].trim() === '')) {
+      return null;
+    }
 
-  return result.map((el, index) => <React.Fragment key={index}>{el}</React.Fragment>);
+    return (
+      <p key={`line-${lineIndex}`} className="mb-4">
+        {result.map((part, partIndex) => (
+          <React.Fragment key={partIndex}>{part}</React.Fragment>
+        ))}
+      </p>
+    );
+  });
 };
+
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
@@ -140,7 +165,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
         <header className="text-center pb-3">
           <div className="flex flex-col items-center">
             <Image
-              src="https://www.buenconsejolalaguna.com/wp-content/uploads/2022/03/logoBCLL.png"
+              src="/logo.webp"
               alt="Logo del centro educativo"
               width={150}
               height={41}
@@ -203,11 +228,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
                 <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
-                  {text.split('\n\n').map((paragraph, index) => (
-                     <p key={index} className="mb-4">
-                      {parseText(paragraph)}
-                    </p>
-                  ))}
+                  {parseText(text)}
                 </div>
               </CardContent>
             </Card>
@@ -224,7 +245,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                           <div className="flex-shrink-0 w-10 h-10 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-md">
                             {index + 1}
                           </div>
-                          <p className="text-lg leading-relaxed text-muted-foreground text-left">
+                          <p className="text-xl leading-relaxed text-muted-foreground text-left">
                             {question}
                           </p>
                         </li>
