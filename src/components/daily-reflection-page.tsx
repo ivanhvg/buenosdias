@@ -46,7 +46,7 @@ const parseText = (text: string) => {
     // Procesa títulos en negrita
     const boldRegex = /^\*\*(.*?)\*\*$/;
     if (boldRegex.test(line)) {
-      return <strong key={`bold-${lineIndex}`} className="block font-bold">{line.replace(/\*\*/g, '')}</strong>;
+      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{line.replace(/\*\*/g, '')}</strong>;
     }
 
     // Procesa para encontrar URLs de YouTube en otras líneas
