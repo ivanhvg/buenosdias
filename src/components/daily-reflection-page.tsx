@@ -154,7 +154,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
         <header className="text-center pb-3">
           <div className="flex flex-col items-center">
             <Image
-              src="/logo.webp"
+              src="https://i.imgur.com/WgK3nj4.png"
               alt="Logo del centro educativo"
               width={150}
               height={41}

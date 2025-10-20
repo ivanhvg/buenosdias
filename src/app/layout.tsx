@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <meta property="og:title" content="Buenos días · BCLL" />
         <meta property="og:description" content="Nuestro espacio diario para la reflexión y la oración grupal." />
-        <meta property="og:image" content="/logo.webp" />
+        <meta property="og:image" content="https://i.imgur.com/WgK3nj4.png" />
         <meta property="og:url" content="https://buenos-dias-bcll.web.app" />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
