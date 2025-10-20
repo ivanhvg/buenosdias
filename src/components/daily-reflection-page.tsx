@@ -160,6 +160,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               height={41}
               style={{ height: 'auto' }}
               priority
+              className="mb-4"
             />
             <h1 className="text-5xl sm:text-6xl font-headline text-title">
               ¡Buenos días!
