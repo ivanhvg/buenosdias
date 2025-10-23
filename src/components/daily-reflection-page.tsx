@@ -45,9 +45,9 @@ const parseText = (text: string) => {
   return lines.map((line, lineIndex) => {
     // Procesa títulos en negrita
     const boldRegex = /\*\*(.*?)\*\*/;
-    const boldMatch = line.match(boldRegex);
-    if (boldMatch) {
-      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{boldMatch[1]}</strong>;
+    if (lineIndex === 0 && boldRegex.test(line)) {
+      const title = line.replace(boldRegex, '$1');
+      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{title}</strong>;
     }
 
     // Procesa para encontrar URLs de YouTube en otras líneas
@@ -153,7 +153,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     <div className="flex flex-col items-center justify-center min-h-svh bg-background p-4 sm:p-6 md:p-8">
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
         <header className="text-center pb-3">
-          <div className="flex flex-col items-center mb-2">
+          <div className="flex flex-col items-center">
             <Image
               src="https://i.imgur.com/WgK3nj4.png"
               alt="Logo del centro educativo"
@@ -161,6 +161,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               height={41}
               style={{ height: 'auto' }}
               priority
+              className="mb-4"
             />
             <h1 className="text-6xl font-headline text-title">
               ¡Buenos días!
