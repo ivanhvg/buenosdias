@@ -269,7 +269,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
 
         <footer className="text-center text-sm text-muted-foreground py-4">
             <p className="text-base text-muted-foreground/90">Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
-            <div className="flex justify-center items-center gap-x-4 mt-4">
+            <div className="flex justify-center items-center gap-x-2 mt-4">
               <Link href="/aviso-legal" className="hover:text-primary transition-colors">
                 Aviso legal
               </Link>

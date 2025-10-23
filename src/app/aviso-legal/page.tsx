@@ -75,7 +75,20 @@ export default function AvisoLegalPage() {
         </Card>
       </main>
       <footer className="text-center text-sm text-muted-foreground py-4 mt-8">
-        <p>Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
+        <p className="text-base text-muted-foreground/90">Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
+        <div className="flex justify-center items-center gap-x-2 mt-4">
+          <Link href="/aviso-legal" className="hover:text-primary transition-colors">
+            Aviso legal
+          </Link>
+          <span className="text-muted-foreground/50">·</span>
+          <Link href="/privacidad" className="hover:text-primary transition-colors">
+            Privacidad
+          </Link>
+          <span className="text-muted-foreground/50">·</span>
+          <Link href="/politica-de-cookies" className="hover:text-primary transition-colors">
+            Política de cookies
+          </Link>
+        </div>
       </footer>
     </div>
   );
