@@ -69,7 +69,7 @@ export default function AvisoLegalPage() {
             </p>
             <p>
               <strong>Fecha de última actualización</strong><br/>
-              [23 mayo 2025]
+              [23 octubre 2025]
             </p>
           </CardContent>
         </Card>
