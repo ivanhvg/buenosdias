@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { BookOpen, Sprout, Users, Youtube } from 'lucide-react';
 import {
@@ -39,19 +40,15 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 
 const parseText = (text: string) => {
-  const urlRegex = /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*/g;
   const lines = text.split('\n').filter(line => line.trim() !== '');
 
   return lines.map((line, lineIndex) => {
-    // Procesa títulos en negrita
-    const boldRegex = /\*\*(.*?)\*\*/g;
-    const parts: (string | JSX.Element)[] = [];
-    let lastIndex = 0;
-    
     // Procesa para encontrar negritas y URLs en la misma línea
     const combinedRegex = /(\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
+    const parts: (string | JSX.Element)[] = [];
+    let lastIndex = 0;
 
-    line.replace(combinedRegex, (match, group1, videoId, offset) => {
+    line.replace(combinedRegex, (match, _group1, videoId, offset) => {
       // Añade el texto antes del match
       if (offset > lastIndex) {
         parts.push(line.substring(lastIndex, offset));
@@ -73,6 +70,8 @@ const parseText = (text: string) => {
             </Button>
           </a>
         );
+      } else {
+        parts.push(match);
       }
       
       lastIndex = offset + match.length;
@@ -255,8 +254,21 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           </div>
         )}
 
-        <footer className="text-center text-sm text-muted-foreground py-4">
+        <footer className="text-center text-sm text-muted-foreground py-4 space-y-2">
             <p>Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
+            <div className="flex justify-center items-center gap-x-4">
+              <Link href="/aviso-legal" className="hover:text-primary transition-colors">
+                Aviso legal
+              </Link>
+              <span className="text-muted-foreground/50">|</span>
+              <Link href="/privacidad" className="hover:text-primary transition-colors">
+                Privacidad
+              </Link>
+              <span className="text-muted-foreground/50">|</span>
+              <Link href="/politica-de-cookies" className="hover:text-primary transition-colors">
+                Política de cookies
+              </Link>
+            </div>
         </footer>
 
       </main>

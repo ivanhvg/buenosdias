@@ -1,0 +1,40 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+export default function PoliticaCookiesPage() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-svh bg-background p-4 sm:p-6 md:p-8">
+      <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
+        <div className="absolute top-4 left-4">
+          <Button asChild variant="ghost">
+            <Link href="/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Volver
+            </Link>
+          </Button>
+        </div>
+        <header className="text-center pt-16">
+          <h1 className="text-5xl font-headline text-title">Política de Cookies</h1>
+        </header>
+        <Card className="shadow-lg rounded-xl">
+          <CardContent className="pt-6 text-lg leading-relaxed text-card-foreground/90 space-y-4">
+            <p>
+              Este Sitio Web, buenos-dias-bcll.web.app, no utiliza cookies propias ni de terceros para recoger información de los usuarios.
+            </p>
+            <p>
+              No se emplean cookies para el seguimiento de la navegación, fines publicitarios o análisis de comportamiento. La funcionalidad del sitio se limita a la presentación de contenidos sin necesidad de almacenar información en el navegador del usuario a través de cookies.
+            </p>
+            <p>
+              Por tanto, no es necesario mostrar un banner de aceptación de cookies.
+            </p>
+          </CardContent>
+        </Card>
+      </main>
+      <footer className="text-center text-sm text-muted-foreground py-4 mt-8">
+        <p>Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
+      </footer>
+    </div>
+  );
+}
