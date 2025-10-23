@@ -18,15 +18,17 @@ export default function AvisoLegalPage() {
         </div>
         <header className="text-center pt-16">
           <div className="flex flex-col items-center">
-             <Image
-              src="https://i.imgur.com/WgK3nj4.png"
-              alt="Logo del centro educativo"
-              width={150}
-              height={41}
-              style={{ height: 'auto' }}
-              priority
-              className="mb-6"
-            />
+            <Link href="/">
+              <Image
+                src="https://i.imgur.com/WgK3nj4.png"
+                alt="Logo del centro educativo"
+                width={150}
+                height={41}
+                style={{ height: 'auto' }}
+                priority
+                className="mb-6"
+              />
+            </Link>
             <h1 className="text-5xl font-headline text-title">Aviso Legal</h1>
           </div>
         </header>
