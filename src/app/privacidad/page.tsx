@@ -33,19 +33,87 @@ export default function PrivacidadPage() {
         <Card className="shadow-lg rounded-xl">
           <CardContent className="pt-6 text-lg leading-relaxed text-card-foreground/90 space-y-4">
             <p>
-              El Colegio Buen Consejo La Laguna se compromete a proteger la privacidad de los usuarios que accedan a este Sitio Web.
+              <strong>Responsable del tratamiento</strong><br/>
+              COLEGIO NUESTRA SEÑORA DEL BUEN CONSEJO LA LAGUNA (CIF R3800058D)<br/>
+              Dirección: Avenida San Diego, 26. 38208 La Laguna (Santa Cruz de Tenerife)<br/>
+              Correo-e: admin@buenconsejolalaguna.com<br/>
+              Tel.: 922 259 636
             </p>
             <p>
-              <strong>Recogida de datos:</strong> Este Sitio Web no recoge datos de carácter personal de los usuarios sin su conocimiento, ni se ceden a terceros. La única interacción se produce mediante la selección de la etapa educativa para visualizar los contenidos, una acción que es anónima.
+              <strong>Descripción del sitio y finalidad</strong><br/>
+              El sitio web es meramente informativo y muestra textos y reflexiones por etapas educativas para su uso por el profesorado con el alumnado. No se recaban datos personales a través del sitio ni se utilizan formularios, analítica web, perfiles o publicidad.
             </p>
             <p>
-              <strong>Uso de la información:</strong> La información sobre la etapa seleccionada se utiliza únicamente para mostrar el contenido correspondiente y no se almacena ni se asocia a ningún usuario.
+              <strong>Base jurídica</strong><br/>
+              No se realiza tratamiento de datos personales a través del sitio. Si el usuario contacta por medios externos (teléfono o correo), la base jurídica será la atención de solicitudes relacionadas con la actividad educativa del Centro y, en su caso, el cumplimiento de obligaciones legales.
+            </p>
+            <p>
+              <strong>Categorías de datos y procedencia</strong><br/>
+              El sitio no solicita ni trata datos personales. Únicamente podrían tratarse datos técnicos de conexión necesarios para servir el contenido (p. ej., dirección IP, cabeceras de petición), generalmente gestionados por proveedores de infraestructura.
+            </p>
+            <div>
+              <strong>Proveedores y destinatarios</strong>
+              <ul className="list-disc list-inside mt-2 space-y-1">
+                <li>Alojamiento y entrega de contenidos: Netlify, Inc. (hosting/CDN).</li>
+                <li>Servicios de Google/Firebase: el sitio ha sido creado con herramientas de Firebase/Google. En la configuración actual, no se emplean servicios de recogida de datos (p. ej., Firestore, Auth, Analytics) en el frontend del usuario final; no obstante, la infraestructura de Google puede intervenir en la entrega de recursos, pudiendo tratar datos técnicos de conexión.</li>
+                <li>Recursos externos:
+                  <ul className="list-disc list-inside ml-6 mt-1">
+                    <li>Google Fonts (tipografías).</li>
+                    <li>Imgur (alojamiento del logotipo).</li>
+                    <li>Sitios de terceros enlazados (p. ej., YouTube u otras páginas), cuando el usuario accede a dichos enlaces.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p className="mt-2">Estos proveedores pueden recibir datos técnicos de conexión para prestar sus servicios. No se utilizan con fines de analítica propia en este sitio.</p>
+            </div>
+            <div>
+              <strong>Transferencias internacionales</strong>
+              <p className="mt-2">El uso de Netlify, Google/Firebase, Google Fonts, Imgur y YouTube puede implicar transferencias internacionales de datos técnicos. Dichos proveedores declaran aplicar garantías adecuadas (p. ej., cláusulas contractuales tipo). Para más información, consulte sus políticas:</p>
+              <ul className="list-disc list-inside mt-2 space-y-1">
+                <li>Netlify: <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.netlify.com/privacy/</a></li>
+                <li>Google/Firebase y Google Fonts: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://policies.google.com/privacy</a></li>
+                <li>Imgur: <a href="https://imgur.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://imgur.com/privacy</a></li>
+                <li>YouTube/Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://policies.google.com/privacy</a></li>
+              </ul>
+            </div>
+            <p>
+              <strong>Plazos de conservación</strong><br/>
+              El Centro no conserva datos personales a través del sitio web. Los registros técnicos que puedan mantener los proveedores se regirán por sus respectivas políticas.
+            </p>
+            <p>
+              <strong>Derechos de los interesados</strong><br/>
+              Las personas usuarias pueden ejercer derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad mediante comunicación a admin@buenconsejolalaguna.com, acreditando su identidad. Asimismo, pueden reclamar ante la AEPD (www.aepd.es).
+            </p>
+            <p>
+              <strong>Menores de edad</strong><br/>
+              El sitio está orientado a que el profesorado utilice los contenidos con su alumnado. No se solicitan ni tratan datos de menores a través del sitio.
+            </p>
+            <p>
+              <strong>Actualizaciones de la política</strong><br/>
+              Esta Política podrá actualizarse ante cambios legales o técnicos. Se indicará la fecha de la última actualización.
+            </p>
+             <p>
+              <strong>Fecha de última actualización</strong><br/>
+              [23 octubre 2025]
             </p>
           </CardContent>
         </Card>
       </main>
       <footer className="text-center text-sm text-muted-foreground py-4 mt-8">
-        <p>Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
+        <p className="text-base text-muted-foreground/90">Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
+        <div className="flex justify-center items-center gap-x-4 mt-4">
+          <Link href="/aviso-legal" className="hover:text-primary transition-colors">
+            Aviso legal
+          </Link>
+          <span className="text-muted-foreground/50">·</span>
+          <Link href="/privacidad" className="hover:text-primary transition-colors">
+            Privacidad
+          </Link>
+          <span className="text-muted-foreground/50">·</span>
+          <Link href="/politica-de-cookies" className="hover:text-primary transition-colors">
+            Política de cookies
+          </Link>
+        </div>
       </footer>
     </div>
   );
