@@ -33,16 +33,43 @@ export default function AvisoLegalPage() {
         <Card className="shadow-lg rounded-xl">
           <CardContent className="pt-6 text-lg leading-relaxed text-card-foreground/90 space-y-4">
             <p>
-              El presente Aviso Legal regula el acceso y uso del sitio web buenos-dias-bcll.web.app (en adelante, el "Sitio Web"), titularidad del Colegio Buen Consejo La Laguna.
+              <strong>Titular del sitio</strong><br/>
+              Este sitio web es titularidad de COLEGIO NUESTRA SEÑORA DEL BUEN CONSEJO LA LAGUNA (en adelante, “el Centro”), con CIF R3800058D, inscrito en el Registro de Centros Educativos con el número 38002648.<br/>
+              Dirección: Avenida San Diego, 26. 38208 La Laguna (Santa Cruz de Tenerife)<br/>
+              Correo electrónico: admin@buenconsejolalaguna.com<br/>
+              Teléfono: 922 259 636
             </p>
             <p>
-              El uso del Sitio Web atribuye la condición de usuario e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.
+              <strong>Objeto del sitio</strong><br/>
+              El sitio ofrece textos breves y reflexiones para su lectura por el profesorado con su alumnado, organizados por etapas educativas. No se recaban datos personales a través del sitio. Algunos textos pueden incluir enlaces a vídeos (p. ej., YouTube) u otros recursos de terceros.
             </p>
             <p>
-              <strong>Contenido del Sitio Web:</strong> El contenido de este Sitio Web, incluyendo los textos de reflexión y las preguntas, tiene un carácter meramente informativo y pastoral, destinado a la comunidad educativa del Colegio Buen Consejo La Laguna.
+              <strong>Condiciones de uso</strong><br/>
+              El acceso y uso del sitio implica la aceptación de las presentes condiciones. El usuario se compromete a realizar un uso adecuado y lícito de los contenidos y a no emplearlos con fines contrarios a la ley, la moral o el orden público.
             </p>
             <p>
-              <strong>Propiedad Intelectual:</strong> Los contenidos de este Sitio Web, salvo que se indique lo contrario, son propiedad del Colegio o de sus legítimos titulares y están protegidos por la normativa de propiedad intelectual.
+              <strong>Propiedad intelectual e industrial</strong><br/>
+              Los contenidos, diseño, logotipos, textos y demás elementos del sitio son propiedad del Centro o de sus legítimos titulares y están protegidos por la normativa aplicable. Queda prohibida su reproducción, distribución o comunicación pública salvo autorización expresa o amparo legal.
+            </p>
+            <p>
+              <strong>Enlaces y contenidos de terceros</strong><br/>
+              El sitio puede incluir enlaces a webs y servicios de terceros (por ejemplo, YouTube u otros sitios). El Centro no asume responsabilidad por los contenidos, políticas o prácticas de dichos sitios enlazados. La activación de estos enlaces puede implicar que el tercero aplique sus propias cookies y tratamientos de datos conforme a sus políticas.
+            </p>
+            <p>
+              <strong>Responsabilidad</strong><br/>
+              El Centro no garantiza la disponibilidad continua del sitio ni la inexistencia de errores, si bien adoptará medidas razonables para prevenirlos y corregirlos. El uso de la información del sitio se realiza por cuenta y riesgo del usuario.
+            </p>
+            <p>
+              <strong>Protección de datos</strong><br/>
+              No se recaban datos personales a través de este sitio. Consulte la Política de privacidad para más información.
+            </p>
+            <p>
+              <strong>Ley aplicable y jurisdicción</strong><br/>
+              Estas condiciones se rigen por la legislación española. Salvo normativa imperativa aplicable, las partes se someten a los juzgados y tribunales de Santa Cruz de Tenerife.
+            </p>
+            <p>
+              <strong>Fecha de última actualización</strong><br/>
+              [23 mayo 2025]
             </p>
           </CardContent>
         </Card>
