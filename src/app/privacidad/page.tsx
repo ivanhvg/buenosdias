@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -16,7 +17,18 @@ export default function PrivacidadPage() {
           </Button>
         </div>
         <header className="text-center pt-16">
-          <h1 className="text-5xl font-headline text-title">Política de Privacidad</h1>
+          <div className="flex flex-col items-center">
+             <Image
+              src="https://i.imgur.com/WgK3nj4.png"
+              alt="Logo del centro educativo"
+              width={150}
+              height={41}
+              style={{ height: 'auto' }}
+              priority
+              className="mb-6"
+            />
+            <h1 className="text-5xl font-headline text-title">Política de Privacidad</h1>
+          </div>
         </header>
         <Card className="shadow-lg rounded-xl">
           <CardContent className="pt-6 text-lg leading-relaxed text-card-foreground/90 space-y-4">
