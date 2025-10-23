@@ -260,11 +260,11 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               <Link href="/aviso-legal" className="hover:text-primary transition-colors">
                 Aviso legal
               </Link>
-              <span className="text-muted-foreground/50">|</span>
+              <span className="text-muted-foreground/50">·</span>
               <Link href="/privacidad" className="hover:text-primary transition-colors">
                 Privacidad
               </Link>
-              <span className="text-muted-foreground/50">|</span>
+              <span className="text-muted-foreground/50">·</span>
               <Link href="/politica-de-cookies" className="hover:text-primary transition-colors">
                 Política de cookies
               </Link>
