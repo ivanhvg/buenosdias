@@ -44,30 +44,37 @@ const parseText = (text: string) => {
 
   return lines.map((line, lineIndex) => {
     // Procesa títulos en negrita
-    const boldRegex = /\*\*(.*?)\*\*/;
-    if (lineIndex === 0 && boldRegex.test(line)) {
-      const title = line.replace(boldRegex, '$1');
-      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{title}</strong>;
-    }
-
-    // Procesa para encontrar URLs de YouTube en otras líneas
+    const boldRegex = /\*\*(.*?)\*\*/g;
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
-    line.replace(urlRegex, (match, videoId, offset) => {
-      // Añade el texto antes del enlace
+    
+    // Procesa para encontrar negritas y URLs en la misma línea
+    const combinedRegex = /(\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
+
+    line.replace(combinedRegex, (match, group1, videoId, offset) => {
+      // Añade el texto antes del match
       if (offset > lastIndex) {
         parts.push(line.substring(lastIndex, offset));
       }
-      // Añade el enlace de YouTube
-      const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
-      parts.push(
-        <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${lineIndex}-${lastIndex}`}>
-          <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
-            <Youtube className="mr-2 h-5 w-5" />
-            Ver vídeo en YouTube
-          </Button>
-        </a>
-      );
+
+      // Procesa si es negrita
+      if (match.startsWith('**') && match.endsWith('**')) {
+        const title = match.substring(2, match.length - 2);
+        parts.push(<strong key={`bold-${lineIndex}-${lastIndex}`} className="font-bold">{title}</strong>);
+      }
+      // Procesa si es URL de YouTube
+      else if (videoId) {
+        const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        parts.push(
+          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${lineIndex}-${lastIndex}`}>
+            <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
+              <Youtube className="mr-2 h-5 w-5" />
+              Ver vídeo en YouTube
+            </Button>
+          </a>
+        );
+      }
+      
       lastIndex = offset + match.length;
       return match;
     });
@@ -161,7 +168,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               height={41}
               style={{ height: 'auto' }}
               priority
-              className="mb-4"
+              className="mb-6"
             />
             <h1 className="text-6xl font-headline text-title">
               ¡Buenos días!
