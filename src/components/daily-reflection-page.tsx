@@ -48,16 +48,29 @@ const parseText = (text: string) => {
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
 
+    // Procesa títulos en la primera línea
+    if (lineIndex === 0) {
+      const match = line.match(/^(\*\*.*?\*\*)/);
+      if (match) {
+        const title = match[1].substring(2, match[1].length - 2);
+        parts.push(<strong key={`title-${lineIndex}`} className="font-bold">{title}</strong>);
+        line = line.substring(match[1].length);
+      }
+    }
+    
     line.replace(combinedRegex, (match, _group1, videoId, offset) => {
       // Añade el texto antes del match
       if (offset > lastIndex) {
         parts.push(line.substring(lastIndex, offset));
       }
 
-      // Procesa si es negrita
+      // Procesa si es negrita (y no es un título ya procesado)
       if (match.startsWith('**') && match.endsWith('**')) {
-        const title = match.substring(2, match.length - 2);
-        parts.push(<strong key={`bold-${lineIndex}-${lastIndex}`} className="font-bold">{title}</strong>);
+        const boldText = match.substring(2, match.length - 2);
+        // Evita duplicar el título si la regex lo captura de nuevo
+        if (lineIndex > 0 || !parts.some(p => typeof p !== 'string' && p.key === `title-${lineIndex}`)) {
+          parts.push(<strong key={`bold-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
+        }
       }
       // Procesa si es URL de YouTube
       else if (videoId) {
@@ -71,7 +84,7 @@ const parseText = (text: string) => {
           </a>
         );
       } else {
-        parts.push(match);
+         parts.push(match);
       }
       
       lastIndex = offset + match.length;
@@ -254,9 +267,9 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           </div>
         )}
 
-        <footer className="text-center text-sm text-muted-foreground py-4 space-y-2">
+        <footer className="text-center text-sm text-muted-foreground py-4">
             <p>Colegio Buen Consejo La Laguna © {new Date().getFullYear()}</p>
-            <div className="flex justify-center items-center gap-x-4">
+            <div className="flex justify-center items-center gap-x-4 mt-4">
               <Link href="/aviso-legal" className="hover:text-primary transition-colors">
                 Aviso legal
               </Link>
@@ -275,3 +288,5 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     </div>
   );
 }
+
+    
