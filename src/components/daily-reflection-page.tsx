@@ -44,9 +44,10 @@ const parseText = (text: string) => {
 
   return lines.map((line, lineIndex) => {
     // Procesa títulos en negrita
-    const boldRegex = /^\*\*(.*?)\*\*$/;
-    if (boldRegex.test(line)) {
-      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{line.replace(/\*\*/g, '')}</strong>;
+    const boldRegex = /\*\*(.*?)\*\*/;
+    const boldMatch = line.match(boldRegex);
+    if (boldMatch) {
+      return <strong key={`bold-${lineIndex}`} className="block font-bold mb-2">{boldMatch[1]}</strong>;
     }
 
     // Procesa para encontrar URLs de YouTube en otras líneas
@@ -152,7 +153,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     <div className="flex flex-col items-center justify-center min-h-svh bg-background p-4 sm:p-6 md:p-8">
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
         <header className="text-center pb-3">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center mb-2">
             <Image
               src="https://i.imgur.com/WgK3nj4.png"
               alt="Logo del centro educativo"
@@ -161,7 +162,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
               style={{ height: 'auto' }}
               priority
             />
-            <h1 className="text-5xl sm:text-6xl font-headline text-title">
+            <h1 className="text-6xl font-headline text-title">
               ¡Buenos días!
             </h1>
           </div>
@@ -186,12 +187,12 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
 
         <div className="w-full max-w-xs mx-auto">
           <Select onValueChange={handleLevelChange} disabled={isLoading}>
-            <SelectTrigger className="bg-card border-border shadow-sm text-base">
+            <SelectTrigger className="bg-card border-border shadow-sm text-lg">
               <SelectValue placeholder="Selecciona tu etapa educativa" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="infantil-primaria" className="text-base">Educación Infantil y Primaria</SelectItem>
-              <SelectItem value="secundaria" className="text-base">Educación Secundaria</SelectItem>
+              <SelectItem value="infantil-primaria" className="text-lg">Educación Infantil y Primaria</SelectItem>
+              <SelectItem value="secundaria" className="text-lg">Educación Secundaria</SelectItem>
             </SelectContent>
           </Select>
         </div>
