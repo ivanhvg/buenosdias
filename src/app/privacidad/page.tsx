@@ -53,11 +53,11 @@ export default function PrivacidadPage() {
             </p>
             <div>
               <strong>Proveedores y destinatarios</strong>
-              <ul className="list-disc list-inside mt-2 space-y-1">
+              <ul className="list-disc list-outside ml-6 mt-2 space-y-1">
                 <li>Alojamiento y entrega de contenidos: Netlify, Inc. (hosting/CDN).</li>
                 <li>Servicios de Google/Firebase: el sitio ha sido creado con herramientas de Firebase/Google. En la configuración actual, no se emplean servicios de recogida de datos (p. ej., Firestore, Auth, Analytics) en el frontend del usuario final; no obstante, la infraestructura de Google puede intervenir en la entrega de recursos, pudiendo tratar datos técnicos de conexión.</li>
                 <li>Recursos externos:
-                  <ul className="list-disc list-inside ml-6 mt-1">
+                  <ul className="list-disc list-outside ml-6 mt-1">
                     <li>Google Fonts (tipografías).</li>
                     <li>Imgur (alojamiento del logotipo).</li>
                     <li>Sitios de terceros enlazados (p. ej., YouTube u otras páginas), cuando el usuario accede a dichos enlaces.</li>
@@ -69,7 +69,7 @@ export default function PrivacidadPage() {
             <div>
               <strong>Transferencias internacionales</strong>
               <p className="mt-2">El uso de Netlify, Google/Firebase, Google Fonts, Imgur y YouTube puede implicar transferencias internacionales de datos técnicos. Dichos proveedores declaran aplicar garantías adecuadas (p. ej., cláusulas contractuales tipo). Para más información, consulte sus políticas:</p>
-              <ul className="list-disc list-inside mt-2 space-y-1">
+              <ul className="list-disc list-outside ml-6 mt-2 space-y-1">
                 <li>Netlify: <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.netlify.com/privacy/</a></li>
                 <li>Google/Firebase y Google Fonts: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://policies.google.com/privacy</a></li>
                 <li>Imgur: <a href="https://imgur.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://imgur.com/privacy</a></li>

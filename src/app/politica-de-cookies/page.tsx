@@ -38,11 +38,11 @@ export default function PoliticaCookiesPage() {
             </p>
             <div>
               <strong>Uso de cookies en este sitio</strong>
-              <ul className="list-disc list-inside mt-2 space-y-2">
+              <ul className="list-disc list-outside ml-6 mt-2 space-y-2">
                 <li>El sitio no utiliza cookies propias ni cookies de analítica o publicidad.</li>
                 <li>
                   Para servir el sitio y sus recursos se emplean terceros que pueden tratar datos técnicos y, en algunos casos, establecer cookies técnicas:
-                  <ul className="list-disc list-inside ml-6 mt-1">
+                  <ul className="list-disc list-outside ml-6 mt-1">
                     <li>Netlify (hosting/CDN) para la entrega segura de contenidos.</li>
                     <li>Google Fonts para servir tipografías (no suele establecer cookies, pero puede recoger datos técnicos de la solicitud).</li>
                     <li>Imgur para servir el logotipo (puede establecer cookies técnicas y, según su configuración, otras).</li>
@@ -53,7 +53,7 @@ export default function PoliticaCookiesPage() {
             </div>
             <div>
               <strong>Tabla orientativa de terceros y posibles cookies/tecnologías</strong>
-              <ul className="list-disc list-inside mt-2 space-y-2">
+              <ul className="list-disc list-outside ml-6 mt-2 space-y-2">
                 <li>Netlify (netlify.com): registros técnicos del servicio y, en su caso, cookies estrictamente necesarias. Finalidad: servir y proteger el sitio.</li>
                 <li>Google Fonts (fonts.googleapis.com / fonts.gstatic.com): normalmente sin cookies; posible recogida de datos técnicos de conexión. Finalidad: servir tipografías.</li>
                 <li>Imgur (imgur.com / i.imgur.com): puede establecer cookies técnicas y de seguridad. Finalidad: servir la imagen del logotipo y proteger el servicio.</li>
@@ -62,7 +62,7 @@ export default function PoliticaCookiesPage() {
             </div>
             <div>
               <strong>Gestión y configuración</strong>
-              <ul className="list-disc list-inside mt-2 space-y-2">
+              <ul className="list-disc list-outside ml-6 mt-2 space-y-2">
                   <li>Puede configurar su navegador para bloquear o eliminar cookies.</li>
                   <li>Dado que este sitio no instala cookies no esenciales propias ni integra, por defecto, servicios de analítica o publicidad, no se solicita consentimiento para esas finalidades.</li>
                   <li>Si en el futuro se incrustan vídeos de YouTube directamente en la página, se implementará el modo de privacidad avanzada (https://www.youtube-nocookie.com) y, si aun así se establecieran cookies no esenciales, se mostrará un banner de consentimiento con opciones Aceptar/Rechazar/Configurar, bloqueando la carga hasta la aceptación.</li>
@@ -70,7 +70,7 @@ export default function PoliticaCookiesPage() {
             </div>
             <div>
               <strong>Políticas de terceros</strong>
-              <ul className="list-disc list-inside mt-2 space-y-1">
+              <ul className="list-disc list-outside ml-6 mt-2 space-y-1">
                 <li>Netlify: <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.netlify.com/privacy/</a></li>
                 <li>Google (Firebase y Fonts): <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://policies.google.com/privacy</a></li>
                 <li>Imgur: <a href="https://imgur.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://imgur.com/privacy</a></li>
