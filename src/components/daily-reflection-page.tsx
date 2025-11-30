@@ -43,17 +43,17 @@ const parseText = (text: string) => {
   const lines = text.split('\n').filter(line => line.trim() !== '');
 
   return lines.map((line, lineIndex) => {
-    // Procesa para encontrar negritas y URLs en la misma línea
-    const combinedRegex = /(\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
+    // Procesa para encontrar negritas/cursivas y URLs en la misma línea
+    const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
 
     // Procesa títulos en la primera línea
     if (lineIndex === 0) {
-      const match = line.match(/^(\*\*.*?\*\*)/);
+      const match = line.match(/^(\*\*\*.*?\*\*\*)/);
       if (match) {
-        const title = match[1].substring(2, match[1].length - 2);
-        parts.push(<strong key={`title-${lineIndex}`} className="font-bold">{title}</strong>);
+        const title = match[1].substring(3, match[1].length - 3);
+        parts.push(<strong key={`title-${lineIndex}`} className="font-bold italic">{title}</strong>);
         line = line.substring(match[1].length);
       }
     }
@@ -64,13 +64,17 @@ const parseText = (text: string) => {
         parts.push(line.substring(lastIndex, offset));
       }
 
-      // Procesa si es negrita (y no es un título ya procesado)
-      if (match.startsWith('**') && match.endsWith('**')) {
-        const boldText = match.substring(2, match.length - 2);
-        // Evita duplicar el título si la regex lo captura de nuevo
-        if (lineIndex > 0 || !parts.some(p => typeof p !== 'string' && p.key === `title-${lineIndex}`)) {
-          parts.push(<strong key={`bold-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
+      // Procesa si es negrita y cursiva
+      if (match.startsWith('***') && match.endsWith('***')) {
+        const boldItalicText = match.substring(3, match.length - 3);
+         if (lineIndex > 0 || !parts.some(p => typeof p !== 'string' && p.key === `title-${lineIndex}`)) {
+            parts.push(<strong key={`bold-italic-${lineIndex}-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
         }
+      }
+      // Procesa si es solo negrita
+      else if (match.startsWith('**') && match.endsWith('**')) {
+        const boldText = match.substring(2, match.length - 2);
+        parts.push(<strong key={`bold-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
       }
       // Procesa si es URL de YouTube
       else if (videoId) {
