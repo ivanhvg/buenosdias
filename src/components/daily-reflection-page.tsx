@@ -44,6 +44,7 @@ const parseText = (text: string) => {
     const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
+    let hasTitle = false;
 
     line.replace(combinedRegex, (match, _group1, videoId, offset) => {
       if (offset > lastIndex) {
@@ -51,9 +52,11 @@ const parseText = (text: string) => {
       }
 
       if (match.startsWith('***') && match.endsWith('***')) {
+        hasTitle = true;
         const boldItalicText = match.substring(3, match.length - 3);
         parts.push(<strong key={`bi-${lineIndex}-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
       } else if (match.startsWith('**') && match.endsWith('**')) {
+        hasTitle = true;
         const boldText = match.substring(2, match.length - 2);
         parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
       } else if (videoId) {
@@ -78,7 +81,11 @@ const parseText = (text: string) => {
       parts.push(line.substring(lastIndex));
     }
     
-    return <React.Fragment key={`line-${lineIndex}`}>{parts.map((part, partIndex) => <React.Fragment key={partIndex}>{part}</React.Fragment>)}</React.Fragment>;
+    return (
+      <div key={`line-${lineIndex}`} className={hasTitle ? 'mb-2' : ''}>
+        {parts.map((part, partIndex) => <React.Fragment key={partIndex}>{part}</React.Fragment>)}
+      </div>
+    );
   };
 
   const oracionMarker = '\n\n**Oración**';
@@ -91,11 +98,11 @@ const parseText = (text: string) => {
   return (
     <>
       <div className="space-y-2">
-        {mainTextParagraphs.map((p, i) => <div key={i}>{processLine(p, i)}</div>)}
+        {mainTextParagraphs.map((p, i) => processLine(p, i))}
       </div>
       {oracionText && (
          <div className="mt-6 space-y-2">
-           {oracionText.split('\n').filter(p => p.trim() !== '').map((p, i) => <div key={`o-${i}`}>{processLine(p, i + mainTextParagraphs.length)}</div>)}
+           {oracionText.split('\n').filter(p => p.trim() !== '').map((p, i) => processLine(p, i + mainTextParagraphs.length))}
         </div>
       )}
     </>
