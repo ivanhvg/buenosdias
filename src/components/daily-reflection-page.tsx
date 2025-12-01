@@ -40,41 +40,28 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 
 const parseText = (text: string) => {
-  const paragraphs = text.split('\n').filter(line => line.trim() !== '');
+  const paragraphs = text.split('\n').filter(p => p.trim() !== '');
 
-  return paragraphs.map((paragraph, pIndex) => {
+  const processLine = (line: string, key: string) => {
     const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
-    let currentText = paragraph;
 
-    // Procesa títulos en la primera línea del párrafo
-    if (pIndex === 0) {
-      const match = currentText.match(/^(\*\*\*.*?\*\*\*)/);
-      if (match) {
-        const title = match[1].substring(3, match[1].length - 3);
-        parts.push(<strong key={`title-${pIndex}`} className="font-bold italic">{title}</strong>);
-        currentText = currentText.substring(match[1].length).trim();
-      }
-    }
-    
-    currentText.replace(combinedRegex, (match, _group1, videoId, offset) => {
+    line.replace(combinedRegex, (match, _group1, videoId, offset) => {
       if (offset > lastIndex) {
-        parts.push(currentText.substring(lastIndex, offset));
+        parts.push(line.substring(lastIndex, offset));
       }
 
       if (match.startsWith('***') && match.endsWith('***')) {
         const boldItalicText = match.substring(3, match.length - 3);
-        parts.push(<strong key={`bold-italic-${pIndex}-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
-      }
-      else if (match.startsWith('**') && match.endsWith('**')) {
+        parts.push(<strong key={`${key}-bold-italic-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
+      } else if (match.startsWith('**') && match.endsWith('**')) {
         const boldText = match.substring(2, match.length - 2);
-        parts.push(<strong key={`bold-${pIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
-      }
-      else if (videoId) {
+        parts.push(<strong key={`${key}-bold-${lastIndex}`} className="font-bold">{boldText}</strong>);
+      } else if (videoId) {
         const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
         parts.push(
-          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${pIndex}-${lastIndex}`}>
+          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`${key}-youtube-${lastIndex}`}>
             <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
               <Youtube className="mr-2 h-5 w-5" />
               Ver vídeo en YouTube
@@ -82,31 +69,22 @@ const parseText = (text: string) => {
           </a>
         );
       } else {
-         parts.push(match);
+        parts.push(match);
       }
       
       lastIndex = offset + match.length;
       return match;
     });
 
-    if (lastIndex < currentText.length) {
-      parts.push(currentText.substring(lastIndex));
+    if (lastIndex < line.length) {
+      parts.push(line.substring(lastIndex));
     }
-
-    // Añade un espacio extra para el párrafo de la Oración
-    const isOracion = paragraph.includes('**Oración**');
-    const paragraphStyle = isOracion ? { marginTop: '1.5rem' } : {};
-
-    return (
-      <div key={`paragraph-${pIndex}`} style={paragraphStyle}>
-        {parts.map((part, partIndex) => (
-          <React.Fragment key={partIndex}>{part}</React.Fragment>
-        ))}
-      </div>
-    );
-  });
+    
+    return <p key={key}>{parts.map((part, partIndex) => <React.Fragment key={partIndex}>{part}</React.Fragment>)}</p>;
+  };
+  
+  return paragraphs.map((p, i) => processLine(p, `p-${i}`));
 };
-
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
