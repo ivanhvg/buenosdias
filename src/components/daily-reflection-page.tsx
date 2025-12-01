@@ -54,11 +54,11 @@ const parseText = (text: string) => {
       if (match.startsWith('***') && match.endsWith('***')) {
         hasTitle = true;
         const boldItalicText = match.substring(3, match.length - 3);
-        parts.push(<strong key={`bi-${lineIndex}-${lastIndex}`} className="font-bold italic text-2xl">{boldItalicText}</strong>);
+        parts.push(<strong key={`bi-${lineIndex}-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
       } else if (match.startsWith('**') && match.endsWith('**')) {
         hasTitle = true;
         const boldText = match.substring(2, match.length - 2);
-        parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold text-2xl">{boldText}</strong>);
+        parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
       } else if (videoId) {
         const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
         parts.push(
