@@ -25,13 +25,13 @@ interface DailyReflectionPageProps {
 }
 
 const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
-  septiembre: { valor: 'ACOGIDA · BIENVENIDA', mes: 'septiembre' },
+  septiembre: { valor: 'ACOGIDA · BIENVENida', mes: 'septiembre' },
   octubre: { valor: 'FRATERNIDAD', mes: 'octubre' },
   noviembre: { valor: 'RESPETO', mes: 'noviembre' },
-  diciembre: { valor: 'AMOR', mes: 'diciembre' },
-  enero: { valor: 'VIDA', mes: 'enero' },
-  febrero: { valor: 'PAZ', mes: 'febrero' },
-  marzo: { valor: 'RESPONSABILIDAD', mes: 'marzo' },
+  diciembre: { valor: 'VIDA', mes: 'diciembre' },
+  enero: { valor: 'PAZ Y UNIÓN', mes: 'enero' },
+  febrero: { valor: 'RESPONSABILIDAD', mes: 'febrero' },
+  marzo: { valor: 'AMOR', mes: 'marzo' },
   abril: { valor: 'TOLERANCIA', mes: 'abril' },
   mayo: { valor: 'ENTUSIASMO', mes: 'mayo' },
   junio: { valor: 'GRATITUD', mes: 'junio' },
