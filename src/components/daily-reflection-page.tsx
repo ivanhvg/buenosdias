@@ -81,20 +81,12 @@ const parseText = (text: string) => {
     return parts.map((part, index) => <React.Fragment key={index}>{part}</React.Fragment>);
   };
   
-  const paragraphs = text.split('\n\n');
-  return paragraphs.map((paragraph, i) => {
-    const lines = paragraph.split('\n');
-    return (
-        <p key={`p-${i}`}>
-            {lines.map((line, j) => (
-                <React.Fragment key={j}>
-                    {processChunk(line, `line-${i}-${j}`)}
-                    {j < lines.length - 1 && <br />}
-                </React.Fragment>
-            ))}
-        </p>
-    );
-  });
+  const paragraphs = text.split('\n');
+  return paragraphs.map((paragraph, i) => (
+      <p key={`p-${i}`}>
+          {processChunk(paragraph, `line-${i}`)}
+      </p>
+  ));
 };
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
