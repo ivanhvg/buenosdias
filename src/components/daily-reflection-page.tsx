@@ -25,7 +25,7 @@ interface DailyReflectionPageProps {
 }
 
 const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
-  septiembre: { valor: 'ACOGIDA · BIENVENida', mes: 'septiembre' },
+  septiembre: { valor: 'ACOGIDA / BIENVENIDA', mes: 'septiembre' },
   octubre: { valor: 'FRATERNIDAD', mes: 'octubre' },
   noviembre: { valor: 'RESPETO', mes: 'noviembre' },
   diciembre: { valor: 'VIDA', mes: 'diciembre' },
@@ -40,47 +40,41 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 
 const parseText = (text: string) => {
-  const lines = text.split('\n').filter(line => line.trim() !== '');
+  const paragraphs = text.split('\n').filter(line => line.trim() !== '');
 
-  return lines.map((line, lineIndex) => {
-    // Procesa para encontrar negritas/cursivas y URLs en la misma línea
+  return paragraphs.map((paragraph, pIndex) => {
     const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
+    let currentText = paragraph;
 
-    // Procesa títulos en la primera línea
-    if (lineIndex === 0) {
-      const match = line.match(/^(\*\*\*.*?\*\*\*)/);
+    // Procesa títulos en la primera línea del párrafo
+    if (pIndex === 0) {
+      const match = currentText.match(/^(\*\*\*.*?\*\*\*)/);
       if (match) {
         const title = match[1].substring(3, match[1].length - 3);
-        parts.push(<strong key={`title-${lineIndex}`} className="font-bold italic">{title}</strong>);
-        line = line.substring(match[1].length);
+        parts.push(<strong key={`title-${pIndex}`} className="font-bold italic">{title}</strong>);
+        currentText = currentText.substring(match[1].length).trim();
       }
     }
     
-    line.replace(combinedRegex, (match, _group1, videoId, offset) => {
-      // Añade el texto antes del match
+    currentText.replace(combinedRegex, (match, _group1, videoId, offset) => {
       if (offset > lastIndex) {
-        parts.push(line.substring(lastIndex, offset));
+        parts.push(currentText.substring(lastIndex, offset));
       }
 
-      // Procesa si es negrita y cursiva
       if (match.startsWith('***') && match.endsWith('***')) {
         const boldItalicText = match.substring(3, match.length - 3);
-         if (lineIndex > 0 || !parts.some(p => typeof p !== 'string' && p.key === `title-${lineIndex}`)) {
-            parts.push(<strong key={`bold-italic-${lineIndex}-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
-        }
+        parts.push(<strong key={`bold-italic-${pIndex}-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
       }
-      // Procesa si es solo negrita
       else if (match.startsWith('**') && match.endsWith('**')) {
         const boldText = match.substring(2, match.length - 2);
-        parts.push(<strong key={`bold-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
+        parts.push(<strong key={`bold-${pIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
       }
-      // Procesa si es URL de YouTube
       else if (videoId) {
         const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
         parts.push(
-          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${lineIndex}-${lastIndex}`}>
+          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${pIndex}-${lastIndex}`}>
             <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
               <Youtube className="mr-2 h-5 w-5" />
               Ver vídeo en YouTube
@@ -95,17 +89,20 @@ const parseText = (text: string) => {
       return match;
     });
 
-    // Añade el texto restante de la línea
-    if (lastIndex < line.length) {
-      parts.push(line.substring(lastIndex));
+    if (lastIndex < currentText.length) {
+      parts.push(currentText.substring(lastIndex));
     }
 
+    // Añade un espacio extra para el párrafo de la Oración
+    const isOracion = paragraph.includes('**Oración**');
+    const paragraphStyle = isOracion ? { marginTop: '1.5rem' } : {};
+
     return (
-      <p key={`line-${lineIndex}`} className="mb-4">
+      <div key={`paragraph-${pIndex}`} style={paragraphStyle}>
         {parts.map((part, partIndex) => (
           <React.Fragment key={partIndex}>{part}</React.Fragment>
         ))}
-      </p>
+      </div>
     );
   });
 };
@@ -241,7 +238,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="space-y-8">
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
-                <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
+                <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
                   {parseText(text)}
                 </div>
               </CardContent>
@@ -292,5 +289,3 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
     </div>
   );
 }
-
-    
