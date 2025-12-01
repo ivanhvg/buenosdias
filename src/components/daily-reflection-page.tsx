@@ -40,14 +40,14 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 
 const parseText = (text: string) => {
-  const processLine = (line: string, key: string) => {
+  const processChunk = (chunk: string, key: string) => {
     const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
 
-    line.replace(combinedRegex, (match, _group1, videoId, offset) => {
+    chunk.replace(combinedRegex, (match, _group1, videoId, offset) => {
       if (offset > lastIndex) {
-        parts.push(line.substring(lastIndex, offset));
+        parts.push(chunk.substring(lastIndex, offset));
       }
 
       if (match.startsWith('***') && match.endsWith('***')) {
@@ -74,21 +74,27 @@ const parseText = (text: string) => {
       return match;
     });
 
-    if (lastIndex < line.length) {
-      parts.push(line.substring(lastIndex));
+    if (lastIndex < chunk.length) {
+      parts.push(chunk.substring(lastIndex));
     }
     
-    return parts;
+    return parts.map((part, index) => <React.Fragment key={index}>{part}</React.Fragment>);
   };
   
-  const lines = text.split('\n');
-  return lines.map((line, i) => (
-    <p key={`line-${i}`}>
-      {processLine(line, `line-${i}`).map((part, partIndex) => (
-        <React.Fragment key={partIndex}>{part}</React.Fragment>
-      ))}
-    </p>
-  ));
+  const paragraphs = text.split('\n\n');
+  return paragraphs.map((paragraph, i) => {
+    const lines = paragraph.split('\n');
+    return (
+        <p key={`p-${i}`}>
+            {lines.map((line, j) => (
+                <React.Fragment key={j}>
+                    {processChunk(line, `line-${i}-${j}`)}
+                    {j < lines.length - 1 && <br />}
+                </React.Fragment>
+            ))}
+        </p>
+    );
+  });
 };
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
@@ -157,15 +163,17 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
         <header className="text-center pb-3">
           <div className="flex flex-col items-center">
-            <Image
-              src="https://i.imgur.com/WgK3nj4.png"
-              alt="Logo del centro educativo"
-              width={150}
-              height={41}
-              style={{ height: 'auto' }}
-              priority
-              className="mb-6"
-            />
+            <Link href="/">
+              <Image
+                src="https://i.imgur.com/WgK3nj4.png"
+                alt="Logo del centro educativo"
+                width={150}
+                height={41}
+                style={{ height: 'auto' }}
+                priority
+                className="mb-6"
+              />
+            </Link>
             <h1 className="text-6xl font-headline text-title">
               ¡Buenos días!
             </h1>
