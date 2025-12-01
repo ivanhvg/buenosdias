@@ -40,54 +40,64 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 
 const parseText = (text: string) => {
-  const processChunk = (chunk: string, key: string) => {
+  const processChunk = (chunk: string) => {
     const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
-    const parts: (string | JSX.Element)[] = [];
-    let lastIndex = 0;
+    return chunk.split('\n').map((line, index) => {
+      if (line.trim() === '') return <br key={`br-${index}`} />;
 
-    chunk.replace(combinedRegex, (match, _group1, videoId, offset) => {
-      if (offset > lastIndex) {
-        parts.push(chunk.substring(lastIndex, offset));
-      }
+      const parts: (string | JSX.Element)[] = [];
+      let lastIndex = 0;
 
-      if (match.startsWith('***') && match.endsWith('***')) {
-        const boldItalicText = match.substring(3, match.length - 3);
-        parts.push(<strong key={`${key}-bold-italic-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
-      } else if (match.startsWith('**') && match.endsWith('**')) {
-        const boldText = match.substring(2, match.length - 2);
-        parts.push(<strong key={`${key}-bold-${lastIndex}`} className="font-bold">{boldText}</strong>);
-      } else if (videoId) {
-        const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        parts.push(
-          <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`${key}-youtube-${lastIndex}`}>
-            <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
-              <Youtube className="mr-2 h-5 w-5" />
-              Ver vídeo en YouTube
-            </Button>
-          </a>
-        );
-      } else {
-        parts.push(match);
+      line.replace(combinedRegex, (match, _group1, videoId, offset) => {
+        if (offset > lastIndex) {
+          parts.push(line.substring(lastIndex, offset));
+        }
+
+        if (match.startsWith('***') && match.endsWith('***')) {
+          const boldItalicText = match.substring(3, match.length - 3);
+          parts.push(<strong key={`bold-italic-${index}-${lastIndex}`} className="font-bold italic">{boldItalicText}</strong>);
+        } else if (match.startsWith('**') && match.endsWith('**')) {
+          const boldText = match.substring(2, match.length - 2);
+          parts.push(<strong key={`bold-${index}-${lastIndex}`} className="font-bold">{boldText}</strong>);
+        } else if (videoId) {
+          const fullUrl = `https://www.youtube.com/watch?v=${videoId}`;
+          parts.push(
+            <a href={fullUrl} target="_blank" rel="noopener noreferrer" key={`youtube-${index}-${lastIndex}`}>
+              <Button variant="link" className="p-0 h-auto text-xl text-primary hover:text-accent">
+                <Youtube className="mr-2 h-5 w-5" />
+                Ver vídeo en YouTube
+              </Button>
+            </a>
+          );
+        } else {
+          parts.push(match);
+        }
+        
+        lastIndex = offset + match.length;
+        return match;
+      });
+
+      if (lastIndex < line.length) {
+        parts.push(line.substring(lastIndex));
       }
       
-      lastIndex = offset + match.length;
-      return match;
+      return <React.Fragment key={`line-${index}`}>{parts.map((part, partIndex) => <React.Fragment key={partIndex}>{part}</React.Fragment>)}{index < chunk.split('\n').length -1 ? <br /> : null}</React.Fragment>;
     });
-
-    if (lastIndex < chunk.length) {
-      parts.push(chunk.substring(lastIndex));
-    }
-    
-    return parts.map((part, index) => <React.Fragment key={index}>{part}</React.Fragment>);
   };
-  
-  const paragraphs = text.split('\n');
-  return paragraphs.map((paragraph, i) => (
-      <p key={`p-${i}`}>
-          {processChunk(paragraph, `line-${i}`)}
-      </p>
-  ));
+
+  const oracionMarker = '\n\n**Oración**';
+  const textParts = text.split(oracionMarker);
+  const mainText = textParts[0];
+  const oracionText = textParts.length > 1 ? `**Oración**${textParts[1]}` : null;
+
+  return (
+    <>
+      <div className="mb-4">{processChunk(mainText)}</div>
+      {oracionText && <div>{processChunk(oracionText)}</div>}
+    </>
+  );
 };
+
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
@@ -221,7 +231,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="space-y-8">
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
-                <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic space-y-4">
+                <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
                   {parseText(text)}
                 </div>
               </CardContent>
