@@ -40,8 +40,6 @@ const valoresDelMes: { [key: string]: { valor: string; mes: string } } = {
 const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, vuelve mañana.";
 
 const parseText = (text: string) => {
-  const paragraphs = text.split('\n').filter(p => p.trim() !== '');
-
   const processLine = (line: string, key: string) => {
     const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
     const parts: (string | JSX.Element)[] = [];
@@ -80,10 +78,17 @@ const parseText = (text: string) => {
       parts.push(line.substring(lastIndex));
     }
     
-    return <p key={key}>{parts.map((part, partIndex) => <React.Fragment key={partIndex}>{part}</React.Fragment>)}</p>;
+    return parts;
   };
   
-  return paragraphs.map((p, i) => processLine(p, `p-${i}`));
+  const lines = text.split('\n');
+  return lines.map((line, i) => (
+    <p key={`line-${i}`}>
+      {processLine(line, `line-${i}`).map((part, partIndex) => (
+        <React.Fragment key={partIndex}>{part}</React.Fragment>
+      ))}
+    </p>
+  ));
 };
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
