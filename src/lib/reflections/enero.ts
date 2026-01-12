@@ -13,6 +13,15 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 12,
+    questions: [
+      '¿Por qué solemos reservar nuestras mejores actitudes solo para las "épocas especiales"? Analiza si tu amabilidad depende del calendario o de tu convicción personal.',
+      'Identifica un "día normal" reciente en el que alguien necesitara una palabra de aliento y tú no te diste cuenta. ¿Qué te impidió ver esa necesidad?',
+      'La moraleja habla de no apagar la ilusión. ¿Qué proyecto o valor personal estás dejando que se apague por la rutina del curso?'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 13,
     questions: [
@@ -22,11 +31,27 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 13,
+    questions: [
+      'El Papa pone el foco en Canarias como ejemplo de acogida. ¿Cuál es tu postura real frente a los que llegan de fuera buscando una vida mejor? ¿Es una postura basada en datos o en prejuicios?',
+      'La solidaridad nos hace crecer. ¿En qué momento de tu vida has sentido que ayudar a otro te ha hecho madurar a ti más que al otro?',
+      '¿Qué significa para ti "acoger" en el contexto de tu instituto o grupo de amigos? ¿Hay alguien que esté "en la orilla" esperando ser incluido?'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 14,
     questions: [
       '***Primaria 1.º–3.º:*** ¿Qué es un tesoro para ti hoy?',
       '***Primaria 4.º–6.º:*** Dibuja o describe tu tesoro y cómo lo cuidas.'
+    ]
+  },
+  {
+    level: 'secundaria',
+    day: 14,
+    questions: [
+      '¿Por qué vale la pena “venderlo todo” por el Reino?'
     ]
   },
   {
@@ -39,12 +64,30 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 15,
+    questions: [
+      'A medida que creces, tu relación con tu familia cambia. ¿Qué estás aportando tú hoy para que la unión en tu casa sea real y no solo una apariencia?',
+      'Piensa en un conflicto familiar reciente. ¿Cómo podrías haber actuado desde el amor y no desde el orgullo?',
+      'Pide hoy por la paciencia y la escucha en tu hogar, empezando por la tuya.'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 16,
     questions: [
       'Escribe o dibuja tres cosas por las que das gracias por haber recibido a Jesús en Navidad.',
       'Cada vez que comas hoy, detente un momento y agradece en silencio la comida y a quienes la prepararon.',
       'Crea una “caja de gracias” en casa y escribe en un papel algo bonito que pasó en Navidad para guardar el recuerdo.'
+    ]
+  },
+  {
+    level: 'secundaria',
+    day: 16,
+    questions: [
+      'Más allá de la tradición, ¿qué significa para un joven de hoy que Dios se haga niño y vulnerable? ¿Qué te dice eso sobre el poder y la humildad?',
+      'Agradecer es un acto de rebeldía en un mundo que siempre pide más. ¿De qué regalo no material te sientes más agradecido tras esta Navidad?',
+      '¿Cómo cambia tu perspectiva del día si lo empiezas dando gracias en lugar de quejándote?'
     ]
   },
   {
@@ -57,6 +100,15 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 19,
+    questions: [
+      'En los trabajos en grupo, ¿sueles ser el que impone su idea o el que sabe escuchar las habilidades de los demás para construir algo mayor?',
+      'Identifica un "río peligroso" (un problema social o escolar) que nadie se atreve a cruzar solo. ¿Quiénes serían tus aliados para construir ese puente?',
+      'La colaboración exige humildad. ¿Qué parte de tu ego tendrías que "sacrificar" para que un proyecto común funcione?'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 20,
     questions: [
@@ -66,11 +118,27 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 20,
+    questions: [
+      'Pedro es un camarero, alguien común. ¿Crees que hace falta tener un cargo importante para cambiar la vida de alguien, o basta con estar atento a la realidad?',
+      'La valentía de Pedro nació de su experiencia como marinero. ¿Qué habilidades tienes tú que podrías poner al servicio de los demás en una emergencia?',
+      '¿Actuarías igual que Pedro si nadie te estuviera grabando para TikTok? Reflexiona sobre la diferencia entre heroísmo y postureo.'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 21,
     questions: [
       '***Primaria 1.º–3.º:*** ¿Qué perla te gustaría cuidar: amistad, familia, fe?',
       '***Primaria 4.º–6.º:*** Cuenta una decisión para proteger esa perla.'
+    ]
+  },
+  {
+    level: 'secundaria',
+    day: 21,
+    questions: [
+      '¿Qué renuncias concretas exige tu perla (tu vocación)?'
     ]
   },
   {
@@ -83,12 +151,30 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 22,
+    questions: [
+      'Venezuela es una "tierra hermana". ¿Qué responsabilidad crees que tenemos los jóvenes de aquí con los problemas de jóvenes de otros países?',
+      'La oración por otros países nos saca de nuestro propio ombligo. ¿Qué sabes realmente de la situación de las personas allí más allá de los titulares?',
+      'Pide por la libertad y la justicia, valores que a veces damos por sentados pero que muchos no tienen.'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 23,
     questions: [
       'Escribe en un papel tres momentos felices que viviste con tu familia o amigos en Navidad.',
       'Haz un pequeño regalo de agradecimiento (un dibujo, una carta) a alguien que te hizo feliz estas fiestas.',
       'Cada vez que veas a un familiar o amigo hoy, agradece en voz alta algo bonito que hicieron por ti.'
+    ]
+  },
+  {
+    level: 'secundaria',
+    day: 23,
+    questions: [
+      '¿Qué momento de estas fiestas te hizo sentir realmente "vivo" y conectado con los tuyos? No pienses en regalos, piensa en conexiones.',
+      'Agradece hoy a ese amigo que te escuchó cuando no estabas bien. ¿Se lo has dicho alguna vez?',
+      'La alegría compartida se multiplica. ¿A quién vas a contagiar hoy tu buena energía?'
     ]
   },
   {
@@ -101,6 +187,15 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 26,
+    questions: [
+      '"La paz no llega cuando alguien gana". ¿Cómo aplicas esto a tus discusiones con amigos o pareja? ¿Buscas tener la razón o mantener la relación?',
+      'El gesto del niño con la flor fue disruptivo. ¿Qué gesto pacífico podrías tener tú en un ambiente de tensión o bullying?',
+      '¿Qué "guerras" personales mantienes abiertas por orgullo y qué ganarías si decidieras que "nadie más debe perder"?'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 27,
     questions: [
@@ -110,11 +205,27 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 27,
+    questions: [
+      'Si soldados en guerra pudieron jugar al fútbol, ¿qué nos impide a nosotros perdonar una ofensa pequeña?',
+      'Las trincheras son muros mentales. ¿Qué muros has levantado tú contra personas que piensan diferente a ti?',
+      'La paz es una elección activa, no solo la ausencia de gritos. ¿Qué vas a elegir hoy: el conflicto o el encuentro?'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 28,
     questions: [
       '***Primaria 1.º–3.º:*** ¿Qué “peces” buenos quieres conservar en tu vida?',
       '***Primaria 4.º–6.º:*** Haz una lista de 5 cosas buenas que te ayudan a ser mejor.'
+    ]
+  },
+  {
+    level: 'secundaria',
+    day: 28,
+    questions: [
+      '¿Cómo discernir entre lo que te construye y lo que te vacía?'
     ]
   },
   {
@@ -127,12 +238,30 @@ const dailyReflections: DailyReflection[] = [
     ]
   },
   {
+    level: 'secundaria',
+    day: 29,
+    questions: [
+      'La paz mundial empieza en tu forma de hablar en los grupos de WhatsApp. ¿Eres de los que incendia o de los que calma?',
+      'Pide por los gobernantes, para que tengan la lucidez de buscar el bien común por encima del poder.',
+      '¿Qué compromiso concreto vas a asumir hoy para ser un agente de paz en tu instituto?'
+    ]
+  },
+  {
     level: 'infantil-primaria',
     day: 30,
     questions: [
       'Haz una lista de tres cosas nuevas por las que das gracias al comenzar este año.',
       'Dibuja cómo te imaginas este año lleno de amor, paz y generosidad.',
       'Agradece a alguien que te ayudó a empezar bien el año con una pequeña nota o abrazo.'
+    ]
+  },
+  {
+    level: 'secundaria',
+    day: 30,
+    questions: [
+      'Un año nuevo es una página en blanco. ¿Qué errores del pasado vas a dejar atrás para no manchar esta nueva oportunidad?',
+      'La generosidad no es dar lo que te sobra, sino dar lo que el otro necesita. ¿A quién vas a dedicarle tu tiempo hoy?',
+      'Termina este tiempo de reflexión agradeciendo la oportunidad de vivir, de aprender y de poder cambiar el mundo desde tu pequeña parcela.'
     ]
   }
 ];
