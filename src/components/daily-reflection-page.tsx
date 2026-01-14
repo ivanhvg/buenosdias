@@ -41,7 +41,7 @@ const DEFAULT_TEXT = "Hoy no hay lectura para la etapa seleccionada. Por favor, 
 
 const parseText = (text: string) => {
   const processLine = (line: string, lineIndex: number) => {
-    const combinedRegex = /(\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
+    const combinedRegex = /(\*\*\*.*?\*\*\*|\*\*.*?\*\*|https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{11})[^\s]*)/g;
     const parts: (string | JSX.Element)[] = [];
     let lastIndex = 0;
     let hasTitle = false;
@@ -51,8 +51,11 @@ const parseText = (text: string) => {
         parts.push(line.substring(lastIndex, offset));
       }
 
-      if (match.startsWith('**') && match.endsWith('**')) {
+      if (match.startsWith('***') && match.endsWith('***')) {
         hasTitle = true;
+        const boldText = match.substring(3, match.length - 3);
+        parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
+      } else if (match.startsWith('**') && match.endsWith('**')) {
         const boldText = match.substring(2, match.length - 2);
         parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
       } else if (videoId) {
@@ -260,7 +263,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
           <div className="space-y-8">
             <Card className="shadow-lg transition-all hover:shadow-xl rounded-xl animate-in fade-in duration-500">
               <CardContent className="pt-6">
-                <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4 italic">
+                <div className="text-xl leading-relaxed text-card-foreground/90 border-l-4 border-accent pl-4">
                   {parseText(text)}
                 </div>
               </CardContent>
