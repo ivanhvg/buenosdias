@@ -203,7 +203,6 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                 alt="Logo del centro educativo"
                 width={150}
                 height={41}
-                style={{ height: 'auto' }}
                 priority
                 className="mb-6"
               />
