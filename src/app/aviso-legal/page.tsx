@@ -26,6 +26,7 @@ export default function AvisoLegalPage() {
                 height={41}
                 priority
                 className="mb-6"
+                style={{ height: 'auto' }}
               />
             </Link>
             <h1 className="text-5xl font-headline text-title">Aviso Legal</h1>
