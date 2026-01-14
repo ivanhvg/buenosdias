@@ -52,8 +52,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 5,
     questions: [
-        'Primaria 1.º – 3.º: ¿Qué puede hacer tu “tierra” para escuchar mejor a Jesús?',
-        'Primaria 4.º – 6.º: Piensa en dos “piedras/espinas” que quieres quitar de tu corazón.'
+        '**Primaria 1.º – 3.º:** ¿Qué puede hacer tu “tierra” para escuchar mejor a Jesús?',
+        '**Primaria 4.º – 6.º:** Piensa en dos “piedras/espinas” que quieres quitar de tu corazón.'
     ]
   },
   {
@@ -141,8 +141,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 12,
     questions: [
-        'Primaria 1.º – 3.º: ¿Has visto crecer algo poco a poco? Así crece el bien.',
-        'Primaria 4.º – 6.º: Describe un proceso lento en tu vida y qué aprendiste.'
+        '**Primaria 1.º – 3.º:** ¿Has visto crecer algo poco a poco? Así crece el bien.',
+        '**Primaria 4.º – 6.º:** Describe un proceso lento en tu vida y qué aprendiste.'
     ]
   },
   {
@@ -230,8 +230,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 19,
     questions: [
-        'Primaria 1.º – 3.º: ¿Qué pequeño gesto tuyo puede hacer grande a tu clase?',
-        'Primaria 4.º – 6.º: Piensa un gesto pequeño y pon una fecha para hacerlo.'
+        '**Primaria 1.º – 3.º:** ¿Qué pequeño gesto tuyo puede hacer grande a tu clase?',
+        '**Primaria 4.º – 6.º:** Piensa un gesto pequeño y pon una fecha para hacerlo.'
     ]
   },
   {
@@ -319,8 +319,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 26,
     questions: [
-        'Primaria 1.º – 3.º: ¿Cómo “levantas” el ánimo de otros?',
-        'Primaria 4.º – 6.º: Escribe 3 formas de ser levadura en tu curso.'
+        '**Primaria 1.º – 3.º:** ¿Cómo “levantas” el ánimo de otros?',
+        '**Primaria 4.º – 6.º:** Escribe 3 formas de ser levadura en tu curso.'
     ]
   },
   {

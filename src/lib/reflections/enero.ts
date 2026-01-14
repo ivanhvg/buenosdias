@@ -43,8 +43,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 14,
     questions: [
-      '***Primaria 1.º–3.º:*** ¿Qué es un tesoro para ti hoy?',
-      '***Primaria 4.º–6.º:*** Dibuja o describe tu tesoro y cómo lo cuidas.'
+      '**Primaria 1.º–3.º:** ¿Qué es un tesoro para ti hoy?',
+      '**Primaria 4.º–6.º:** Dibuja o describe tu tesoro y cómo lo cuidas.'
     ]
   },
   {
@@ -130,8 +130,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 21,
     questions: [
-      '***Primaria 1.º–3.º:*** ¿Qué perla te gustaría cuidar: amistad, familia, fe?',
-      '***Primaria 4.º–6.º:*** Cuenta una decisión para proteger esa perla.'
+      '**Primaria 1.º–3.º:** ¿Qué perla te gustaría cuidar: amistad, familia, fe?',
+      '**Primaria 4.º–6.º:** Cuenta una decisión para proteger esa perla.'
     ]
   },
   {
@@ -217,8 +217,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 28,
     questions: [
-      '***Primaria 1.º–3.º:*** ¿Qué “peces” buenos quieres conservar en tu vida?',
-      '***Primaria 4.º–6.º:*** Haz una lista de 5 cosas buenas que te ayudan a ser mejor.'
+      '**Primaria 1.º–3.º:** ¿Qué “peces” buenos quieres conservar en tu vida?',
+      '**Primaria 4.º–6.º:** Haz una lista de 5 cosas buenas que te ayudan a ser mejor.'
     ]
   },
   {

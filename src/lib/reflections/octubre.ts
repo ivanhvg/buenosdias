@@ -7,8 +7,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 1,
     questions: [
-      'Primaria 1.º - 3.º: ¿Qué cosas hacemos cada día que ponen nuestra vida “sobre roca”?',
-      'Primaria 4.º - 6.º: Piensa en dos cosas que haces habitualmente que te ayudan a estar firme y explica por qué.'
+      '**Primaria 1.º - 3.º:** ¿Qué cosas hacemos cada día que ponen nuestra vida “sobre roca”?',
+      '**Primaria 4.º - 6.º:** Piensa en dos cosas que haces habitualmente que te ayudan a estar firme y explica por qué.'
     ]
   },
   {
@@ -92,8 +92,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 8,
     questions: [
-      'Primaria 1.º - 3.º: ¿Qué “cosas nuevas” quiere Jesús traer a tu corazón?',
-      'Primaria 4.º - 6.º: Cuenta una situación en la que un “parche” no bastó y qué cambiaste de verdad.'
+      '**Primaria 1.º - 3.º:** ¿Qué “cosas nuevas” quiere Jesús traer a tu corazón?',
+      '**Primaria 4.º - 6.º:** Cuenta una situación en la que un “parche” no bastó y qué cambiaste de verdad.'
     ]
   },
   {
@@ -177,8 +177,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 15,
     questions: [
-      'Primaria 1.º - 3.º: ¿Cuál es tu “luz” (tu cualidad) y cómo la compartes en clase?',
-      'Primaria 4.º - 6.º: Nombra un talento tuyo y pon un ejemplo de cómo lo pondrás al servicio.'
+      '**Primaria 1.º - 3.º:** ¿Cuál es tu “luz” (tu cualidad) y cómo la compartes en clase?',
+      '**Primaria 4.º - 6.º:** Nombra un talento tuyo y pon un ejemplo de cómo lo pondrás al servicio.'
     ]
   },
   {
@@ -262,8 +262,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 22,
     questions: [
-      'Primaria 1.º - 3.º: ¿Escuchas cuando te invitan a hacer el bien?',
-      'Primaria 4.º - 6.º: Piensa una invitación buena que recibiste y cómo respondiste.'
+      '**Primaria 1.º - 3.º:** ¿Escuchas cuando te invitan a hacer el bien?',
+      '**Primaria 4.º - 6.º:** Piensa una invitación buena que recibiste y cómo respondiste.'
     ]
   },
   {
@@ -347,8 +347,8 @@ const dailyReflections: DailyReflection[] = [
     level: 'infantil-primaria',
     day: 29,
     questions: [
-      'Primaria 1.º - 3.º: ¿Te cuesta perdonar cuando te piden perdón?',
-      'Primaria 4.º - 6.º: Cuenta una vez que perdonaste y cómo te sentiste.'
+      '**Primaria 1.º - 3.º:** ¿Te cuesta perdonar cuando te piden perdón?',
+      '**Primaria 4.º - 6.º:** Cuenta una vez que perdonaste y cómo te sentiste.'
     ]
   },
   {
