@@ -109,6 +109,28 @@ const parseText = (text: string) => {
   );
 };
 
+const parseQuestion = (question: string) => {
+  const boldRegex = /(\*\*.*?\*\*)/g;
+  const parts: (string | JSX.Element)[] = [];
+  let lastIndex = 0;
+
+  question.replace(boldRegex, (match, _group1, offset) => {
+    if (offset > lastIndex) {
+      parts.push(question.substring(lastIndex, offset));
+    }
+    const boldText = match.substring(2, match.length - 2);
+    parts.push(<strong key={`q-b-${lastIndex}`} className="font-bold">{boldText}</strong>);
+    lastIndex = offset + match.length;
+    return match;
+  });
+
+  if (lastIndex < question.length) {
+    parts.push(question.substring(lastIndex));
+  }
+
+  return <>{parts.map((part, partIndex) => <React.Fragment key={partIndex}>{part}</React.Fragment>)}</>;
+};
+
 
 export function DailyReflectionPage({ initialText, initialQuestions }: DailyReflectionPageProps) {
   const [currentDate, setCurrentDate] = useState('');
@@ -261,7 +283,7 @@ export function DailyReflectionPage({ initialText, initialQuestions }: DailyRefl
                             {index + 1}
                           </div>
                           <p className="text-xl leading-relaxed text-muted-foreground text-left">
-                            {question}
+                            {parseQuestion(question)}
                           </p>
                         </li>
                       ))}
