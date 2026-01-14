@@ -6,17 +6,17 @@ import { Button } from '@/components/ui/button';
 
 export default function AvisoLegalPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh bg-background p-4 sm:p-6 md:p-8">
+    <div className="flex flex-col items-center min-h-svh bg-background p-4 sm:p-6 md:p-8">
+      <div className="absolute top-4 left-4">
+        <Button asChild variant="ghost">
+          <Link href="/">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Volver
+          </Link>
+        </Button>
+      </div>
       <main className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in-50 duration-500">
-        <div className="absolute top-4 left-4">
-          <Button asChild variant="ghost">
-            <Link href="/">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Volver
-            </Link>
-          </Button>
-        </div>
-        <header className="text-center pt-16">
+        <header className="text-center pt-8">
           <div className="flex flex-col items-center">
             <Link href="/">
               <Image
