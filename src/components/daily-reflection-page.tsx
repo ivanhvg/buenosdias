@@ -53,8 +53,8 @@ const parseText = (text: string) => {
 
       if (match.startsWith('***') && match.endsWith('***')) {
         hasTitle = true;
-        const boldText = match.substring(3, match.length - 3);
-        parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
+        const titleText = match.substring(3, match.length - 3);
+        parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold italic text-2xl">{titleText}</strong>);
       } else if (match.startsWith('**') && match.endsWith('**')) {
         const boldText = match.substring(2, match.length - 2);
         parts.push(<strong key={`b-${lineIndex}-${lastIndex}`} className="font-bold">{boldText}</strong>);
